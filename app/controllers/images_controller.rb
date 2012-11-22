@@ -1,4 +1,5 @@
-require 'tumblr-api'
+require 'tumblr'
+
 class ImagesController < ApplicationController
   # GET /images
   # GET /images.json
@@ -15,9 +16,12 @@ class ImagesController < ApplicationController
     image = Image.find(params[:id])
 
     text = "This is a link to image <img src=\"#{image.url}\"> #{image.url} "
+    post = Tumblr::Post.create(:email => 'info1117@gmail.com',
+                               :password => '123132',
+                               :type => 'text',
+                               :title => "First post via API - #{image.title}",
+                               :body => text)
 
-    user = Tumblr::User.new('info1117@gmail.com', '123132')
-    post = Tumblr::Post.create(user, :type => 'regular', :title => "First post via API - #{image.title}", :body => text)
   end
 
   # GET /images/1
