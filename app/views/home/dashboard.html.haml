@@ -1,0 +1,25 @@
+.current_user
+  %h1 User info
+  .img
+    =image_tag @user[:image_url]
+  .nickname
+    =@user[:nickname]
+  .fullname
+    =@user[:name]
+
+%hr
+
+
+%h1 images
+.images
+  -@images.each do |i|
+    .image
+      .thumb=image_tag i.thumb
+      =i.title
+      =i.low_url
+      =i.url
+      =i.location_name
+      =i.created_at
+      =link_to "post this image to tumblr", "images/post/#{i.id}"
+
+

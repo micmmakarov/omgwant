@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Url:
+  = @image.url
+%p
+  %b Title:
+  = @image.title
+%p
+  %b Description:
+  = @image.description
+
+= link_to 'Edit', edit_image_path(@image)
+\|
+= link_to 'Back', images_path

@@ -1,4 +1,18 @@
 Omgwant::Application.routes.draw do
+  resources :products
+
+  resources :images
+
+  resources :users
+
+  get "home/index"
+  get "home/about"
+  get "auth" => "home#auth"
+  get "dashboard" => "home#dashboard"
+  get "feed" => "home#feed"
+  get "callback" => "home#callback"
+  get "images/post/:id" => "images#post"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +62,7 @@ Omgwant::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"
 
