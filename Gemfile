@@ -30,9 +30,10 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
-  gem "uglifier"
-  gem 'compass-rails', '~> 1.0.3'
-  gem 'zurb-foundation', '~> 3.0.9'
+  # gem "uglifier"
+  gem "therubyracer"
+  gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+  gem "twitter-bootstrap-rails"
 end
 
 group :production do
