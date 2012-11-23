@@ -1,4 +1,9 @@
-%h1 Home#index
-%p Find me in app/views/home/index.html.haml
+.row.show-grid.image-feed
+  .span8.offset4
+    %h1 Welcome to OMGwant!
+    %p
+      To get started, sign in with your
+      %a{:href => "https://instagram.com"}Instagram
+      account
 
-=link_to 'Connect via instagram', "/auth"
+    =link_to 'Connect via instagram', "/auth", :class => "btn-connect-instagram"

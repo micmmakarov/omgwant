@@ -58,6 +58,17 @@ hgroup {
   h3, h4 {
     margin: 0;
   }
+  h4 {
+    font-weight: 300;
+  }
+}
+
+.btn-connect-instagram {
+  background: url('/assets/ow-site-sprites.png') 0 -112px;
+  width: 200px;
+  height: 29px;
+  display: block;
+  text-indent: -4000px;
 }
 
 .main-header {
@@ -130,6 +141,10 @@ hgroup {
 
 .btn {
   text-decoration: none;
+  .icon.icon-tumblr-16 {
+    margin-right: 5px;
+    vertical-align: text-bottom;
+  }
 }
 .navbar {
   .brand {

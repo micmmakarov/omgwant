@@ -7,7 +7,7 @@
           .thumb=image_tag i.low_url
           %hgroup
             %h3.image-title
-              =i.created_at.strftime('%B %e, %Y (%a), %I:%M%p')
+              =i.created_at.strftime('%B %e, %Y (%a), %I:%M%p') # formatted date
             %h4
               -if i.location_name.present?
                 %span.icon.icon-geopin
@@ -20,7 +20,7 @@
             .well
               =i.title
           %p
-            %a.btn{"data-toggle" => "modal", :href => "#myModal", :role => "button", :class => 'btn btn-success btn-mini'} <span class="icon icon-plus-16"></span>Add products
+            %a.btn{"data-toggle" => "modal", :href => "#addProductModal", :role => "button", :class => 'btn btn-success btn-mini bsModal'} <span class="icon icon-plus-16"></span>Add products
           %ul.added-products-list
             %li
               %a{:href => "#"}
@@ -32,9 +32,9 @@
               %a{:href => "#"}
                 D&B Shoes - $45.00
           %p
-            =link_to "Post to Tumblr", "images/post/#{i.id}", :class => 'btn btn-info'
+            =link_to '<span class="icon icon-tumblr-16"></span>Post to Tumblr'.html_safe, "images/post/#{i.id}", :class => 'btn btn-info'
 
-.modal.hide.fade.in#myModal
+.modal.hide.fade.in#addProductModal
   .modal-header
     %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
     %h3 Type a product name...

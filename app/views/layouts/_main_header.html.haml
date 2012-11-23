@@ -15,7 +15,7 @@
           %li.dropdown
             %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
               =image_tag current_user.image_url, :class => 'userpic'
-              Hi, #{current_user.name}
+              Hi, #{current_user.full_name}
               %b.caret
             %ul.dropdown-menu
               %li
