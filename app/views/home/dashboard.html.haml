@@ -10,16 +10,23 @@
 / %hr
 
 
-%h2 Your Instagram Photos
-.images
-  -@images.each do |i|
-    .image
-      .thumb=image_tag i.thumb
-      =i.title
-      =i.low_url
-      =i.url
-      =i.location_name
-      =i.created_at
-      =link_to "post this image to tumblr", "images/post/#{i.id}"
-
-
+.row.show-grid.image-feed
+  .span10.offset2
+    %h2 Your Instagram Photos
+    %ul
+      -@images.each do |i|
+        %li
+          .thumb=image_tag i.low_url
+          %hgroup
+            %h3.image-title
+              =i.created_at.strftime('%B %e, %Y (%a), %I:%M%p')
+            %h4
+              at
+              =i.location_name
+          .well
+            =i.title
+          %p
+            =i.low_url
+            =i.url
+          =link_to "post this image to tumblr", "images/post/#{i.id}"
+  
