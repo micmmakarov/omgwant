@@ -13,7 +13,13 @@ end
 
 
 gem 'instagram'
-gem 'omniauth-tumblr'
+
+#gem 'omniauth-tumblr'
+gem 'omniauth', :git => 'git://github.com/intridea/omniauth.git'
+gem 'omniauth-oauth2', :git => 'git://github.com/intridea/omniauth-oauth2.git'
+gem 'omniauth-tumblr', :git => 'git://github.com/jamiew/omniauth-tumblr.git'
+
+
 
 gem 'devise'
 gem 'devise'

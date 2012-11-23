@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
 
     if (user = User.find_by_instagram_id(u.id)).present?
       sign_in(user)
+      user.refresh_images(session[:access_token])
       redirect_to :controller => :home, :action => :dashboard
     else
       user = User.create(:email => "fucking_user@fuck.com", :name => u.username)
@@ -19,6 +20,7 @@ class SessionsController < ApplicationController
       user.image_url = u.profile_picture
       user.save!
       sign_in(user)
+      user.refresh_images
       redirect_to :controller => :home, :action => :dashboard
 
     end

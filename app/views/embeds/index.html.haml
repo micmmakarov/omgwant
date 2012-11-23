@@ -1,0 +1,19 @@
+%h1 Listing embeds
+
+%table
+  %tr
+    %th Image
+    %th
+    %th
+    %th
+
+  - @embeds.each do |embed|
+    %tr
+      %td= embed.image_id
+      %td= link_to 'Show', embed
+      %td= link_to 'Edit', edit_embed_path(embed)
+      %td= link_to 'Destroy', embed, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Embed', new_embed_path

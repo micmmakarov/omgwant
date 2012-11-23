@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121123010724) do
+ActiveRecord::Schema.define(:version => 20121123223838) do
+
+  create_table "embeds", :force => true do |t|
+    t.integer  "image_id"
+    t.string   "code"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "embeds", ["code"], :name => "index_embeds_on_code", :unique => true
+  add_index "embeds", ["image_id"], :name => "index_embeds_on_image_id", :unique => true
 
   create_table "images", :force => true do |t|
     t.string   "url"
@@ -23,13 +33,24 @@ ActiveRecord::Schema.define(:version => 20121123010724) do
     t.string   "location_name"
     t.string   "low_url"
     t.string   "thumb"
+    t.integer  "user_id"
   end
+
+  create_table "images_products", :force => true do |t|
+    t.integer  "image_id"
+    t.integer  "product_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "images_products", ["image_id", "product_id"], :name => "index_images_products_on_image_id_and_product_id", :unique => true
 
   create_table "products", :force => true do |t|
     t.string   "title"
     t.string   "url"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.float    "price"
   end
 
   create_table "users", :force => true do |t|

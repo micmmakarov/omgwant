@@ -1,4 +1,28 @@
 GIT
+  remote: git://github.com/intridea/omniauth-oauth2.git
+  revision: 032c21f2585047b8a7bb335f4f64697f0e6247ab
+  specs:
+    omniauth-oauth2 (1.1.1)
+      oauth2 (~> 0.8.0)
+      omniauth (~> 1.0)
+
+GIT
+  remote: git://github.com/intridea/omniauth.git
+  revision: 2e98c7462bca5363ec3b476fc460ba24dde5a89d
+  specs:
+    omniauth (1.1.1)
+      hashie (~> 1.2)
+      rack
+
+GIT
+  remote: git://github.com/jamiew/omniauth-tumblr.git
+  revision: 414da1c2d0311bda500649e2108e23c8ed6d4b5f
+  specs:
+    omniauth-tumblr (1.1)
+      multi_json
+      omniauth-oauth (~> 1.0)
+
+GIT
   remote: git://github.com/micmmakarov/contenteditable.git
   revision: 87fcc95f7ac4d60a5ea4b02fbce440af35a48b0e
   branch: master
@@ -87,6 +111,7 @@ GEM
     httparty (0.9.0)
       multi_json (~> 1.0)
       multi_xml
+    httpauth (0.2.0)
     i18n (0.6.1)
     i18n-active_record (0.0.2)
       i18n (>= 0.5.0)
@@ -100,6 +125,8 @@ GEM
       railties (>= 3.1.0, < 5.0)
       thor (~> 0.14)
     json (1.7.5)
+    jwt (0.1.5)
+      multi_json (>= 1.0)
     less (2.2.2)
       commonjs (~> 0.2.6)
     less-rails (2.2.6)
@@ -120,14 +147,15 @@ GEM
     net-ssh (2.6.1)
     nokogiri (1.5.5)
     oauth (0.4.7)
-    omniauth (1.1.1)
-      hashie (~> 1.2)
-      rack
+    oauth2 (0.8.0)
+      faraday (~> 0.8)
+      httpauth (~> 0.1)
+      jwt (~> 0.1.4)
+      multi_json (~> 1.0)
+      rack (~> 1.2)
     omniauth-oauth (1.0.1)
       oauth
       omniauth (~> 1.0)
-    omniauth-tumblr (1.1)
-      omniauth-oauth (~> 1.0)
     orm_adapter (0.4.0)
     pg (0.14.1)
     polyglot (0.3.3)
@@ -206,7 +234,9 @@ DEPENDENCIES
   instagram
   jquery-rails
   less-rails
-  omniauth-tumblr
+  omniauth!
+  omniauth-oauth2!
+  omniauth-tumblr!
   pg
   pry
   pry-nav

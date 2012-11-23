@@ -1,4 +1,8 @@
 Omgwant::Application.routes.draw do
+  resources :embeds
+
+  resources :images_products
+
   get "sessions/callback"
 
   devise_for :users
@@ -16,7 +20,9 @@ Omgwant::Application.routes.draw do
   get "feed" => "home#feed"
   get "callback" => "sessions#callback"
   get "images/post/:id" => "images#post"
+  get "embed/:code" => "embeds#show"
 
+  get "auth/tumblr/callback" => "sessions#callback"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

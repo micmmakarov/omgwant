@@ -1,0 +1,16 @@
+= form_for @images_product do |f|
+  - if @images_product.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@images_product.errors.count, "error")} prohibited this images_product from being saved:"
+      %ul
+        - @images_product.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :image_id
+    = f.number_field :image_id
+  .field
+    = f.label :product_id
+    = f.number_field :product_id
+  .actions
+    = f.submit 'Save'
