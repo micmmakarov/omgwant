@@ -1,22 +1,13 @@
 require "instagram"
 
 class HomeController < ApplicationController
+  before_filter :authenticate_user!, :except => :index
 
   def index
   end
 
 
   def about
-  end
-
-  def auth
-    redirect_to Instagram.authorize_url(:redirect_uri => CALLBACK_URL)
-  end
-
-  def callback
-    response = Instagram.get_access_token(params[:code], :redirect_uri => CALLBACK_URL)
-    session[:access_token] = response.access_token
-    redirect_to "/dashboard"
   end
 
   def feed

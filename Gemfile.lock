@@ -119,6 +119,15 @@ GEM
       net-ssh (>= 1.99.1)
     net-ssh (2.6.1)
     nokogiri (1.5.5)
+    oauth (0.4.7)
+    omniauth (1.1.1)
+      hashie (~> 1.2)
+      rack
+    omniauth-oauth (1.0.1)
+      oauth
+      omniauth (~> 1.0)
+    omniauth-tumblr (1.1)
+      omniauth-oauth (~> 1.0)
     orm_adapter (0.4.0)
     pg (0.14.1)
     polyglot (0.3.3)
@@ -197,6 +206,7 @@ DEPENDENCIES
   instagram
   jquery-rails
   less-rails
+  omniauth-tumblr
   pg
   pry
   pry-nav

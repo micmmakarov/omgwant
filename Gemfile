@@ -13,6 +13,7 @@ end
 
 
 gem 'instagram'
+gem 'omniauth-tumblr'
 
 gem 'devise'
 gem 'devise'

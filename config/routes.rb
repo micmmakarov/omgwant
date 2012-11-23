@@ -1,4 +1,8 @@
 Omgwant::Application.routes.draw do
+  get "sessions/callback"
+
+  devise_for :users
+
   resources :products
 
   resources :images
@@ -7,10 +11,10 @@ Omgwant::Application.routes.draw do
 
   get "home/index"
   get "home/about"
-  get "auth" => "home#auth"
+  get "auth" => "sessions#instagram_auth"
   get "dashboard" => "home#dashboard"
   get "feed" => "home#feed"
-  get "callback" => "home#callback"
+  get "callback" => "sessions#callback"
   get "images/post/:id" => "images#post"
 
   # The priority is based upon order of creation:
