@@ -42,10 +42,7 @@ class HomeController < ApplicationController
 
     @images = Image.all
 
-    @user = {}
-    @user[:nickname] = @data[0].caption.from.username
-    @user[:name] = @data[0].caption.from.full_name
-    @user[:image_url] = @data[0].caption.from.profile_picture
+
 
   end
 
