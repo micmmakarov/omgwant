@@ -6,29 +6,6 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    %header.main-header
-      .navbar
-        .navbar-inner
-          %a.brand{:href => "#"}
-            %img{:src => "assets/logo.png"}/
-          %ul.nav
-            %li
-              %a{:href => "#"} About
-            %li
-              %a{:href => "#"} Help
-        
-          %ul.nav.pull-right
-            %li.divider-vertical
-            %li.dropdown
-              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                =image_tag user[:image_url], :class => 'userpic'
-                Hi, #{user[:name]}
-                %b.caret
-              %ul.dropdown-menu
-                %li
-                  %a{:href => "#"} Settings
-                %li.divider
-                %li
-                  %a{:href => "#"} Log Out
+    =render :partial => "layouts/main_header"
     = yield
   

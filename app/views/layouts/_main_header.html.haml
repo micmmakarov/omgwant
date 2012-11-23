@@ -1,0 +1,27 @@
+%header.main-header
+  .navbar
+    .navbar-inner
+      %a.brand{:href => "#"}
+        %img{:src => "assets/logo.png"}/
+      %ul.nav
+        %li
+          %a{:href => "#"} About
+        %li
+          %a{:href => "#"} Help
+
+      %ul.nav.pull-right
+        %li.divider-vertical
+        -if user_signed_in?
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+              =image_tag current_user.image_url, :class => 'userpic'
+              Hi, #{current_user.name}
+              %b.caret
+            %ul.dropdown-menu
+              %li
+                %a{:href => "#"} Settings
+              %li.divider
+              %li
+                %a{:href => "#"} Log Out
+        -else
+          Fucking authenticate user!
