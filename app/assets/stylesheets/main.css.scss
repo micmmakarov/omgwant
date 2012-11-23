@@ -1,0 +1,68 @@
+// 
+//  main.css.scss
+//  omgwant
+//  
+//  Created by Vasily Myazin on 2012-11-22.
+//  Copyright 2012. All rights reserved.
+// 
+
+$main-color: #ec008c;
+$link-color: #f26d7d;
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+
+h1, h2, h3, h4, h5 {
+  color: $main-color;
+  line-height: 1.2;
+}
+a {
+  color: $link-color;
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+hgroup {
+  margin: 0 0 20px;
+  h3, h4 {
+    margin: 0;
+  }
+}
+
+.main-header {
+  .brand {
+    img {
+      width: 100px;
+    }
+  }
+  .userpic {
+    width: 25px;
+    margin-right: 5px;
+  }
+}
+
+.image-feed {
+  ul {
+    margin: 0;
+    li {
+      margin: 0 0 20px;
+      overflow: hidden;
+      list-style: none;
+      .thumb {
+        float: left;
+        width: 350px;
+        margin-right: 20px;
+        img {
+          width: 100%;
+        }
+      }
+      .well {
+        float: left;
+      }
+    }
+  }
+}
