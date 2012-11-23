@@ -1,0 +1,11 @@
+-image = @embed.image
+%h1=image.title
+= image_tag image.url
+= image.description
+= image.created_time
+= image.location_name
+
+= image.products.each do |p|
+  =p.title
+  =p.price
+  =p.url

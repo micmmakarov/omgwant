@@ -21,6 +21,9 @@
               =i.title
           %p
             %a.btn{"data-toggle" => "modal", :href => "#addProductModal", :role => "button", :class => 'btn btn-success btn-mini bsModal'} <span class="icon icon-plus-16"></span>Add products
+            -if i.embed.present?
+              %h1
+                %a{:href => i.embed.url} link to embed
           %ul.added-products-list
             %li
               %a{:href => "#"}

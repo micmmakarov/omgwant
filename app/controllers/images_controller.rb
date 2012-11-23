@@ -12,6 +12,7 @@ class ImagesController < ApplicationController
     end
   end
 
+
   def post
     image = Image.find(params[:id])
 
