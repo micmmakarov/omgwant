@@ -10,19 +10,46 @@ $main-color: #ec008c;
 $link-color: #f26d7d;
 
 body {
+  background: url('/assets/bg-textured.jpg');
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
+  padding-top: 60px;
 }
 
 h1, h2, h3, h4, h5 {
   color: $main-color;
   line-height: 1.2;
+  text-shadow: 0 1px 0 rgba(255,255,255,.8);
 }
 a {
   color: $link-color;
   text-decoration: underline;
   &:hover {
     text-decoration: none;
+  }
+}
+
+.icon {
+  background: url('/assets/ow-site-sprites.png');
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  &.icon-like {
+    height: 14px;
+    vertical-align: top;
+    background-position: 0px -2px;
+  }
+  &.icon-tumblr-16 {
+    background-position: -18px 0; 
+  }
+  &.icon-plus-16 {
+    background-position: -38px 0;
+    margin-right: 5px;
+  }
+  &.icon-geopin {
+    height: 22px;
+    background-position: -53px 0;
   }
 }
 
@@ -34,7 +61,22 @@ hgroup {
 }
 
 .main-header {
+  .navbar {
+    .navbar-inner {
+      // background: #DA7481;
+    }
+    li {
+      a {
+        color: #8D1E2E;
+        font-weight: 700;
+        &:hover {
+          color: $link-color;
+        }
+      }
+    }
+  }
   .brand {
+    margin-left: 0;
     img {
       width: 100px;
     }
@@ -46,23 +88,78 @@ hgroup {
 }
 
 .image-feed {
-  ul {
+  h2 {
+    margin-bottom: 30px;
+  }
+  ul.image-list {
     margin: 0;
-    li {
+    > li {
       margin: 0 0 20px;
       overflow: hidden;
       list-style: none;
+      position: relative;
+      padding-left: 370px;
+      min-height: 350px;
       .thumb {
-        float: left;
-        width: 350px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 330px;
         margin-right: 20px;
+        border: 10px solid white;
+        box-shadow: inset 0 0 15px rgba(0, 0, 0, .5);
         img {
           width: 100%;
+          z-index: -1;
+          position: relative;
         }
       }
       .well {
-        float: left;
+        background: url('/assets/bg-textured-02.gif');
       }
     }
   }
+  .added-products-list {
+    margin-bottom: 20px;
+  }
 }
+
+/****************************************
+/* Bootstrap Overrides
+/****************************************/
+
+.btn {
+  text-decoration: none;
+}
+.navbar {
+  .brand {
+    padding: 8px 20px 8px;
+  } 
+  .nav > {
+    li > a {
+      padding: 10px 15px 8px;
+      &.dropdown-toggle {
+        padding: 8px 15px 8px;
+      }
+    }
+  }
+  .dropdown-menu li > a {
+    text-decoration: none;
+  }
+  .dropdown-menu li > a:hover,
+  .dropdown-menu li > a:focus,
+  .dropdown-submenu:hover > a {
+    background: $main-color;
+    color: #fff;
+  }
+  .dropdown-menu .divider {
+    margin: 6px 1px 4px;
+  }
+  .divider-vertical {
+    margin: 0;
+  }
+}
+
+/****************************************
+/* /Bootstrap Overrides
+/****************************************/

@@ -1,5 +1,5 @@
 %header.main-header
-  .navbar
+  .navbar.navbar-fixed-top
     .navbar-inner
       %a.brand{:href => "#"}
         %img{:src => "assets/logo.png"}/
@@ -24,4 +24,5 @@
               %li
                 %a{:href => "#"} Log Out
         -else
-          Fucking authenticate user!
+          %li
+            %a{:href => "/"} Login
