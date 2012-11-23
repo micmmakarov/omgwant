@@ -1,16 +1,16 @@
-.current_user
-  %h1 User info
-  .img
-    =image_tag user[:image_url]
-  .nickname
-    =user[:nickname]
-  .fullname
-    =user[:name]
+/ .current_user
+/   %h1 User info
+/   .img
+/     =image_tag user[:image_url]
+/   .nickname
+/     =user[:nickname]
+/   .fullname
+/     =user[:name]
+/ 
+/ %hr
 
-%hr
 
-
-%h1 images
+%h2 Your Instagram Photos
 .images
   -@images.each do |i|
     .image
