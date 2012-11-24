@@ -34,8 +34,19 @@ class User < ActiveRecord::Base
   def facebook_post(image)
     api = Koala::Facebook::API.new(self.facebook_token)
     message = "#{image.title} #{image.url}"
-    api.put_connections("me", "feed", :message => message)
+    #api.put_connections("me", "feed", :message => message)
 
+    api.put_wall_post(
+        "hahaha #{image.title}",
+        :name => image.title,
+        :link => "www.google.com",
+        :caption => "blabla",
+        # just-in-case note: picture should be a URL, not a File (that's for put_picture)
+        :picture => image.low_url
+    )
+
+
+    #api.put_wall_post(image.title, {"url" => "http://startupstory.ru/peter_vesterbacka"})
   end
 
 end
