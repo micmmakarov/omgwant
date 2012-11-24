@@ -4,13 +4,15 @@ $ ->
 
   # focus on search input field in modal
   $("#addProductModal").on "shown", ->
-    input = $(this).find(".search-query")
-    input.focus().keyup ->
-      initProductSearch(input)
+    input = $(this).find("#search-query")
+    input.focus()
 
-  #
-  initProductSearch = (input) ->
-    input.jsonSuggest url: "/products.json", "data": "data.price"
+    myObject = ['Toronto','Montreal','New York','Buffalo']
+                              
+    $('#search-query').typeahead source: myObject
+
+#  initProductSearch = (input) ->
+
     # $.getJSON "/products.json", (data) ->
     #   $.each data, (i, product) ->
     #     content = "<p>" + product.title + "</p>"
