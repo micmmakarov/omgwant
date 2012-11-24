@@ -13,6 +13,16 @@
 
 ActiveRecord::Schema.define(:version => 20121124034929) do
 
+  create_table "embeds", :force => true do |t|
+    t.integer  "image_id"
+    t.string   "code"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "embeds", ["code"], :name => "index_embeds_on_code", :unique => true
+  add_index "embeds", ["image_id"], :name => "index_embeds_on_image_id", :unique => true
+
   create_table "images", :force => true do |t|
     t.string   "url"
     t.string   "title"
@@ -47,16 +57,16 @@ ActiveRecord::Schema.define(:version => 20121124034929) do
 
   create_table "users", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at",                                          :null => false
-    t.datetime "updated_at",                                          :null => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
     t.string   "tumblr"
     t.string   "instagram"
-    t.string   "email",                               :default => "", :null => false
-    t.string   "encrypted_password",                  :default => "", :null => false
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                       :default => 0
+    t.integer  "sign_in_count",          :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -65,7 +75,7 @@ ActiveRecord::Schema.define(:version => 20121124034929) do
     t.integer  "instagram_id"
     t.integer  "tumblr_id"
     t.string   "full_name"
-    t.integer  "facebook",               :limit => 8
+    t.integer  "facebook"
     t.string   "facebook_token"
   end
 

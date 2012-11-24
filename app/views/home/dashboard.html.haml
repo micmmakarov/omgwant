@@ -22,10 +22,9 @@
           %p
             %a.btn{"data-toggle" => "modal", :href => "#addProductModal", :role => "button", :class => 'btn btn-success btn-mini bsModal'} <span class="icon icon-plus-16"></span>Add products
             -if i.embed_link.present?
-              %h1
-                %a{:href => i.embed_link} link to embed
+              %a{:href => i.embed_link, :class => 'btn btn-mini'} Embed Link
 
-            %h1.publish{'data-image' => i.id}=link_to 'Publish this image', "images/publish/#{i.id}", :method => 'POST', :remote => true
+            %p.publish{'data-image' => i.id}=link_to 'Publish photo to gallery', "images/publish/#{i.id}", :method => 'POST', :remote => true, :class => 'btn btn-mini'
 
           %ul.added-products-list
             %li
