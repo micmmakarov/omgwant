@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       user.refresh_images(session[:access_token])
       redirect_to :controller => :home, :action => :dashboard
     else
-      user = User.create(:email => "fucking_user@fuck.com", :name => u.username)
+      user = User.create(:email => "#{ (0...10).map{65.+(rand(26)).chr}.join}@email-something.com", :name => u.username)
       pwd = Devise.friendly_token.first(10)
       user.instagram_id = u.id
       user.full_name = u.full_name
