@@ -1,5 +1,3 @@
-require 'tumblr'
-
 class ImagesController < ApplicationController
   # GET /images
   # GET /images.json
