@@ -5,9 +5,11 @@
         %img{:src => "assets/logo.png"}/
       %ul.nav
         %li
-          %a{:href => "#"} About
+          %a{:href => "gallery"} Gallery
         %li
-          %a{:href => "#"} Help
+          %a{:href => "help"} Help
+        %li
+          %a{:href => "about"} About
 
       %ul.nav.pull-right
         %li.divider-vertical
@@ -26,4 +28,4 @@
                   =link_to('Logout', destroy_user_session_path, :method => :delete)
         -else
           %li
-            %a{:href => "/"} Login
+            %a{:href => "/auth"} Login

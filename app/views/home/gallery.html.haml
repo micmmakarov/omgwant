@@ -1,0 +1,7 @@
+%h1 The gallery
+-@images.each do |i|
+  .gallery_image
+    .title
+      %h5=i.title
+    .img
+      =image_tag i.low_url

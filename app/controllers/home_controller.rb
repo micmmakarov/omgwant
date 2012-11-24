@@ -1,7 +1,7 @@
 require "instagram"
 
 class HomeController < ApplicationController
-  before_filter :authenticate_user!, :except => :index
+  before_filter :authenticate_user!, :except => [:index, :gallery]
 
   def index
     if user_signed_in?
@@ -19,11 +19,11 @@ class HomeController < ApplicationController
   end
 
   def dashboard
-
     @images = current_user.images
+  end
 
-
-
+  def gallery
+    @images = Image.where(:published => true)
   end
 
 

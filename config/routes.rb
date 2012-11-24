@@ -33,6 +33,7 @@ Omgwant::Application.routes.draw do
   get ":provider/callback" => "sessions#callbacks"
   post "images/publish/:id" => "images#publish"
 
+  get "gallery" => "home#gallery"
   get "auth/tumblr/callback" => "sessions#callback"
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -83,7 +84,7 @@ Omgwant::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'home#index'
+  root :to => 'home#gallery'
 
   # See how all your routes lay out with "rake routes"
 
