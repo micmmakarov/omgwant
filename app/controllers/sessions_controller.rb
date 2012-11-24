@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
       user.image_url = u.profile_picture
       user.save!
       sign_in(user)
-      user.refresh_images
+      user.refresh_images(session[:access_token])
       redirect_to :controller => :home, :action => :dashboard
 
     end
