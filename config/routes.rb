@@ -1,5 +1,10 @@
 Omgwant::Application.routes.draw do
-  get "api/post"
+
+  get "internal/about"
+
+  get "internal/help"
+
+  get "internal/contact"
 
   resources :embeds
 

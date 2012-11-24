@@ -1,7 +1,7 @@
 %header.main-header
   .navbar.navbar-fixed-top
     .navbar-inner
-      %a.brand{:href => "#"}
+      %a.brand{:href => root_url}
         %img{:src => "assets/logo.png"}/
       %ul.nav
         %li
@@ -22,7 +22,8 @@
                 %a{:href => "#"} Settings
               %li.divider
               %li
-                %a{:href => "#"} Log Out
+                %a{:href => "#"}
+                  =link_to('Logout', destroy_user_session_path, :method => :delete)
         -else
           %li
             %a{:href => "/"} Login
