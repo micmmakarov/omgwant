@@ -42,7 +42,7 @@ class SessionsController < ApplicationController
   end
 
   def auth
-    session[:oauth] = Koala::Facebook::OAuth.new(FACEBOOK_APP_ID, FACEBOOK_APP_SECRET, 'http://localhost:3000/facebook/callback')
+    session[:oauth] = Koala::Facebook::OAuth.new(FACEBOOK_APP_ID, FACEBOOK_APP_SECRET, FACEBOOK_CALLBACK)
     @facebook_url =  session[:oauth].url_for_oauth_code(:permissions=>"read_stream, publish_stream")
     puts session.to_s + "<<< session"
   end
