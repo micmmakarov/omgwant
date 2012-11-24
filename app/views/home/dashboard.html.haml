@@ -21,10 +21,8 @@
               =i.title
           %p
             %a.btn{"data-toggle" => "modal", :href => "#addProductModal", :role => "button", :class => 'btn btn-success btn-mini bsModal'} <span class="icon icon-plus-16"></span>Add products
-            -if i.embed_link.present?
-              %a{:href => i.embed_link, :class => 'btn btn-mini'} Embed Link
 
-            %p.publish{'data-image' => i.id}=link_to 'Publish photo to gallery', "images/publish/#{i.id}", :method => 'POST', :remote => true, :class => 'btn btn-mini'
+            =render :partial => "images/publish", :locals => {:image => i}
 
           %ul.added-products-list
             %li

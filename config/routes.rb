@@ -1,5 +1,7 @@
 Omgwant::Application.routes.draw do
 
+  resources :cutes
+
   get "internal/about"
 
   get "internal/help"

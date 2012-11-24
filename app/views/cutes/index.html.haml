@@ -1,0 +1,21 @@
+%h1 Listing cutes
+
+%table
+  %tr
+    %th User
+    %th Image
+    %th
+    %th
+    %th
+
+  - @cutes.each do |cute|
+    %tr
+      %td= cute.user_id
+      %td= cute.image_id
+      %td= link_to 'Show', cute
+      %td= link_to 'Edit', edit_cute_path(cute)
+      %td= link_to 'Destroy', cute, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Cute', new_cute_path
