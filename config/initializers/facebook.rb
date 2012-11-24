@@ -1,0 +1,3 @@
+FACEBOOK_APP_ID= '306044179500661' # please change!
+FACEBOOK_APP_SECRET= 'd55c4919c1e9ec21099c518e7be75674' # please change!
+FACEBOOK_SITE_URL = 'http://localhost:3000/'

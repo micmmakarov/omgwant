@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121123223838) do
+ActiveRecord::Schema.define(:version => 20121124002155) do
 
   create_table "embeds", :force => true do |t|
     t.integer  "image_id"
@@ -73,6 +73,8 @@ ActiveRecord::Schema.define(:version => 20121123223838) do
     t.integer  "instagram_id"
     t.integer  "tumblr_id"
     t.string   "full_name"
+    t.integer  "facebook"
+    t.string   "facebook_token"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

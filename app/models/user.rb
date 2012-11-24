@@ -30,4 +30,12 @@ class User < ActiveRecord::Base
 
   end
 
+
+  def facebook_post(image)
+    api = Koala::Facebook::API.new(self.facebook_token)
+    message = "#{image.title} #{image.url}"
+    api.put_connections("me", "feed", :message => message)
+
+  end
+
 end

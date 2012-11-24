@@ -41,5 +41,41 @@ class SessionsController < ApplicationController
     redirect_to Instagram.authorize_url(:redirect_uri => CALLBACK_URL)
   end
 
+  def auth
+    session[:oauth] = Koala::Facebook::OAuth.new(FACEBOOK_APP_ID, FACEBOOK_APP_SECRET, 'http://localhost:3000/facebook/callback')
+    @facebook_url =  session[:oauth].url_for_oauth_code(:permissions=>"read_stream, publish_stream")
+    puts session.to_s + "<<< session"
+  end
+
+  def callbacks
+    if params[:provider] == 'facebook'
+
+      if params[:code]
+        # acknowledge code and get access token from FB
+        session[:access_token] = session[:oauth].get_access_token(params[:code])
+      end
+
+      begin
+
+        @api = Koala::Facebook::API.new(session[:access_token])
+        fb_me = @api.get_object("me")
+        current_user.facebook = fb_me["id"]
+        current_user.facebook_token = session[:access_token]
+        current_user.save!
+
+        @name = fb_me["name"]
+
+      rescue Exception=>ex
+        puts ex.message
+      end
+
+    end
+
+    respond_to do |format|
+      format.html {   }
+    end
+
+
+  end
 
 end

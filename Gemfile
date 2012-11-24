@@ -19,6 +19,7 @@ gem 'omniauth', :git => 'git://github.com/intridea/omniauth.git'
 gem 'omniauth-oauth2', :git => 'git://github.com/intridea/omniauth-oauth2.git'
 gem 'omniauth-tumblr', :git => 'git://github.com/jamiew/omniauth-tumblr.git'
 
+gem 'koala'
 
 
 gem 'devise'
@@ -49,7 +50,6 @@ end
 
 
 gem 'jquery-rails'
-gem 'tumblr-api'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
