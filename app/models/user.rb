@@ -37,10 +37,10 @@ class User < ActiveRecord::Base
     #api.put_connections("me", "feed", :message => message)
 
     api.put_wall_post(
-        "hahaha #{image.title}",
+        "Just posted new thing - #{image.title}",
         :name => image.title,
-        :link => "www.google.com",
-        :caption => "blabla",
+        :link => "http://omgwant.herokuapp.com/#{image.embed.url}",
+        :caption => "#{image.description}",
         # just-in-case note: picture should be a URL, not a File (that's for put_picture)
         :picture => image.low_url
     )
