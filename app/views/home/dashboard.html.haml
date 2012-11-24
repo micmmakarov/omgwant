@@ -35,7 +35,7 @@
               %a{:href => "#"}
                 D&B Shoes - $45.00
           %p
-            =link_to '<span class="icon icon-tumblr-16"></span>Post to Tumblr'.html_safe, "images/post/#{i.id}", :class => 'btn btn-info'
+            =link_to '<span class="icon icon-tumblr-16"></span>Post to Facebook'.html_safe, "images/post/#{i.id}", :class => 'btn btn-info', 'data-remote' => 'true'
 
 .modal.hide.fade.in#addProductModal
   .modal-header
@@ -43,7 +43,7 @@
     %h3 Type a product name...
   .modal-body
     %form.navbar-search.pull-left
-      %input.search-query{:placeholder => "Search", :type => "text"}
+      %input#search-query{:placeholder => "Search", :type => "text", "data-provide" => "typeahead"}
     .clearfix
     .search-results
   .modal-footer
