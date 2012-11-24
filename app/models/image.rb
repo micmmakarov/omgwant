@@ -4,7 +4,7 @@ class Image < ActiveRecord::Base
   before_save :generate_code
 
   def generate_code
-    self.code = (0...12).map{65.+(rand(26)).chr}.join
+    self.code = (0...12).map{65.+(rand(26)).chr}.join if self.code.blank?
   end
 
   def embed_link

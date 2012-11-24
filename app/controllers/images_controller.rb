@@ -14,7 +14,7 @@ class ImagesController < ApplicationController
   def embed
     @image = Image.find(params[:id]) if params[:id]
     @image = Image.find_by_code(params[:code]) if params[:code]
-    redirect_to 'dashboard' if @image.published.blank?
+    redirect_to '/dashboard' if @image.published.blank?
   end
 
   def post
