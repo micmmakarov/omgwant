@@ -27,11 +27,11 @@ Omgwant::Application.routes.draw do
   get "feed" => "home#feed"
   get "callback" => "sessions#callback"
   get "images/post/:id" => "api#post"
-  get "embed/:code" => "embeds#show"
+  get "embed/:code" => "images#embed"
 
   get "authenticate" => "sessions#auth"
   get ":provider/callback" => "sessions#callbacks"
-
+  post "images/publish/:id" => "images#publish"
 
   get "auth/tumblr/callback" => "sessions#callback"
   # The priority is based upon order of creation:

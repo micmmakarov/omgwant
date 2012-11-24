@@ -3,7 +3,7 @@
     %h2 Your Instagram Photos
     %ul.image-list
       -@images.each do |i|
-        %li
+        %li.image{'data-id' => i.id, :class => i.published ? 'published' : 'image'}
           .thumb=image_tag i.low_url
           %hgroup
             %h3.image-title
@@ -21,9 +21,12 @@
               =i.title
           %p
             %a.btn{"data-toggle" => "modal", :href => "#addProductModal", :role => "button", :class => 'btn btn-success btn-mini bsModal'} <span class="icon icon-plus-16"></span>Add products
-            -if i.embed.present?
+            -if i.embed_link.present?
               %h1
-                %a{:href => i.embed.url} link to embed
+                %a{:href => i.embed_link} link to embed
+
+            %h1.publish{'data-image' => i.id}=link_to 'Publish this image', "images/publish/#{i.id}", :method => 'POST', :remote => true
+
           %ul.added-products-list
             %li
               %a{:href => "#"}

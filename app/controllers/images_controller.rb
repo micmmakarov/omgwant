@@ -1,6 +1,7 @@
 class ImagesController < ApplicationController
   # GET /images
   # GET /images.json
+  layout "layouts/embed", :only => :embed
   def index
     @images = Image.all
 
@@ -10,6 +11,11 @@ class ImagesController < ApplicationController
     end
   end
 
+  def embed
+    @image = Image.find(params[:id]) if params[:id]
+    @image = Image.find_by_code(params[:code]) if params[:code]
+    redirect_to 'dashboard' if @image.published.blank?
+  end
 
   def post
     image = Image.find(params[:id])
@@ -93,4 +99,18 @@ class ImagesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def publish
+    @image = Image.find(params[:id])
+    if @image.user == current_user
+      if @image.published != true
+        @image.published = true
+      else
+        @image.published = false
+      end
+      @image.save!
+    end
+  end
+
+
 end

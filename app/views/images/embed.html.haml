@@ -1,4 +1,4 @@
--image = @embed.image
+-image = @image
 %h1=image.title
 = image_tag image.url
 = image.description
@@ -19,7 +19,7 @@
 -provide :meta do
   %meta{:content => "OMGwant! - #{image.title}", :property => "og:title"}/
   %meta{:content => "website", :property => "og:type"}/
-  %meta{:content => "http://omgwant.herokuapp.com/#{@embed.url}", :property => "og:url"}/
+  %meta{:content => "http://omgwant.herokuapp.com/#{image.embed_link}", :property => "og:url"}/
   %meta{:content => "#{image.low_url}", :property => "og:image"}/
   %meta{:content => "OMGwant!", :property => "og:site_name"}/
   %meta{:content => "100001436239662", :property => "fb:admins"}/

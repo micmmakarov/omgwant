@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121124002155) do
+ActiveRecord::Schema.define(:version => 20121124034929) do
 
   create_table "embeds", :force => true do |t|
     t.integer  "image_id"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(:version => 20121124002155) do
     t.string   "low_url"
     t.string   "thumb"
     t.integer  "user_id"
+    t.string   "code"
+    t.boolean  "published"
   end
 
   create_table "images_products", :force => true do |t|
