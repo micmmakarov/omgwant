@@ -9,6 +9,10 @@
 $main-color: #ec008c;
 $link-color: #f26d7d;
 
+@mixin generic-transition() {
+  -webkit-transition: all .2s ease-in-out;
+}
+
 body {
   background: url('/assets/bg-textured.jpg');
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -122,7 +126,7 @@ hgroup {
         margin-right: 20px;
         border: 10px solid white;
         box-shadow: inset 0 0 15px rgba(0, 0, 0, .5);
-        -webkit-transition: all .2s ease-in-out;
+        @include generic-transition();
         -webkit-filter: grayscale(.8) saturate(0.5);
         img {
           width: 100%;
@@ -131,7 +135,7 @@ hgroup {
         }
       }
       &.published {
-        -webkit-transition: all .2s ease-in-out;
+        @include generic-transition();
         background: rgba(255,255,255,.5);
         border-radius: 10px;
         .thumb {
@@ -144,6 +148,9 @@ hgroup {
       .well {
         background: url('/assets/bg-textured-02.gif');
       }
+      .publish {
+        margin-bottom: 5px;
+      }
     }
   }
   .added-products-list {
@@ -155,8 +162,17 @@ hgroup {
     float:left;
     width: 22%;
     margin-right: 1%;
+    margin-bottom: 10px;
     max-width: 306px;
     min-width: 240px;
+    position: relative;
+    overflow: hidden;
+    &:hover {
+      .image-meta {
+        bottom: 0;
+        @include generic-transition();
+      }
+    }
     .img {
       border: 10px solid white;
       box-shadow: inset 0 0 15px rgba(0, 0, 0, .5);
@@ -165,9 +181,28 @@ hgroup {
         z-index: -1;
       }
     }
-    
     .title {
       height:30px;
+    }
+    .image-meta {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -53px;
+      background: rgba(0,0,0,.8);
+      padding: 10px;
+      h5 {
+        text-shadow: none;
+        margin: 0 0 5px;
+      }
+      p {
+        color: white;
+        margin: 0 0 5px;
+      }
+      .follow-user {
+        font-size: .7rem;
+        margin: 0;
+      }
     }
   }
 }
