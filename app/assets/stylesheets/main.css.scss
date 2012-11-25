@@ -150,6 +150,10 @@ hgroup {
       }
       .publish {
         margin-bottom: 5px;
+        p {
+          float: left;
+          margin-left: 5px;
+        }
       }
     }
   }
@@ -245,6 +249,9 @@ hgroup {
   .divider-vertical {
     margin: 0;
   }
+}
+.dropdown-menu {
+  z-index: 1050;
 }
 
 /****************************************
