@@ -20,6 +20,7 @@ class HomeController < ApplicationController
 
   def dashboard
     @images = current_user.images
+    @products = Product.all.map { |p| p.title}.to_json
   end
 
   def gallery
