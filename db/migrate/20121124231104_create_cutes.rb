@@ -6,5 +6,8 @@ class CreateCutes < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :cutes, [:image_id, :user_id], unique: true
+
   end
 end

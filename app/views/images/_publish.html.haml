@@ -1,7 +1,8 @@
 -i=image
--if i.published
-  %a{:href => i.embed_link, :class => 'btn btn-mini'} Embed Link
-  %p.publish{'data-image' => i.id}=link_to 'UN! Publish photo to gallery', "images/publish/#{i.id}", :method => 'POST', :remote => true, :class => 'btn btn-mini'
--else
-  %p.publish{'data-image' => i.id}=link_to 'Publish photo to gallery', "images/publish/#{i.id}", :method => 'POST', :remote => true, :class => 'btn btn-mini'
+.publish{'data-id' => i.id}
+  -if i.published
+    %a{:href => i.embed_link, :class => 'btn btn-mini'} Embed Link
+    %ppublish=link_to 'UN! Publish photo to gallery', "images/publish/#{i.id}", :method => 'POST', :remote => true, :class => 'btn btn-mini'
+  -else
+    %p=link_to 'Publish photo to gallery', "images/publish/#{i.id}", :method => 'POST', :remote => true, :class => 'btn btn-mini'
 

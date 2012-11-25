@@ -34,6 +34,7 @@ Omgwant::Application.routes.draw do
   get "authenticate" => "sessions#auth"
   get ":provider/callback" => "sessions#callbacks"
   post "images/publish/:id" => "images#publish"
+  post "cute/:id" => "cutes#cute"
 
   get "gallery" => "home#gallery"
   get "auth/tumblr/callback" => "sessions#callback"
