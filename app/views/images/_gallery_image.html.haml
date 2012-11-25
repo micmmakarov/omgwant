@@ -5,7 +5,7 @@
   .image-meta
     %h5
       -if i.title.present?
-        =i.title
+        =truncate(i.title, :length => 120)
       -elsif i.location_name.present?
         =i.location_name
       -else
