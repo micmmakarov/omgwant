@@ -52,8 +52,9 @@ a {
     margin-right: 5px;
   }
   &.icon-geopin {
+    background-position: -55px 0;
+    width: 16px;
     height: 22px;
-    background-position: -53px 0;
   }
 }
 
@@ -117,7 +118,7 @@ hgroup {
       padding-top: 20px;
       padding-right: 20px;
       padding-bottom: 20px;
-      min-height: 350px;
+      min-height: 330px;
       .thumb {
         position: absolute;
         left: 0;
@@ -152,7 +153,7 @@ hgroup {
         margin-bottom: 5px;
         p {
           float: left;
-          margin-left: 5px;
+          margin-left: 20px;
         }
       }
     }
