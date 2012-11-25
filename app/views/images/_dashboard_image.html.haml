@@ -2,8 +2,14 @@
   .thumb=image_tag i.low_url
   %hgroup
     %h3.image-title
-      =i.created_at.strftime('%B %e, %Y (%a), %I:%M%p') # formatted date
+      -if i.title.present?
+        =truncate(i.title, :length => 100)
+      -elsif i.location_name.present?
+        =i.location_name
+      -else
+        No title
     %h4
+      =i.created_at.strftime('%B %e, %Y (%a), %I:%M%p.') # formatted date
       -if i.location_name.present?
         %span.icon.icon-geopin
         =i.location_name
@@ -11,9 +17,6 @@
     %span.label.label-important{"title" => "Number of Instagram likes", "rel" => "tooltip", "data-placement" => "top"}
       %span.icon-heart.icon-white
       12
-  -if i.title.present?
-    .well
-      =i.title
   %p
     %a.btn{"data-toggle" => "modal", :href => "#addProductModal", :role => "button", :class => 'btn btn-success btn-mini bsModal'}                        
       %span.icon.icon-plus-16
