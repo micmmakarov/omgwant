@@ -1,9 +1,9 @@
-.gallery_image
+.gallery-image
   .title
-    %h5=i.title
     -user_name = i.user.full_name.blank? ? i.user.name : i.user.full_name
   .img
     =image_tag i.low_url
+  %h5=i.title
   %p
     =render :partial => "cutes/cute", :locals => {:image => i}
   %p

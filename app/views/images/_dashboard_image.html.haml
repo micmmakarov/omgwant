@@ -15,9 +15,11 @@
     .well
       =i.title
   %p
-    %a.btn{"data-toggle" => "modal", :href => "#addProductModal", :role => "button", :class => 'btn btn-success btn-mini bsModal'} <span class="icon icon-plus-16"></span>Add products
+    %a.btn{"data-toggle" => "modal", :href => "#addProductModal", :role => "button", :class => 'btn btn-success btn-mini bsModal'}                        
+      %span.icon.icon-plus-16
+      Add products
 
-    =render :partial => "images/publish", :locals => {:image => i}
+  =render :partial => "images/publish", :locals => {:image => i}
 
   %ul.added-products-list
     %li
