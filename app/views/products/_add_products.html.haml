@@ -1,5 +1,5 @@
 .products{'data-id' => image.id}
-  %input.add-products{:type => "text"}
+  %input.add-products{:type => "text", :placeholder => "Type to add products..."}
   %ul
     -image.products.each do |p|
       %li
