@@ -42,6 +42,8 @@ group :assets do
   gem "therubyracer"
   gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
   gem "twitter-bootstrap-rails"
+  gem "rails-backbone" # lest back bone that shit
+  gem 'handlebars_assets' # More info here https://github.com/leshill/handlebars_assets
 end
 
 group :production do
