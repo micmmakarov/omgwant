@@ -11,10 +11,14 @@
     %h3 Type a product name...
   .modal-body
     %form.navbar-search.pull-left
-      %input#search-query{:placeholder => "Search", :type => "text", "data-provide" => "typeahead"}
+      %input.span3{"data-items" => "4", "data-provide" => "typeahead", "data-source" => '["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Dakota","North Carolina","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]', :style => "margin: 0 auto;", :type => "text"}
     .clearfix
     .search-results
   .modal-footer
     %a.btn{:href => "javascript:void(0)", "data-dismiss" => "modal"} Close
     %a.btn.btn-primary{:href => "#"} Save changes
-                
+
+
+
+:javascript
+  loadProducts(#{@products});
