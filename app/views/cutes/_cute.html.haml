@@ -1,6 +1,9 @@
 .cute{'data-id' => image.id}
   Total likes: #{image.cutes.count}
-  -if image.cutes.where(:user_id => current_user.id).empty?
-    =link_to "This is cute!", "cute/#{image.id}", :remote => true, :method => 'POST'
+  -if user_signed_in?
+    -if image.cutes.where(:user_id => current_user.id).empty?
+      =link_to "This is cute!", "cute/#{image.id}", :remote => true, :method => 'POST'
+    -else
+      =link_to "This is not cute!", "cute/#{image.id}", :remote => true, :method => 'POST'
   -else
-    =link_to "This is not cute!", "cute/#{image.id}", :remote => true, :method => 'POST'
+    Please register to make things cute!

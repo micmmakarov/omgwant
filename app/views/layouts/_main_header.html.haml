@@ -5,13 +5,14 @@
         %img{:src => "assets/logo.png"}/
       %ul.nav
         %li
-          %a{:href => "gallery"} Gallery
-        %li
-          %a{:href => "dashboard"} Dashboard
-        %li
           %a{:href => "help"} Help
         %li
           %a{:href => "about"} About
+        -if user_signed_in?
+          %li
+            %a{:href => "gallery"} Gallery
+          %li
+            %a{:href => "dashboard"} Dashboard
 
       %ul.nav.pull-right
         %li.divider-vertical

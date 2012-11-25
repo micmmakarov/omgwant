@@ -2,11 +2,9 @@ Omgwant::Application.routes.draw do
 
   resources :cutes
 
-  get "internal/about"
-
-  get "internal/help"
-
-  get "internal/contact"
+  get "about" => "internal#about"
+  get "help" => "internal#about"
+  get "contact" => "internal#about"
 
   resources :embeds
 
