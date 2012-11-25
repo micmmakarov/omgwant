@@ -5,7 +5,6 @@ class SessionsController < ApplicationController
     session[:access_token] = response.access_token
     client = Instagram.client(:access_token => session[:access_token])
     u = client.user
-    binding.pry
     if (user = User.find_by_instagram_id(u.id)).present?
       sign_in(user)
       user.refresh_images(session[:access_token])
