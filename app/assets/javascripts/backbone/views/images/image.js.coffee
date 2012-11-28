@@ -1,13 +1,15 @@
 class Omgwant.Views.Image extends Backbone.View
+  className: 'gallery-image'
+  
   events:
-    'click .fuck': 'fuck'
+    'click .like': 'like'
 
   initialize: ->
     @model.on('change', @render, this)
 
-  fuck: (e) ->
+  like: (e) ->
     e.preventDefault()
-    @model.fuck()
+    @model.like()
     @model.change()
 
   render: ->

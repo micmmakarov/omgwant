@@ -3,8 +3,8 @@
 .image-meta
   %h5 {{title}}
   %p
-  %p.follow-user
-    Follow
+    %a.like{:href => '#'}
+      Like
+      %span.badge {{cutes}}
+      %a.follow-user.pull-right{:href => '#'} Follow {{user_name}}
 
-  %a.fuck{:href => '#'}
-    Fuck it
