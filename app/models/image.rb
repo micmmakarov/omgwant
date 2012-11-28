@@ -11,6 +11,10 @@ class Image < ActiveRecord::Base
     "embed/#{self.code}"
   end
 
+  def cutes
+     1#cutes.length
+  end
+
   has_many :products, :through => :images_products
   has_many :images_products
   has_one :embed

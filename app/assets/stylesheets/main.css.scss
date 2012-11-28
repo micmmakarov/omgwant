@@ -163,7 +163,9 @@ hgroup {
   }
 }
 .gallery-feed {
-  .gallery-image {
+  #images-table > div {
+    float:left;
+    width: 22%;
     float:left;
     width: 22%;
     margin-right: 1%;
@@ -209,6 +211,10 @@ hgroup {
         margin: 0;
       }
     }
+  }
+
+  .gallery-image {
+
   }
 }
 

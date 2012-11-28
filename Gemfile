@@ -15,9 +15,9 @@ end
 gem 'instagram'
 
 #gem 'omniauth-tumblr'
-gem 'omniauth', :git => 'git://github.com/intridea/omniauth.git'
-gem 'omniauth-oauth2', :git => 'git://github.com/intridea/omniauth-oauth2.git'
-gem 'omniauth-tumblr', :git => 'git://github.com/jamiew/omniauth-tumblr.git'
+gem 'omniauth'
+#gem 'omniauth-oauth2', :git => 'git://github.com/intridea/omniauth-oauth2.git'
+gem 'omniauth-tumblr'
 
 gem 'koala'
 
@@ -44,6 +44,7 @@ group :assets do
   gem "twitter-bootstrap-rails"
   gem "rails-backbone" # lest back bone that shit
   gem 'handlebars_assets' # More info here https://github.com/leshill/handlebars_assets
+  gem 'hamlbars'
 end
 
 group :production do
