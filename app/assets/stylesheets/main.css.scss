@@ -196,10 +196,17 @@ li > a.btn-connect-instagram:hover {
       position: absolute;
       left: 0;
       right: 0;
-      bottom: -53px;
+      bottom: -33px;
       background: rgba(0,0,0,.8);
       padding: 10px;
+      a {
+        text-decoration: none;
+        &:hover {
+          color: #fff;
+        }
+      }
       h5 {
+        color: lighten($link-color, 20%);
         text-shadow: none;
         margin: 0 0 5px;
       }
