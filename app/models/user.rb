@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :name
 
-  #has_many :images
+  has_many :images
   has_many :cutes
 
   def liked_images
