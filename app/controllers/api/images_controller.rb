@@ -1,6 +1,6 @@
 class Api::ImagesController < ApplicationController
 
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :only => :cute
   respond_to :json
 
   def index

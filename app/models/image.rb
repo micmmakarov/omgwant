@@ -19,6 +19,16 @@ class Image < ActiveRecord::Base
     self.user.full_name.blank? ? self.user.name : self.user.full_name
   end
 
+  def computed_title
+    if self.title.present?
+      truncate(self.title, :length => 120)
+    elsif self.location_name.present?
+      self.location_name
+    else
+      "No title"
+    end
+  end
+
   has_many :products, :through => :images_products
   has_many :images_products
   has_one :embed
