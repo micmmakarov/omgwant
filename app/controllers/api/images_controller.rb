@@ -16,13 +16,13 @@ class Api::ImagesController < ApplicationController
 
   def cute
     @image = Image.find(params[:id])
-    binding.pry
     if @image.cutes.where(:user_id => current_user.id).empty?
       Cute.create!(:user_id => current_user.id, :image_id => @image.id)
     else
       Cute.where(:user_id => current_user.id, :image_id => @image.id).first.destroy
     end
 
+    render json: @image.to_json(:methods => [:title, :low_url, :url, :likes, :user_name, :computed_title]) if @image.published
   end
 
 end

@@ -11,7 +11,6 @@ class Omgwant.Views.Image extends Backbone.View
   like: (e) ->
     e.preventDefault()
     @model.like()
-    @model.change()
 
   render: ->
     @$el.html HandlebarsTemplates['image'](@model.toJSON())

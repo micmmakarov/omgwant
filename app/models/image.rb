@@ -12,7 +12,7 @@ class Image < ActiveRecord::Base
   end
 
   def likes
-     1#cutes.length
+     cutes.length
   end
 
   def user_name
