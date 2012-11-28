@@ -1,4 +1,3 @@
 %section.row.show-grid.gallery-feed
   .span16.offset1
-    %h2 The gallery
     #images-table

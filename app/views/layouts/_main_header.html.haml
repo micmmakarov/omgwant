@@ -4,15 +4,15 @@
       %a.brand{:href => root_url}
         %img{:src => "assets/logo.png"}/
       %ul.nav
-        %li
-          %a{:href => "help"} Help
-        %li
-          %a{:href => "about"} About
         -if user_signed_in?
           %li
-            %a{:href => "gallery"} Gallery
+            %a{:href => "/"} Gallery
           %li
             %a{:href => "dashboard"} Dashboard
+        %li
+          %a{:href => "about"} About
+        %li
+          %a{:href => "help"} Help
 
       %ul.nav.pull-right
         %li.divider-vertical
