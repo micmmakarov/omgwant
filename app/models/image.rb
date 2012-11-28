@@ -1,6 +1,6 @@
 class Image < ActiveRecord::Base
   attr_accessible :description, :title, :price
-
+  include ActionView::Helpers::TextHelper
   before_save :generate_code
 
   def generate_code
@@ -11,7 +11,7 @@ class Image < ActiveRecord::Base
     "embed/#{self.code}"
   end
 
-  def cutes
+  def likes
      1#cutes.length
   end
 
@@ -20,10 +20,10 @@ class Image < ActiveRecord::Base
   end
 
   def computed_title
-    if self.title.present?
-      truncate(self.title, :length => 120)
-    elsif self.location_name.present?
-      self.location_name
+    if title.present?
+      truncate(title, :length => 120)
+    elsif location_name.present?
+      location_name
     else
       "No title"
     end

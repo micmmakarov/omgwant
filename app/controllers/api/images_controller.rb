@@ -5,18 +5,18 @@ class Api::ImagesController < ApplicationController
 
   def index
     images = Image.where(:published => true)
-    render json: images.to_json(:methods => [:title, :low_url, :url, :cutes, :user_name])
+    render json: images.to_json(:methods => [:title, :low_url, :url, :likes, :user_name, :computed_title])
   end
 
   def show
     image = Image.find(params[:id])
-    render json: image.to_json(:methods => [:title, :low_url, :url, :cutes, :user_name]) if image.published
+    render json: image.to_json(:methods => [:title, :low_url, :url, :likes, :user_name, :computed_title]) if image.published
   end
 
 
   def cute
     @image = Image.find(params[:id])
-
+    binding.pry
     if @image.cutes.where(:user_id => current_user.id).empty?
       Cute.create!(:user_id => current_user.id, :image_id => @image.id)
     else
