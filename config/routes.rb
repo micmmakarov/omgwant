@@ -5,6 +5,7 @@ Omgwant::Application.routes.draw do
 
   namespace :api do
     resources :images
+    post "cute/:id" => "images#cute"
   end
 
   get "auth" => "sessions#instagram_auth"

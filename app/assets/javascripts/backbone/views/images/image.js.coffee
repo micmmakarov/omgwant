@@ -1,4 +1,5 @@
 class Omgwant.Views.Image extends Backbone.View
+
   className: 'gallery-image'
   
   events:
