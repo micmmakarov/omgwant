@@ -227,6 +227,30 @@ li > a.btn-connect-instagram:hover {
 }
 
 /****************************************
+/* Home Page
+/****************************************/
+
+.category-nav {
+  margin: 0 0 20px;
+  overflow: hidden;
+  h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    float: left;
+    color: desaturate($main-color, 20%);
+  }
+  .nav-pills {
+    float: left;
+    margin: 7px 0 0 14px;
+  }
+}
+
+/****************************************
+/* /Home Page
+/****************************************/
+
+
+/****************************************
 /* Bootstrap Overrides
 /****************************************/
 
@@ -278,6 +302,15 @@ li > a.btn-connect-instagram:hover {
       }
     }
   }
+}
+.nav-pills {
+ > .active {
+   > a,
+   > a:hover {
+     text-decoration: none;
+     background-color: $main-color;
+   }
+ }
 }
 
 /****************************************
