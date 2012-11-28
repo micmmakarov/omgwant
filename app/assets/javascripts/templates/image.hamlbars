@@ -1,10 +1,10 @@
 .img
   %img{:src => '{{low_url}}'}
 .image-meta
-  %h5 {{title}}
+  %h5 {{computed_title}}
   %p
     %a.like{:href => '#'}
       Like
-      %span.badge {{cutes}}
+      %span.badge {{likes}}
       %a.follow-user.pull-right{:href => '#'} Follow {{user_name}}
 
