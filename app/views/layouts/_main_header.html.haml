@@ -30,5 +30,15 @@
                 %a{:href => "#"}
                   =link_to('Logout', destroy_user_session_path, :method => :delete)
         -else
-          %li
-            %a{:href => "/auth"} Login
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+              Login
+            %ul.dropdown-menu
+              %li
+                %p
+                  To get started, sign in with your
+                  %a{:href => "https://instagram.com"}Instagram
+                  account
+                =link_to 'Connect via instagram', "/auth", :class => "btn-connect-instagram non-menu-item"
+                
+

@@ -68,9 +68,10 @@ hgroup {
   }
 }
 
-.btn-connect-instagram {
-  background: url('/assets/ow-site-sprites.png') 0 -112px;
-  width: 200px;
+.btn-connect-instagram,
+li > a.btn-connect-instagram:hover {
+  background: url('/assets/ow-site-sprites.png') 0 -112px no-repeat;
+  width: 160px;
   height: 29px;
   display: block;
   text-indent: -4000px;
@@ -247,7 +248,7 @@ hgroup {
   .dropdown-menu li > a:hover,
   .dropdown-menu li > a:focus,
   .dropdown-submenu:hover > a {
-    background: $main-color;
+    background-color: $main-color;
     color: #fff;
   }
   .dropdown-menu .divider {
@@ -259,6 +260,17 @@ hgroup {
 }
 .dropdown-menu {
   z-index: 1050;
+  li > {
+    p {
+      margin: 10px 20px;
+    }
+    a.non-menu-item {
+      margin: 0 20px 5px;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
 }
 
 /****************************************
