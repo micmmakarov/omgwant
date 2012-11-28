@@ -1,5 +1,8 @@
 Omgwant::Application.routes.draw do
 
+  devise_for :users
+  resources :users
+
   namespace :api do
     resources :images
   end
@@ -13,6 +16,10 @@ Omgwant::Application.routes.draw do
   get "authenticate" => "sessions#auth"
   get ":provider/callback" => "sessions#callbacks"
   post "images/publish/:id" => "images#publish"
+
+
+  get "sessions/callback"
+
 
   root :to => 'home#index'
 
