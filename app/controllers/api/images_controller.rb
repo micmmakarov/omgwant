@@ -13,6 +13,11 @@ class Api::ImagesController < ApplicationController
     render json: image.to_json(:methods => [:title, :low_url, :url, :likes, :user_name, :computed_title]) if image.published
   end
 
+  def user_likes
+    user = User.find(params[:id])
+    images = user.liked_images
+    render json: images.to_json(:methods => [:title, :low_url, :url, :likes, :user_name, :computed_title])
+  end
 
   def cute
     @image = Image.find(params[:id])
@@ -24,5 +29,9 @@ class Api::ImagesController < ApplicationController
 
     render json: @image.to_json(:methods => [:title, :low_url, :url, :likes, :user_name, :computed_title]) if @image.published
   end
+
+
+
+
 
 end

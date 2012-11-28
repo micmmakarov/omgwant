@@ -15,6 +15,10 @@ class Image < ActiveRecord::Base
      cutes.length
   end
 
+  def like_action(user)
+    not Cute.where(:user_id => user.id, :image_id => id)
+  end
+
   def user_name
     self.user.full_name.blank? ? self.user.name : self.user.full_name
   end

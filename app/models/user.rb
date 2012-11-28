@@ -9,8 +9,12 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :name
 
-  has_many :images
+  #has_many :images
   has_many :cutes
+
+  def liked_images
+    cutes.map {|c| c.image}.flatten
+  end
 
   def refresh_images(access_token)
 

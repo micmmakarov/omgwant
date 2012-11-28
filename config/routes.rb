@@ -1,11 +1,12 @@
 Omgwant::Application.routes.draw do
 
   devise_for :users
-  resources :users
+  #resources :users
 
   namespace :api do
     resources :images
     post "cute/:id" => "images#cute"
+    get ":id/likes" => "images#user_likes"
   end
 
   get "auth" => "sessions#instagram_auth"
@@ -24,7 +25,7 @@ Omgwant::Application.routes.draw do
 
   root :to => 'home#index'
 
-  match "*path" => "home#index"
+  match '*path' => "home#index"
 
 
 
