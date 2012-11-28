@@ -5,3 +5,6 @@
   %p
   %p.follow-user
     Follow
+
+  %a.fuck{:href => '#'}
+    Fuck it

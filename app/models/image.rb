@@ -15,6 +15,10 @@ class Image < ActiveRecord::Base
      1#cutes.length
   end
 
+  def user_name
+    self.user.full_name.blank? ? self.user.name : self.user.full_name
+  end
+
   has_many :products, :through => :images_products
   has_many :images_products
   has_one :embed
