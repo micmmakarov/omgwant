@@ -4,8 +4,10 @@ class Api::ImagesController < ApplicationController
   respond_to :json
 
   def index
+    Image.current_user = current_user
     images = Image.where(:published => true)
-    render json: images.to_json(:methods => [:title, :low_url, :url, :likes, :user_name, :computed_title])
+    Thread.current[:user] = current_user
+    render json: images.to_json(:methods => [:title, :low_url, :url, :likes, :user_name, :computed_title, :like_action])
   end
 
   def show

@@ -1,4 +1,5 @@
 class Image < ActiveRecord::Base
+  cattr_accessor :current_user
   attr_accessible :description, :title, :price
   include ActionView::Helpers::TextHelper
   before_save :generate_code
@@ -15,8 +16,8 @@ class Image < ActiveRecord::Base
      cutes.length
   end
 
-  def like_action(user)
-    not Cute.where(:user_id => user.id, :image_id => id)
+  def like_action
+    not Cute.where(:user_id => current_user.id, :image_id => id).first.present?
   end
 
   def user_name
