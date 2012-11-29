@@ -2,7 +2,7 @@
   .navbar.navbar-fixed-top
     .navbar-inner
       %a.brand{:href => root_url}
-        %img{:src => "assets/logo.png"}/
+        %img{:src => "/assets/logo.png"}/
       %ul.nav
         -if user_signed_in?
           %li
@@ -40,5 +40,3 @@
                   %a{:href => "https://instagram.com"}Instagram
                   account
                 =link_to 'Connect via instagram', "/auth", :class => "btn-connect-instagram non-menu-item"
-                
-
