@@ -4,21 +4,23 @@ class Api::ImagesController < ApplicationController
   respond_to :json
 
   def index
-    Image.current_user = current_user
+    Image.current_user = current_user if user_signed_in?
     images = Image.where(:published => true)
     Thread.current[:user] = current_user
     render json: images.to_json(:methods => [:title, :low_url, :url, :likes, :user_name, :computed_title, :like_action])
   end
 
   def show
+    Image.current_user = current_user if user_signed_in?
     image = Image.find(params[:id])
-    render json: image.to_json(:methods => [:title, :low_url, :url, :likes, :user_name, :computed_title]) if image.published
+    render json: image.to_json(:methods => [:title, :low_url, :url, :likes, :user_name, :computed_title, :like_action]) if image.published
   end
 
   def user_likes
+    Image.current_user = current_user if user_signed_in?
     user = User.find(params[:id])
     images = user.liked_images
-    render json: images.to_json(:methods => [:title, :low_url, :url, :likes, :user_name, :computed_title])
+    render json: images.to_json(:methods => [:title, :low_url, :url, :likes, :user_name, :computed_title, :like_action])
   end
 
   def cute

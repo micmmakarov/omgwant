@@ -17,7 +17,9 @@ class Image < ActiveRecord::Base
   end
 
   def like_action
-    not Cute.where(:user_id => current_user.id, :image_id => id).first.present?
+    if current_user.present?
+      not Cute.where(:user_id => current_user.id, :image_id => id).first.present?
+    end
   end
 
   def user_name
