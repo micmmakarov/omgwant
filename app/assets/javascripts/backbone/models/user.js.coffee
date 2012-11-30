@@ -5,3 +5,5 @@ class Omgwant.Models.User extends Backbone.Model
   initialize: =>
     @.images = new Omgwant.Collections.Images
     @.images.url = "/api/users/#{this.id}"
+
+
