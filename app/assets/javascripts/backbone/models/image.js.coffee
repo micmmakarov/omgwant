@@ -9,3 +9,8 @@ class Omgwant.Models.Image extends Backbone.Model
         @set('likes', data.likes)
 
 
+  likable: ->
+    "Like" if @.like_action == true
+    "Unlike" if @.like_action == false
+
+

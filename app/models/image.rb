@@ -16,6 +16,10 @@ class Image < ActiveRecord::Base
      cutes.length
   end
 
+  def user_info
+    self.user
+  end
+
   def like_action
     if current_user.present?
       not Cute.where(:user_id => current_user.id, :image_id => id).first.present?
@@ -23,7 +27,12 @@ class Image < ActiveRecord::Base
   end
 
   def user_name
-    self.user.full_name.blank? ? self.user.name : self.user.full_name
+    a_name = self.user.full_name.blank? ? self.user.name : self.user.full_name
+    a_name.split(" ")[0]
+  end
+
+  def user_id
+
   end
 
   def computed_title
