@@ -4,7 +4,7 @@
   %h5 {{computed_title}}
   %p
     %a.like{:href => '#'}
-      Like
+      {{like_action_label}}
       %span.badge {{likes}}
       %a.follow-user.pull-right{:href => '#'} Follow {{user_name}}
 

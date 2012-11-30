@@ -13,5 +13,5 @@ class Omgwant.Views.Image extends Backbone.View
     @model.like()
 
   render: ->
-    @$el.html HandlebarsTemplates['image'](@model.toJSON())
+    @$el.html HandlebarsTemplates['image'](@model.to_JSON1())
     this

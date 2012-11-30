@@ -9,7 +9,6 @@ class Omgwant.Views.Images extends Backbone.View
     $("#images-table").append(view.render().el)
 
   render: ->
-    #alert "fuck"
     @$el.html HandlebarsTemplates['images']()
     @collection.each(@addOne)
     this
