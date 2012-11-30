@@ -1,0 +1,16 @@
+#images
+  .row
+    .span16.offset1
+      %nav.category-nav
+        %h3 Browse by category:
+        %ul.nav.nav-pills
+          %li.active
+            %a{:href => '#'} Fashion
+          %li
+            %a{:href => '#'} Beauty
+          %li
+            %a{:href => '#'} Accessories
+
+  %section.row.show-grid.gallery-feed
+    .span16.offset1
+      #images-table

@@ -1,0 +1,32 @@
+#images
+  .row
+    .span11.offset1
+      %h3 Jennifer Wong's Board
+
+      %h4 Liked Photos
+      
+      %ul.thumbs-list.medium
+        %li
+          %img{:src => "http://distilleryimage4.s3.amazonaws.com/81ed7e64291911e2af1622000a1fb845_6.jpg"}
+        %li
+          %img{:src => "http://distilleryimage4.s3.amazonaws.com/81ed7e64291911e2af1622000a1fb845_6.jpg"}
+        %li
+          %img{:src => "http://distilleryimage4.s3.amazonaws.com/81ed7e64291911e2af1622000a1fb845_6.jpg"}
+        %li
+          %img{:src => "http://distilleryimage4.s3.amazonaws.com/81ed7e64291911e2af1622000a1fb845_6.jpg"}
+        %li
+          %img{:src => "http://distilleryimage4.s3.amazonaws.com/81ed7e64291911e2af1622000a1fb845_6.jpg"}
+        %li
+          %img{:src => "http://distilleryimage4.s3.amazonaws.com/81ed7e64291911e2af1622000a1fb845_6.jpg"}
+        %li
+          %img{:src => "http://distilleryimage4.s3.amazonaws.com/81ed7e64291911e2af1622000a1fb845_6.jpg"}
+        %li
+          %img{:src => "http://distilleryimage4.s3.amazonaws.com/81ed7e64291911e2af1622000a1fb845_6.jpg"}
+
+
+  %section.row.show-grid.gallery-feed
+    .span11.offset1
+      %h4 Posted Photos
+      
+      #images-table
+      

@@ -163,16 +163,30 @@ li > a.btn-connect-instagram:hover {
     margin-bottom: 20px;
   }
 }
+.thumbs-list {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  li {
+    list-style: none;
+    background: red;
+    float: left;
+    margin: 0 1% 10px 0;
+  }
+  &.medium {
+    li {
+      width: 11%;
+    }
+  }
+}
 .gallery-feed {
   #images-table > div {
     float:left;
-    width: 22%;
-    float:left;
-    width: 22%;
+    width: 23%;
     margin-right: 1%;
     margin-bottom: 10px;
     max-width: 306px;
-    min-width: 240px;
+    min-width: 197px;
     position: relative;
     overflow: hidden;
     &:hover {
