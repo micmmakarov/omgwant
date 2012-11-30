@@ -15,7 +15,11 @@ class Omgwant.Models.Image extends Backbone.Model
     console.log like_action
     label
   
-  to_JSON1: =>
+  get_like_action_label: =>
     j = @.toJSON()
     j.like_action_label = @.like_action_label()
     j
+
+  profile_url: ->
+    url = "#{@.get('user_info').id}/likes" 
+    url
