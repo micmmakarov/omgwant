@@ -4,7 +4,7 @@ class Omgwant.Models.Image extends Backbone.Model
   like: ->
     $.ajax
       type: "POST"
-      url: "api/cute/#{@id}"
+      url: "/api/cute/#{@id}"
       success: (data) =>
         @set('likes', data.likes)
 
