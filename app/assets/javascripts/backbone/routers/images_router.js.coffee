@@ -13,9 +13,9 @@ class Omgwant.Routers.main extends Backbone.Router
     #$("#images").html(@view.render().el)
 
   likes: (user) ->
-    @likes = new Omgwant.Collections.Likes()
-    @likes.set('fuck',5)
-    @likes.fucking()
-    # @likes.updateByUser(user)
-    @view = new Omgwant.Views.Likes({el:"#images", collection: @likes})
+    @user = new Omgwant.Models.User(id:user)
+    @user.images.fetch()
+    #@user.fetch(user)
+    @view = new Omgwant.Views.Images({el:"#images",collection: @user.images})
+    #@view = new Omgwant.Views.Likes({el:"#images", collection: @likes})
     
