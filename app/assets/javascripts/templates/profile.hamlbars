@@ -9,24 +9,8 @@
           %img{:src => "{{image_url}}" }
 
       %h4 Liked Photos
-      %ul.thumbs-list.medium
-        %li
-          %img{:src => "http://distilleryimage4.s3.amazonaws.com/81ed7e64291911e2af1622000a1fb845_6.jpg"}
-        %li
-          %img{:src => "http://distilleryimage4.s3.amazonaws.com/81ed7e64291911e2af1622000a1fb845_6.jpg"}
-        %li
-          %img{:src => "http://distilleryimage4.s3.amazonaws.com/81ed7e64291911e2af1622000a1fb845_6.jpg"}
-        %li
-          %img{:src => "http://distilleryimage4.s3.amazonaws.com/81ed7e64291911e2af1622000a1fb845_6.jpg"}
-        %li
-          %img{:src => "http://distilleryimage4.s3.amazonaws.com/81ed7e64291911e2af1622000a1fb845_6.jpg"}
-        %li
-          %img{:src => "http://distilleryimage4.s3.amazonaws.com/81ed7e64291911e2af1622000a1fb845_6.jpg"}
-        %li
-          %img{:src => "http://distilleryimage4.s3.amazonaws.com/81ed7e64291911e2af1622000a1fb845_6.jpg"}
-        %li
-          %img{:src => "http://distilleryimage4.s3.amazonaws.com/81ed7e64291911e2af1622000a1fb845_6.jpg"}
-
+      #liked-images
+      
   %section.row-fluid.show-grid.gallery-feed
     .span1
     .span10
