@@ -1,6 +1,7 @@
 #images
-  .row
-    .span16.offset1
+  .row-fluid
+    .span1
+    .span10
       %nav.category-nav
         %h3 Browse by category:
         %ul.nav.nav-pills
@@ -10,7 +11,10 @@
             %a{:href => '#'} Beauty
           %li
             %a{:href => '#'} Accessories
+    .span1
 
-  %section.row.show-grid.gallery-feed
-    .span16.offset1
+  %section.row-fluid.show-grid.gallery-feed
+    .span1
+    .span10
       #images-table
+    .span1

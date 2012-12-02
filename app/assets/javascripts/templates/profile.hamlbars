@@ -1,6 +1,7 @@
 .user-profile
-  .row
-    .span11.offset1
+  .row-fluid
+    .span1
+    .span10
       %header.user-profile-header
         %h3 Jennifer Wong's Board
         %p San Jose, CA. Member since Dec '12.
@@ -27,9 +28,9 @@
         %li
           %img{:src => "http://distilleryimage4.s3.amazonaws.com/81ed7e64291911e2af1622000a1fb845_6.jpg"}
 
-
-  %section.row.show-grid.gallery-feed
-    .span11.offset1
+  %section.row-fluid.show-grid.gallery-feed
+    .span1
+    .span10
       %h4 Posted Photos
       
       #images-table
