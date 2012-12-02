@@ -1,11 +1,15 @@
 class Api::ImagesController < ApplicationController
 
   before_filter :authenticate_user!, :only => :cute
-  helper_method :api_methods
+  helper_method :api_methods, :like_methods
   respond_to :json
 
   def api_methods
     [:title, :low_url, :url, :likes, :computed_title, :like_action, :user_info]
+  end
+
+  def like_methods
+    [:likes, :like_action]
   end
 
   def index
@@ -30,7 +34,7 @@ class Api::ImagesController < ApplicationController
       Cute.where(:user_id => current_user.id, :image_id => @image.id).first.destroy
     end
 
-    render json: @image.to_json(:methods => api_methods) if @image.published
+    render json: @image.to_json(:methods => like_methods) if @image.published
   end
 
 
