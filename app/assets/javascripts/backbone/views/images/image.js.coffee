@@ -3,21 +3,16 @@ class Omgwant.Views.Image extends Backbone.View
   className: 'gallery-image'
   
   events:
-    'click .like': 'like'
     'click .view-user-profile': 'view_profile'
 
   initialize: ->
-    @model.on('change', @render, this)
-
-  like: (e) ->
-    e.preventDefault()
-    @model.like()
+    window.view = @
+    @model.on 'change', @render, @
   
-  view_profile: (e) ->
-    e.preventDefault()
-    console.log @model.profile_url()
-    Backbone.history.navigate(@model.profile_url(), true)
+  view_profile: (event) ->
+    event.preventDefault()
+    Omgwant.router.navigate @model.profile_url(), {trigger:true}
 
   render: ->
-    @$el.html HandlebarsTemplates['image'](@model.get_like_action_label())
-    this
+    @$el.html HandlebarsTemplates['image'](@model.toJSON())
+    @

@@ -1,5 +1,5 @@
 #= require_self
-#= require_tree ./templates
+## require_tree ./templates
 #= require_tree ./models
 #= require_tree ./collections
 #= require_tree ./views
@@ -11,7 +11,7 @@ window.Omgwant =
   Routers: {}
   Views: {}
   init: ->
-    new Omgwant.Routers.main()
+    @router = new Omgwant.Routers.main()
     Backbone.history.start({pushState: true})
 
 $ ->
