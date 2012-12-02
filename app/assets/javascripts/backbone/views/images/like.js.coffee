@@ -8,6 +8,5 @@ class Omgwant.Views.Like extends Backbone.View
     event.stopImmediatePropagation()
     @model.save()
   render: ->
-    console.log('render', JSON.stringify(@model.toJSON()))
     @$el.html HandlebarsTemplates['like'](@model.toJSON())
     @
