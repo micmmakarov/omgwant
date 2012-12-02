@@ -1,0 +1,20 @@
+.user-profile
+  .row-fluid
+    .span1
+    .span10
+      %header.user-profile-header
+        %h3 {{full_name}}
+        %p {{created_at}}
+        %div.userpic
+          %img{:src => "{{image_url}}" }
+
+      %h4 Liked Photos
+      #liked-images
+      
+  %section.row-fluid.show-grid.gallery-feed
+    .span1
+    .span10
+      %h4 Posted Photos
+      
+      #images-table
+      

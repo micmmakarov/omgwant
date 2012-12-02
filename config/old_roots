@@ -1,0 +1,29 @@
+
+  #
+  get "about" => "internal#about"
+  get "help" => "internal#about"
+  get "contact" => "internal#about"
+
+  resources :embeds
+  resources :cutes
+
+  resources :images_products
+
+  get "sessions/callback"
+
+  devise_for :users
+
+  resources :products
+
+
+  resources :users
+
+  get "home/index"
+  get "home/about"
+  get "feed" => "home#feed"
+
+  post "cute/:id" => "cutes#cute"
+
+  get "gallery" => "home#gallery"
+  get "auth/tumblr/callback" => "sessions#callback"
+

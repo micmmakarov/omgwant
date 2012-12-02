@@ -1,0 +1,7 @@
+.img
+  %img{:src => '{{low_url}}'}
+.image-meta
+  %h5 {{computed_title}}
+  %p
+    %a.like{:href => '#'}
+    %a.view-user-profile.pull-right.small{:href => '{{user_info.id}}/likes'} {{user_info.full_name}}'s Board
