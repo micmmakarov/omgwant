@@ -1,17 +1,13 @@
 class Omgwant.Views.Images extends Backbone.View
-  #template: JST["backbone/templates/images/index"]
-
   initialize: ->
-    @collection.on('reset', @render, this)
-
+    return
   addOne: (image) =>
     view = new Omgwant.Views.Image(model: image)
-    $("#images-table").append(view.render().el)
-
+    ($ "#images-table").append view.render().el
   render: ->
     @$el.html HandlebarsTemplates['images']()
-    @collection.each(@addOne)
-    this
+    @collection.each @addOne
+    @
 
 
 

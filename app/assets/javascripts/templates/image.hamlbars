@@ -4,7 +4,5 @@
   %h5 {{computed_title}}
   %p
     %a.like{:href => '#'}
-      {{like_action_label}}
-      %span.badge {{likes}}
-      %a.view-user-profile.pull-right.small{:href => '{{user_info.id}}/likes'} {{user_info.full_name}}'s Board
+    %a.view-user-profile.pull-right.small{:href => '{{user_info.id}}/likes'} {{user_info.full_name}}'s Board
 

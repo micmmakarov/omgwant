@@ -1,3 +1,3 @@
 %section.row.show-grid.gallery-feed
   .span16.offset1
-    #images-table
+  #images-table

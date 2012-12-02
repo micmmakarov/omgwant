@@ -6,7 +6,7 @@ Omgwant::Application.routes.draw do
   namespace :api do
     resources :images
     resources :users
-    match "cute/:id" => "images#cute"
+    match "like/:id" => "images#cute"
     get ":id/likes" => "images#user_likes"
   end
 
