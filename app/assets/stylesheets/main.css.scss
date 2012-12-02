@@ -227,7 +227,7 @@ li > a.btn-connect-instagram:hover {
         color: white;
         margin: 0 0 5px;
       }
-      .follow-user {
+      .small {
         font-size: .7rem;
         margin: 0;
       }
@@ -320,6 +320,14 @@ li > a.btn-connect-instagram:hover {
      background-color: $main-color;
    }
  }
+}
+@media only screen and  (max-width: 979px) {
+  body {
+    padding-top: 0;
+  } 
+  .gallery-feed #images-table > div .image-meta {
+    bottom: -49px;
+  }
 }
 
 /****************************************
