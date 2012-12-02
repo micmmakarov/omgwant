@@ -1,2 +1,0 @@
-{{#if like_action}}Like{{else}}Unlike{{/if}}
-%span.badge {{likes}}
