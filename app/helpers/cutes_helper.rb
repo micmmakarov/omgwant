@@ -1,2 +1,0 @@
-module CutesHelper
-end
