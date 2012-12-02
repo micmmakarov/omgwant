@@ -1,0 +1,5 @@
+-if user_signed_in?
+  -if current_user.facebook.blank?
+    %a{:href =>@facebook_url} Add facebook account
+  -else
+    Your facebook already connected to OMGwant!

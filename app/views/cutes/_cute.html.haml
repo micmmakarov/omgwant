@@ -1,0 +1,12 @@
+%p.cute{'data-id' => image.id}
+  -if user_signed_in?
+    -if image.cutes.where(:user_id => current_user.id).empty?
+      =link_to "cute/#{image.id}", :remote => true, :method => 'POST' do
+        This is cute!
+        %span.badge #{image.cutes.count}
+    -else
+      =link_to "cute/#{image.id}", :remote => true, :method => 'POST' do
+        Unlike
+        %span.badge #{image.cutes.count}
+  -else
+    Please register to make things cute!

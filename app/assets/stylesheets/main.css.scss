@@ -1,0 +1,408 @@
+// 
+//  main.css.scss
+//  omgwant
+//  
+//  Created by Vasily Myazin on 2012-11-22.
+//  Copyright 2012. All rights reserved.
+// 
+
+$main-color: #ec008c;
+$link-color: #f26d7d;
+
+@mixin generic-transition() {
+  -webkit-transition: all .2s ease-in-out;
+}
+@mixin border-radius($topleft, $topright: $topleft, $bottomright: $topleft, $bottomleft: $topleft) {
+  -moz-border-radius: $topleft $topright $bottomright $bottomleft;
+  -ms-border-radius: $topleft $topright $bottomright $bottomleft;
+  -o-border-radius: $topleft $topright $bottomright $bottomleft;
+  -webkit-border-radius: $topleft $topright $bottomright $bottomleft;
+  border-radius: $topleft $topright $bottomright $bottomleft;
+}
+@mixin no-select() {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+@mixin text-shadow-white() {
+  text-shadow: 0 1px 0 rgba(255,255,255,0.9);
+}
+
+body {
+  background: url('/assets/bg-textured.jpg');
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  padding-top: 60px;
+}
+
+h1, h2, h3, h4, h5 {
+  color: $main-color;
+  line-height: 1.2;
+  text-shadow: 0 1px 0 rgba(255,255,255,.8);
+}
+a {
+  color: $link-color;
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.inset1 {
+  margin-right: 130px;
+}
+
+.icon {
+  background: url('/assets/ow-site-sprites.png');
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  &.icon-like {
+    height: 14px;
+    vertical-align: top;
+    background-position: 0px -2px;
+  }
+  &.icon-tumblr-16 {
+    background-position: -18px 0; 
+  }
+  &.icon-plus-16 {
+    background-position: -38px 0;
+    margin-right: 5px;
+  }
+  &.icon-geopin {
+    background-position: -55px 0;
+    width: 16px;
+    height: 22px;
+  }
+}
+
+hgroup {
+  margin: 0 0 20px;
+  h3, h4 {
+    margin: 0;
+  }
+  h4 {
+    font-weight: 300;
+  }
+}
+
+.btn-connect-instagram,
+li > a.btn-connect-instagram:hover {
+  background: url('/assets/ow-site-sprites.png') 0 -112px no-repeat;
+  width: 160px;
+  height: 29px;
+  display: block;
+  text-indent: -4000px;
+}
+
+.main-header {
+  .navbar {
+    .navbar-inner {
+      // background: #DA7481;
+    }
+    li {
+      a {
+        color: #8D1E2E;
+        font-weight: 700;
+        &:hover {
+          color: $link-color;
+        }
+      }
+    }
+  }
+  .brand {
+    margin-left: 0;
+    img {
+      width: 100px;
+    }
+  }
+  .userpic {
+    width: 25px;
+    margin-right: 5px;
+  }
+}
+
+.image-feed {
+  h2 {
+    margin-bottom: 30px;
+  }
+  ul.image-list {
+    margin: 0;
+    > li {
+      margin: 0 0 20px;
+      overflow: hidden;
+      list-style: none;
+      position: relative;
+      padding-left: 370px;
+      padding-top: 20px;
+      padding-right: 20px;
+      padding-bottom: 20px;
+      min-height: 330px;
+      .thumb {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 330px;
+        margin-right: 20px;
+        border: 10px solid white;
+        box-shadow: inset 0 0 15px rgba(0, 0, 0, .5);
+        @include generic-transition();
+        -webkit-filter: grayscale(.8) saturate(0.5);
+        img {
+          width: 100%;
+          z-index: -1;
+          position: relative;
+        }
+      }
+      &.published {
+        @include generic-transition();
+        background: rgba(255,255,255,.5);
+        border-radius: 10px;
+        .thumb {
+          left: 20px;
+          top: 20px;
+          width: 310px;
+          -webkit-filter: grayscale(0) saturate(1);
+        }
+      }
+      .well {
+        background: url('/assets/bg-textured-02.gif');
+      }
+      .publish {
+        margin-bottom: 5px;
+        p {
+          float: left;
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+  .added-products-list {
+    margin-bottom: 20px;
+  }
+}
+.thumbs-list {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  li {
+    list-style: none;
+    position: relative;
+    float: left;
+    margin: 0 1% 10px 0;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, .5);
+    &:before {
+      position: absolute;
+      content: '';
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      border: 5px solid white;
+    }
+    img {
+      position: relative;
+      z-index: -1;
+    }
+  }
+  &.medium {
+    li {
+      width: 11.5%;
+      &:nth-child(8n+8) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+@media only screen and  (max-width: 1050px) {
+}
+
+.gallery-feed {
+  #images-table > div {
+    float:left;
+    width: 24%;
+    margin-right: 1%;
+    margin-bottom: 10px;
+    max-width: 306px;
+    min-width: 197px;
+    position: relative;
+    overflow: hidden;
+    &:hover {
+      .image-meta {
+        bottom: 0;
+        @include generic-transition();
+      }
+    }
+    .img {
+      border: 10px solid white;
+      box-shadow: inset 0 0 15px rgba(0, 0, 0, .5);
+      img {
+        position: relative;
+        z-index: -1;
+      }
+    }
+    .title {
+      height:30px;
+    }
+    .image-meta {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -33px;
+      background: rgba(0,0,0,.8);
+      padding: 10px;
+      a {
+        text-decoration: none;
+        &:hover {
+          color: #fff;
+        }
+      }
+      h5 {
+        color: lighten($link-color, 20%);
+        text-shadow: none;
+        margin: 0 0 5px;
+      }
+      p {
+        color: white;
+        margin: 0 0 5px;
+      }
+      .small {
+        font-size: .7rem;
+        margin: 0;
+      }
+    }
+  }
+}
+
+/****************************************
+/* Home Page
+/****************************************/
+
+.category-nav {
+  margin: 0 0 20px;
+  overflow: hidden;
+  h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    float: left;
+    color: desaturate($main-color, 20%);
+  }
+  .nav-pills {
+    float: left;
+    margin: 7px 0 0 14px;
+  }
+}
+
+/****************************************
+/* /Home Page
+/****************************************/
+
+/****************************************
+/* User Profile
+/****************************************/
+
+.user-profile {
+  .user-profile-header {
+    position: relative;
+    padding-left: 100px;
+    min-height: 80px;
+    margin: 0 0 20px;
+    h3 {
+      margin-bottom: 5px;
+    }
+    p {
+      color: #777;
+      @include text-shadow-white;
+    }
+    .userpic {
+      width: 80px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+/****************************************
+/* /User Profile
+/****************************************/
+
+
+/****************************************
+/* Bootstrap Overrides
+/****************************************/
+
+.btn {
+  text-decoration: none;
+  .icon.icon-tumblr-16 {
+    margin-right: 5px;
+    vertical-align: text-bottom;
+  }
+}
+.navbar {
+  .brand {
+    padding: 8px 20px 8px;
+  } 
+  .nav > {
+    li > a {
+      padding: 10px 15px 8px;
+      &.dropdown-toggle {
+        padding: 8px 15px 8px;
+      }
+    }
+  }
+  .dropdown-menu li > a {
+    text-decoration: none;
+  }
+  .dropdown-menu li > a:hover,
+  .dropdown-menu li > a:focus,
+  .dropdown-submenu:hover > a {
+    background-color: $main-color;
+    color: #fff;
+  }
+  .dropdown-menu .divider {
+    margin: 6px 1px 4px;
+  }
+  .divider-vertical {
+    margin: 0;
+  }
+}
+.dropdown-menu {
+  z-index: 1050;
+  li > {
+    p {
+      margin: 10px 20px;
+    }
+    a.non-menu-item {
+      margin: 0 20px 5px;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+}
+.nav-pills {
+ > .active {
+   > a,
+   > a:hover {
+     text-decoration: none;
+     background-color: $main-color;
+   }
+ }
+}
+@media only screen and  (max-width: 979px) {
+  body {
+    padding-top: 0;
+  } 
+  .gallery-feed #images-table > div .image-meta {
+    bottom: -49px;
+  }
+}
+
+/****************************************
+/* /Bootstrap Overrides
+/****************************************/
