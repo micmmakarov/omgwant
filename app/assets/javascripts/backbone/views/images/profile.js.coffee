@@ -1,16 +1,10 @@
 class Omgwant.Views.Profile extends Backbone.View
-
+  model: new Omgwant.Models.User({})
   initialize: ->
-    @collection.on 'reset', @render, this
-
-  addOne: (image) ->
-    view = new Omgwant.Views.Image(model: image)
-    ($ '#images-table').append view.render().el
-
+    @model.on 'change', @render, @
   render: ->
-    @$el.html HandlebarsTemplates['profile']()
-    @collection.each(@addOne, @)
-    this
+    @$el.html HandlebarsTemplates['profile'](@model.toJSON())
+    @
 
 
 

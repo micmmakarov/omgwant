@@ -12,7 +12,6 @@ class Omgwant.Routers.main extends Backbone.Router
     @view = new Omgwant.Views.Gallery({el:"#main-content"})
 
   likes: (user) ->
-    @user = new Omgwant.Models.User(id:user)
-    @user.images.fetch()
-    @view = new Omgwant.Views.Profile({el:"#main-content",collection: @user.images})
+    
+    @view = new Omgwant.Views.Profile({el:"#main-content"})
     
