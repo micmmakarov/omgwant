@@ -26,7 +26,7 @@ class Api::ImagesController < ApplicationController
   end
 
 
-  def cute
+  def like
     @image = Image.find(params[:id])
     if @image.cutes.where(:user_id => current_user.id).empty?
       Cute.create!(:user_id => current_user.id, :image_id => @image.id)
@@ -34,7 +34,7 @@ class Api::ImagesController < ApplicationController
       Cute.where(:user_id => current_user.id, :image_id => @image.id).first.destroy
     end
 
-    render json: @image.to_json(:methods => like_methods) if @image.published
+    render json: {likes: @image.likes, like_action:@image.like_action} if @image.published
   end
 
 
