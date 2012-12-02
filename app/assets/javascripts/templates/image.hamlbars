@@ -6,5 +6,5 @@
     %a.like{:href => '#'}
       {{like_action_label}}
       %span.badge {{likes}}
-      %a.view-user-profile.pull-right{:href => '{{user_info.id}}/likes'} {{user_info.full_name}}'s Board
+      %a.view-user-profile.pull-right.small{:href => '{{user_info.id}}/likes'} {{user_info.full_name}}'s Board
 
