@@ -2,16 +2,12 @@ class Omgwant.Routers.main extends Backbone.Router
 
   routes:
     '': 'index'
-    '/': 'index'
-    ':user/likes': 'likes'
-    ':user/likes/': 'likes'
+    'users/:user' : 'profile'
 
   initialize: ->
     
   index: ->
     @view = new Omgwant.Views.Gallery({el:"#main-content"})
-
-  likes: (user) ->
-    
-    @view = new Omgwant.Views.Profile({el:"#main-content"})
+  profile: (user) ->
+    @view = new Omgwant.Views.Profile({el:"#main-content", user_id:user})
     

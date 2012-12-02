@@ -8,7 +8,7 @@ Omgwant::Application.routes.draw do
     resources :users
     match "like/:id" => "images#like"
     get ":id/likes" => "images#user_likes"
-    get "users/:id/user_likes" => "users#user_likes"
+    get "users/:id/likes" => "users#user_likes"
   end
 
   get "auth" => "sessions#instagram_auth"
