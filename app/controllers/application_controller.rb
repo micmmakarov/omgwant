@@ -2,6 +2,16 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   helper_method :user
+  helper_method :api_methods, :like_methods
+
+  def api_methods
+    [:title, :low_url, :url, :likes, :computed_title, :like_action, :user_info]
+  end
+
+  def like_methods
+    [:likes, :like_action]
+  end
+
 
   def user
     if session[:access_token].present?

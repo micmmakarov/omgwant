@@ -1,16 +1,8 @@
 class Api::ImagesController < ApplicationController
 
   before_filter :authenticate_user!, :only => :cute
-  helper_method :api_methods, :like_methods
   respond_to :json
 
-  def api_methods
-    [:title, :low_url, :url, :likes, :computed_title, :like_action, :user_info]
-  end
-
-  def like_methods
-    [:likes, :like_action]
-  end
 
   def index
     Image.current_user = current_user if user_signed_in?
