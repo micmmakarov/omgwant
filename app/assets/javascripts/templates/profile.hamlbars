@@ -4,7 +4,7 @@
     .span10
       %header.user-profile-header
         %h3 {{full_name}}
-        %p {{created_at}}
+        %p Joined {{formatDate created_at}}
         %div.userpic
           %img{:src => "{{image_url}}" }
 
