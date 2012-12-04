@@ -1,5 +1,7 @@
 .img
   %img{:src => '{{low_url}}'}
+.image-products.badge.badge-info
+  3
 .image-meta
   %h5 {{computed_title}}
   %p

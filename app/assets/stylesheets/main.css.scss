@@ -4,7 +4,7 @@
 //  
 //  Created by Vasily Myazin on 2012-11-22.
 //  Copyright 2012. All rights reserved.
-// 
+//
 
 $main-color: #ec008c;
 $link-color: #f26d7d;
@@ -274,6 +274,11 @@ li > a.btn-connect-instagram:hover {
         font-size: .7rem;
         margin: 0;
       }
+    }
+    .image-products {
+      position: absolute;
+      top: 15px;
+      right: 15px;
     }
   }
 }
