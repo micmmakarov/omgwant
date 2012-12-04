@@ -1,4 +1,4 @@
-class Omgwant.Views.Gallery extends Backbone.View
+class Omgwant.Views.Images extends Backbone.View
   initialize: ->
     @collection.on 'reset', @render, @
   addOne: (image) ->

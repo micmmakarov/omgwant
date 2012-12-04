@@ -9,7 +9,7 @@ class Omgwant.Views.Profile extends Backbone.View
     @imagesView = new Omgwant.Views.LikedImages {
     collection: @model.liked_images }
 
-    @publishedView = new Omgwant.Views.Gallery {
+    @publishedView = new Omgwant.Views.Images {
       collection: @model.published_images }
 
 
