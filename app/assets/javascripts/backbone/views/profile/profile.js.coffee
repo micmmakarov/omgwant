@@ -3,11 +3,15 @@ class Omgwant.Views.Profile extends Backbone.View
     @model = new Omgwant.Models.User {id:@options.user_id}
     @model.on 'change', @render, @
     @model.fetch()
-    @postedView = new Omgwant.Views.Gallery {
-      collection: @model.posted_images }
+    @model.published_images.fetch()
+    @model.liked_images.fetch()
 
     @imagesView = new Omgwant.Views.LikedImages {
-      collection: new Omgwant.Collections.LikedImages {user_id:@options.user_id} }
+    collection: @model.liked_images }
+
+    @publishedView = new Omgwant.Views.Gallery {
+      collection: @model.published_images }
+
 
   render: ->
     @$el.html HandlebarsTemplates['profile'] @model.toJSON()
