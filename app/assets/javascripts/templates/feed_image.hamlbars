@@ -1,6 +1,7 @@
 .img
   %img{:src => '{{low_url}}'}
-.image-products.badge.badge-info
+%a.image-products.badge.badge-inverse{:href => '#'} 
+  %span.icon.icon-bag
   3
 .image-meta
   %h5 {{computed_title}}

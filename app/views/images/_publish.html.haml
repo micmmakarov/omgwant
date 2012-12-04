@@ -1,6 +1,5 @@
 -i=image
 .publish{'data-id' => i.id}
-  %p
   -if i.published
     =link_to 'Unpublish photo from gallery', "images/publish/#{i.id}", :method => 'POST', :remote => true, :class => 'btn btn-mini btn-danger'
     %a{:href => i.embed_link, :class => 'btn btn-mini'} Embed Link

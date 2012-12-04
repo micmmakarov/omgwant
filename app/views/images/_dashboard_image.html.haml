@@ -16,23 +16,23 @@
       -if i.location_name.present?
         %span.icon.icon-geopin
         =i.location_name
-  %a.btn{"data-toggle" => "modal", :href => "#addProductModal", :role => "button", :class => 'btn btn-success btn-mini pull-left bsModal'}                        
-    %span.icon.icon-plus-16
-    Add products
+  / %a.btn{"data-toggle" => "modal", :href => "#addProductModal", :role => "button", :class => 'btn btn-success btn-mini pull-left bsModal'}                        
+  /   %span.icon.icon-plus-16
+  /   Add products
 
   =render :partial => "images/publish", :locals => {:image => i}
   .clearfix
   =render :partial => "products/add_products", :locals => {:image => i}
 
   %ul.added-products-list
-    %li
-      %a{:href => "#"}
-        Prada Shoes - $129.99
-    %li
-      %a{:href => "#"}
-        Gucci Skirt - $33.99
-    %li
-      %a{:href => "#"}
-        D&B Shoes - $45.00
+    / %li
+    /   %a{:href => "#"}
+    /     Prada Shoes - $129.99
+    / %li
+    /   %a{:href => "#"}
+    /     Gucci Skirt - $33.99
+    / %li
+    /   %a{:href => "#"}
+    /     D&B Shoes - $45.00
   %p
     =link_to '<span class="icon icon-tumblr-16"></span>Post to Facebook'.html_safe, "images/post/#{i.id}", :class => 'btn btn-info', 'data-remote' => 'true'

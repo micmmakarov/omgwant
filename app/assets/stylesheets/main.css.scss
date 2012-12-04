@@ -78,6 +78,11 @@ a {
     width: 16px;
     height: 22px;
   }
+  &.icon-bag {
+    background-position: -73px 0;
+    width: 16px;
+    height: 15px;
+  }
 }
 
 hgroup {
@@ -180,6 +185,9 @@ li > a.btn-connect-instagram:hover {
         }
       }
     }
+  }
+  .products {
+    margin: 20px 0 0;
   }
   .added-products-list {
     margin-bottom: 20px;
@@ -347,6 +355,9 @@ li > a.btn-connect-instagram:hover {
     margin-right: 5px;
     vertical-align: text-bottom;
   }
+}
+a.badge {
+  text-decoration: none;
 }
 .navbar {
   .brand {
