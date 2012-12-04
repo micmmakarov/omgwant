@@ -3,7 +3,6 @@ class Omgwant.Views.LikedImages extends Backbone.View
   className: 'thumbs-list medium'
   initialize: ->
     @collection.on 'reset', @render, @
-    @collection.fetch()
   addImage: (model)->
     image = new Omgwant.Views.LikedImage({model:model})
     @$el.append image.render().el

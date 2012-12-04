@@ -16,6 +16,10 @@ class User < ActiveRecord::Base
     cutes.map {|c| c.image}.flatten
   end
 
+  def published_images
+    images.where(:published => true)
+  end
+
   def refresh_images(access_token)
 
     client = Instagram.client(:access_token => access_token)
