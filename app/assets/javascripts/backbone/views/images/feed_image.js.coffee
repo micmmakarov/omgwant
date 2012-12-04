@@ -12,7 +12,7 @@ class Omgwant.Views.FeedImage extends Backbone.View
     
   view_profile: (event) ->
     event.preventDefault()
-    Omgwant.router.navigate @model.profile_url(), {trigger:true}
+    Omgwant.router.navigate "users/#{@model.id}", {trigger:true}
     
   render: ->
     @$el.html HandlebarsTemplates['feed_image'](@model.toJSON())
