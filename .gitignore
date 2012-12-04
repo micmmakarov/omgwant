@@ -7,3 +7,5 @@ tmp
 /tmp/*/*/*
 /tmp/*/*/*/*
 /tmp/**/*/tmp.idea.DS_Store
+db/development.sqlite3
+/db/development.sqlite3
