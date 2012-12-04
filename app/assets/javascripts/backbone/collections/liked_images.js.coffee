@@ -1,4 +1,4 @@
-class Omgwant.Collections.ProfileImages extends Backbone.Collection
+class Omgwant.Collections.LikedImages extends Backbone.Collection
   model: Backbone.Model
   initialize: (options)->
     @user_id = options.user_id

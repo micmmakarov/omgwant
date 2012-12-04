@@ -1,4 +1,6 @@
 class Omgwant.Models.User extends Backbone.Model
   intialize: ->
-    console.log(@id)
+    posted_images = Omgwant.Collections.FeedImages({})
+
   url:-> "/api/users/#{@id}"
+
