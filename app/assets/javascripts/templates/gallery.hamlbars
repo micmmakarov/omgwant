@@ -6,11 +6,11 @@
         %h3 Browse by category:
         %ul.nav.nav-pills
           %li.active
-            %a{:href => '#'} Fashion
+            %a.link{:href => '#'} Fashion
           %li
-            %a{:href => '#'} Beauty
+            %a.link{:href => '#'} Beauty
           %li
-            %a{:href => '#'} Accessories
+            %a.link{:href => '#'} Accessories
     .span1
 
   %section.row-fluid.show-grid.gallery-feed

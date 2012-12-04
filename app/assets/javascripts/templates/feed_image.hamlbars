@@ -7,4 +7,4 @@
   %h5 {{computed_title}}
   %p
     %a.like{:href => '#'}
-    %a.view-user-profile.pull-right.small{:href => 'users/{{user_info.id}}'} {{user_info.full_name}}'s Board
+    %a.view-user-profile.pull-right.small.link{'data-link' => 'backbone', :href => 'users/{{user_info.id}}'} {{user_info.full_name}}'s Board
