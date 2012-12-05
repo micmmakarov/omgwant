@@ -19,3 +19,5 @@ window.Omgwant =
 $ ->
   Omgwant.init()
 
+
+
