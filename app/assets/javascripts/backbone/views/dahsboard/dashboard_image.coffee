@@ -8,7 +8,8 @@ class Omgwant.Views.DashboardImage extends Backbone.View
   events:
     'click .publish': 'publish'
 
-  publish: ->
+  publish: (event) ->
+    event.preventDefault()
     published = not @model.get('published')
     @model.set('published', published)
     @model.save()

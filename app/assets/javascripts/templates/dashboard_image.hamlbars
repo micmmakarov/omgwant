@@ -13,7 +13,11 @@
 /   Add products
 
 .publish
-  Publish
+  {{#if published}}
+  %a{:href => '#', :class => 'btn btn-mini btn-danger'} Remove photo from gallery
+  {{else}}
+  %a{:href => '#', :class => 'btn btn-mini'} Publish photo to gallery
+  {{/if}}
 
 %ul.added-products-list
   / %li
