@@ -8,6 +8,8 @@ class Omgwant.Views.FeedImage extends Backbone.View
 
   like: (event) ->
     event.preventDefault()
+    alert "please register" if typeof current_user is 'undefined'
+    return if typeof current_user is 'undefined'
     @model.like()
 
   render: ->

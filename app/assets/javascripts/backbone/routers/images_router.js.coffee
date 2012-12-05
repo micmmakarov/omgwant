@@ -12,7 +12,7 @@ class Omgwant.Routers.main extends Backbone.Router
       Omgwant.router.navigate @getAttribute('href'), {trigger:true}
 
   dashboard: ->
-    return if current_user.email.blank?
+    return if typeof current_user is 'undefined'
     @view = new Omgwant.Views.Dashboard({el:"#main-content"})
 
   index: ->
