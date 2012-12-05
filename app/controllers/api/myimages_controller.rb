@@ -4,30 +4,33 @@ class Api::MyimagesController < ApplicationController
 
   def index
     @images = current_user.images.order('created_at DESC')
-    render json: @images.to_json(:methods => api_methods)
+    render json: @images
   end
 
   def show
     @image = Image.find(params[:id])
 
-    render json: @image.to_json(:methods => api_methods) if @image.user = current_user
+    render json: @image if @image.user = current_user
   end
 
   def create
     @image = Image.create(params[:image])
-    render json: @image.to_json(:methods => api_methods)
+    render json: @image
   end
 
   def update
     @image = Image.find(params[:id])
-    @image = Image.update_attributes(params[:id]) if @image.user = current_user
-    render json: @image.to_json(:methods => api_methods)
+    #binding.pry
+    @image.published = params[:myimage][:published]
+    @image.save! #if @image.user = current_user
+    #@image = @image.update_attributes(params[:myimage]) if @image.user = current_user
+    render json: @image
   end
 
   def destroy
     @image = Image.find(params[:id])
     @image.destroy if @image.user = current_user
-    render json: @image.to_json(:methods => api_methods)
+    render json: @image
   end
 
 end
