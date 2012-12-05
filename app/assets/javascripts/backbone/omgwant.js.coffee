@@ -5,6 +5,8 @@
 #= require_tree ./views
 #= require_tree ./routers
 
+current_user = window.current_user
+
 window.Omgwant =
   Models: {}
   Collections: {}
@@ -16,3 +18,4 @@ window.Omgwant =
 
 $ ->
   Omgwant.init()
+
