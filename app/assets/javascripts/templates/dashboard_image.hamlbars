@@ -10,10 +10,6 @@
     .products
       %input.add-products{:type => "text", :placeholder => "Type to add products..."}
 
-/ %a.btn{"data-toggle" => "modal", :href => "#addProductModal", :role => "button", :class => 'btn btn-success btn-mini pull-left bsModal'}
-/   %span.icon.icon-plus-16
-/   Add products
-
 .publish
   {{#if published}}
   %a{:href => '#', :class => 'btn btn-mini btn-danger'} Remove photo from gallery

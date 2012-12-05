@@ -1,7 +1,7 @@
 .row-fluid.show-grid.image-feed
   .span1
   .span10
-    %h2 Your Instagram Photos, {{current_user.name}}
+    %h2 These are your photos {{currentUserFullName}}!
     %ul.image-list
 
 .modal.hide.fade.in#addProductModal
