@@ -7,11 +7,18 @@ class Omgwant.Views.DashboardImage extends Backbone.View
 
   events:
     'click .publish': 'publish'
-    'keypress .add-product': 'type'
+    'keypress :input': 'type'
 
-  type: ->
-    @$el.find(".add-products").process(window.a)
-    alert "sd"
+  type: _.debounce(->
+    alert @$el.find(".add-product").val()
+    $.ajax
+      type: "GET"
+      url: "http://api.shopstyle.com/action/apiGetBrands?pid=uid7444-8563962-34"
+      success: (data) =>
+  , 2000)
+
+    #http://api.shopstyle.com/action/apiSearch?pid=uid7444-8563962-34&fts=red+dress&min=0&count=10
+
 
   publish: (event) ->
     event.preventDefault()
@@ -24,10 +31,6 @@ class Omgwant.Views.DashboardImage extends Backbone.View
       @$el.addClass('published')
     else
       @$el.removeClass('published')
-
-    window.a = ['Toronto','Montreal','New York','Buffalo','Montreal','New York','Buffalo','Montreal','New York','Buffalo','Montreal','New York','Buffalo','Montreal','New York','Buffalo']
-    options = {source: window.a, items: 5}
-    @$el.find(".add-products").typeahead options
 
     @$el.html HandlebarsTemplates['dashboard_image'](@model.toJSON())
     @
