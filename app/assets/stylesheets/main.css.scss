@@ -38,6 +38,19 @@ body {
   padding-top: 60px;
 }
 
+html, body {
+  height: 100%;
+}
+.main-content {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -50px; /* same as the footer */
+}
+#main-content {
+  position: relative;
+}
+
 h1, h2, h3, h4, h5 {
   color: $main-color;
   line-height: 1.2;
@@ -295,11 +308,16 @@ li > a.btn-connect-instagram:hover {
 /* Footer
 /****************************************/
 
+.push-footer,
+.main-footer {
+  height: 30px; /* same as the footer */
+  clear: both;
+}
 .main-footer {
   background: #333;
   color: #fff;
-  margin-top: 20px;
   padding-top: 10px;
+  position: relative;
 }
 
 /****************************************

@@ -8,5 +8,6 @@
     = csrf_meta_tags
   %body
     =render :partial => "layouts/main_header"
-    = yield
+    .main-content
+      = yield
     =render :partial => "layouts/main_footer"

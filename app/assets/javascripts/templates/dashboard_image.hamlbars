@@ -5,9 +5,9 @@
     {{title}}
   %h4
     {{formatDate created_at}}
-    // If location
     %span.icon.icon-geopin
     {{location_name}}
+
 / %a.btn{"data-toggle" => "modal", :href => "#addProductModal", :role => "button", :class => 'btn btn-success btn-mini pull-left bsModal'}
 /   %span.icon.icon-plus-16
 /   Add products
