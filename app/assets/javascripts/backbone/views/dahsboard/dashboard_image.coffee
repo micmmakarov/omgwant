@@ -14,7 +14,10 @@ class Omgwant.Views.DashboardImage extends Backbone.View
     @model.save()
 
   render: ->
-    @$el.addClass('published') if @model.get('published')
+    if @model.get('published')
+      @$el.addClass('published')
+    else
+      @$el.removeClass('published')
     @$el.html HandlebarsTemplates['dashboard_image'](@model.toJSON())
     @
 
