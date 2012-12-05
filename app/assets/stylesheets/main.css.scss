@@ -242,6 +242,10 @@ li > a.btn-connect-instagram:hover {
 @media only screen and  (max-width: 1050px) {
 }
 
+/****************************************
+/* Gallery
+/****************************************/
+
 .gallery-feed {
   #images-table > div {
     float:left;
@@ -295,6 +299,11 @@ li > a.btn-connect-instagram:hover {
         font-size: .7rem;
         margin: 0;
       }
+      .not-logged-in {
+        .like-action {
+          display: none;
+        }
+      }
     }
     .image-products {
       position: absolute;
@@ -303,6 +312,13 @@ li > a.btn-connect-instagram:hover {
     }
   }
 }
+
+
+/****************************************
+/* /Gallery
+/****************************************/
+
+
 
 /****************************************
 /* Footer

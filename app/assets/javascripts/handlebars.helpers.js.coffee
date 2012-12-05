@@ -8,6 +8,12 @@ Handlebars.registerHelper 'if_current_user', (block) ->
   else
     block.inverse()
 
+Handlebars.registerHelper 'logged_in_state', (block) ->
+  if typeof current_user isnt 'undefined'
+    'logged-in'
+  else
+    'not-logged-in'
+
 Handlebars.registerHelper "currentUserFullName", () ->
   current_user.full_name
 
