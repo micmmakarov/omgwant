@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if (user = User.find_by_instagram_id(u.id)).present?
       sign_in(user)
       user.refresh_images(session[:access_token])
-      redirect_to :controller => :home, :action => :dashboard
+      redirect_to :controller => :home, :action => :index
     else
       user = User.create(:email => "#{ (0...10).map{65.+(rand(26)).chr}.join}@email-something.com", :name => u.username)
       pwd = Devise.friendly_token.first(10)
@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
       user.save!
       sign_in(user)
       user.refresh_images(session[:access_token])
-      redirect_to :controller => :home, :action => :dashboard
+      redirect_to :controller => :home, :action => :index
 
     end
 
