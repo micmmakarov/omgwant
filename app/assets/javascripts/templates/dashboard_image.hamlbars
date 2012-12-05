@@ -1,0 +1,29 @@
+.thumb
+  %img{:src => '{{low_url}}'}
+%hgroup
+  %h3.image-title
+    {{title}}
+  %h4
+    {{created_at}}
+    // If location
+    %span.icon.icon-geopin
+      {{location_name}}
+/ %a.btn{"data-toggle" => "modal", :href => "#addProductModal", :role => "button", :class => 'btn btn-success btn-mini pull-left bsModal'}
+/   %span.icon.icon-plus-16
+/   Add products
+
+.publish
+  Publish
+
+%ul.added-products-list
+  / %li
+  /   %a{:href => "#"}
+  /     Prada Shoes - $129.99
+  / %li
+  /   %a{:href => "#"}
+  /     Gucci Skirt - $33.99
+  / %li
+  /   %a{:href => "#"}
+  /     D&B Shoes - $45.00
+%p
+  Post to facebook

@@ -6,6 +6,7 @@ Omgwant::Application.routes.draw do
   namespace :api do
     resources :images
     resources :users
+    resources :myimages
     match "like/:id" => "images#like"
     get ":id/likes" => "images#user_likes"
     get "users/:id/likes" => "users#user_likes"
@@ -13,7 +14,7 @@ Omgwant::Application.routes.draw do
   end
 
   get "auth" => "sessions#instagram_auth"
-  get "dashboard" => "home#dashboard"
+  #get "dashboard" => "home#dashboard"
   get "callback" => "sessions#callback"
   get "images/post/:id" => "api#post"
   get "embed/:code" => "images#embed"
