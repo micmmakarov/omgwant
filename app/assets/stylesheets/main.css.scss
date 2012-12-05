@@ -45,7 +45,8 @@ html, body {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -50px; /* same as the footer */
+  margin: 0 auto -50px; 
+  padding-bottom: 20px;
 }
 #main-content {
   position: relative;
@@ -324,9 +325,8 @@ li > a.btn-connect-instagram:hover {
 /* Footer
 /****************************************/
 
-.push-footer,
-.main-footer {
-  height: 30px; /* same as the footer */
+.push-footer {
+  height: 50px;
   clear: both;
 }
 .main-footer {

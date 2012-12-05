@@ -24,11 +24,12 @@
               %b.caret
             %ul.dropdown-menu
               %li
+                %a{:href => "/users/1"} My Profile
+              %li
                 %a{:href => "#"} Settings
               %li.divider
               %li
-                %a{:href => "#"}
-                  =link_to('Logout', destroy_user_session_path, :method => :delete)
+                =link_to('Logout', destroy_user_session_path, :method => :delete)
         -else
           %li.dropdown
             %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
