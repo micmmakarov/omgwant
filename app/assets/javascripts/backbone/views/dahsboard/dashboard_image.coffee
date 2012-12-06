@@ -13,7 +13,7 @@ class Omgwant.Views.DashboardImage extends Backbone.View
 
     #alert @$el.find("input").val()
     $.ajax
-      type: "POST"
+      type: "GET"
       url: "/api/search"
       data: {search: @$el.find("input").val()}
       success: (data) =>
