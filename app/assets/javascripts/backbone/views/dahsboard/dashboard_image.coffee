@@ -13,14 +13,14 @@ class Omgwant.Views.DashboardImage extends Backbone.View
 
     #alert @$el.find("input").val()
     $.ajax
-      type: "GET"
-      url: "/api/images"
+      type: "POST"
+      url: "/api/search"
+      data: {search: @$el.find("input").val()}
       success: (data) =>
 
         result = data.map((item, i) ->
-          item.computed_title
+          item.name
         )
-        #@$el.find('input').typeahead({source: window.result})
         @$el.find('input').typeahead().data('typeahead').source = result
   , 50)
 
