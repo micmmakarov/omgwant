@@ -9,7 +9,11 @@ class Omgwant.Routers.main extends Backbone.Router
 
   initialize: ->
     $("html").on "click", ".link", (event) ->
-      Omgwant.router.navigate @getAttribute('href'), {trigger:true}
+      event.preventDefault()
+      if @getAttribute('data-page') == 'home'
+        Omgwant.router.navigate @getAttribute(''), {trigger:true}
+      else
+        Omgwant.router.navigate @getAttribute('href'), {trigger:true}
 
   profile: (user) ->
     @view = new Omgwant.Views.Profile({el:"#main-content", user_id:user})
