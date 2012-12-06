@@ -11,6 +11,7 @@ Omgwant::Application.routes.draw do
     get ":id/likes" => "images#user_likes"
     get "users/:id/likes" => "users#user_likes"
     get "users/:id/published" => "users#user_published"
+    match "search" => "products#search"
   end
 
   get "auth" => "sessions#instagram_auth"
