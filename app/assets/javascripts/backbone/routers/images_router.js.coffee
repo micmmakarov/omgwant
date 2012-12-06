@@ -1,15 +1,22 @@
 class Omgwant.Routers.main extends Backbone.Router
 
   routes:
-    '': 'index'
+    ''            : 'index'
     'users/:user' : 'profile'
-    'dashboard' : 'dashboard'
-
+    'dashboard'   : 'dashboard'
+    'about'       : 'about'
+    'help'        : 'help'
 
   initialize: ->
     $("html").on "click", ".link", (event) ->
       event.preventDefault()
       Omgwant.router.navigate @getAttribute('href'), {trigger:true}
+
+  about: ->
+    @view = new Omgwant.Views.StaticPage({el:"#main-content", pageName: 'about'})
+
+  help: ->
+    @view = new Omgwant.Views.StaticPage({el:"#main-content", pageName: 'help'})
 
   dashboard: ->
     return if typeof current_user is 'undefined'
@@ -17,5 +24,6 @@ class Omgwant.Routers.main extends Backbone.Router
 
   index: ->
     @view = new Omgwant.Views.Gallery({el:"#main-content"})
+
   profile: (user) ->
     @view = new Omgwant.Views.Profile({el:"#main-content", user_id:user})

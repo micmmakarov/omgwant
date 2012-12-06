@@ -24,7 +24,7 @@
               %b.caret
             %ul.dropdown-menu
               %li
-                %a{:href => "/users/1"} My Profile
+                %a.link{:href => "/users/#{current_user.id}"} My Profile
               %li
                 %a{:href => "#"} Settings
               %li.divider
