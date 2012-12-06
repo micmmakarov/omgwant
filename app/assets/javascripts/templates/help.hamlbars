@@ -1,1 +1,5 @@
-%h1 Help
+.row-fluid.show-grid.image-feed
+  .span1
+  .span10
+    %h1 Help
+    
