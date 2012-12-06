@@ -10,8 +10,7 @@ class Omgwant.Views.DashboardImage extends Backbone.View
     'keypress :input': 'type'
 
   type: _.debounce(->
-
-    #alert @$el.find("input").val()
+    console.log "Loading"
     $.ajax
       type: "GET"
       url: "/api/search"
@@ -19,9 +18,11 @@ class Omgwant.Views.DashboardImage extends Backbone.View
       success: (data) =>
 
         result = data.map((item, i) ->
-          item.name
+          item.name if item.name isnt "" or typeof item.name isnt 'undefined'
         )
         @$el.find('input').typeahead().data('typeahead').source = result
+        console.log "finished loading"
+
   , 50)
 
     #http://api.shopstyle.com/action/apiSearch?pid=uid7444-8563962-34&fts=red+dress&min=0&count=10
