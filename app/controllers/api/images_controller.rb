@@ -1,6 +1,6 @@
 class Api::ImagesController < ApplicationController
 
-  before_filter :authenticate_user!, :only => :cute
+  before_filter :authenticate_user!, :except => [:index, :show]
   respond_to :json
 
 
@@ -17,6 +17,23 @@ class Api::ImagesController < ApplicationController
     render json: image.to_json(:methods => api_methods) if image.published
   end
 
+  def create
+    @image = Image.create(params[:image])
+    render json: @image.to_json(:methods => api_methods)
+  end
+
+  def update
+    @image = Image.find(params[:id])
+    @image.published = params[:published]
+    @image.save! if @image.user = current_user
+    render json: @image.to_json(:methods => api_methods)
+  end
+
+  def destroy
+    @image = Image.find(params[:id])
+    @image.destroy if @image.user = current_user
+    render json: @image
+  end
 
   def like
     @image = Image.find(params[:id])

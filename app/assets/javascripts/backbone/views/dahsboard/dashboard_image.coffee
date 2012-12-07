@@ -33,7 +33,7 @@ class Omgwant.Views.DashboardImage extends Backbone.View
     published = not @model.get('published')
     @model.set('published', published)
     @model.save()
-    @$el.find('input').typeahead();
+    #@$el.find('input').typeahead();
 
   render: ->
     if @model.get('published')

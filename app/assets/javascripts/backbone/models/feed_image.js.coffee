@@ -11,3 +11,4 @@ class Omgwant.Models.FeedImage extends Backbone.Model
       success: (data) =>
         @set('like_action', data.like_action)
         @set('likes', data.likes)
+
