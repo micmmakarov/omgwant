@@ -15,6 +15,7 @@ class Omgwant.Views.ShowImage extends Backbone.View
     $('body').css('overflow','visible')
     @unbind()
     @remove()
+    Omgwant.router.navigate '', {trigger:false}
     # window.history.back()
     
   render: ->
