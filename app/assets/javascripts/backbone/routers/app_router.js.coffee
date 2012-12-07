@@ -30,7 +30,10 @@ class Omgwant.Routers.main extends Backbone.Router
     @view = new Omgwant.Views.Dashboard({el:"#main-content"})
     
   show_image: (id) ->
-    currentImage = Omgwant.currentImage || new Omgwant.Models.FeedImage({id: id}).fetch()
+    currentImage = Omgwant.currentImage
+    if not currentImage?
+      currentImage = new Omgwant.Models.FeedImage({id: id})
+      currentImage.fetch()
     @view = new Omgwant.Views.ImageModal({model: currentImage})
     $(".modal-holder").html @view.render().el
 
