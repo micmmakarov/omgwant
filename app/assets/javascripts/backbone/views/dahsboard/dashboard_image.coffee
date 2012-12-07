@@ -23,7 +23,7 @@ class Omgwant.Views.DashboardImage extends Backbone.View
         @$el.find('input').typeahead().data('typeahead').source = result
         console.log "finished loading"
 
-  , 50)
+  , 100)
 
     #http://api.shopstyle.com/action/apiSearch?pid=uid7444-8563962-34&fts=red+dress&min=0&count=10
 

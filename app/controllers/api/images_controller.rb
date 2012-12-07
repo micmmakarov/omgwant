@@ -6,7 +6,8 @@ class Api::ImagesController < ApplicationController
 
   def index
     Image.current_user = current_user if user_signed_in?
-    images = Image.where(:published => true).limit(12)
+    page = params[:page]
+    images = Image.where(:published => true).all(:limit => 12, :offset => page)
     Thread.current[:user] = current_user
     render json: images.to_json(:methods => api_methods)
   end
