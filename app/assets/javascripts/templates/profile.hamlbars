@@ -8,6 +8,7 @@
   %h4 Liked Photos
   #liked-images
   
+.clearfix
 %section.show-grid.gallery-feed
   %h4 Posted Photos
   
