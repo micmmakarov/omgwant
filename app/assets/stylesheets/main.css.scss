@@ -110,7 +110,7 @@ hgroup {
 }
 
 .btn-connect-instagram,
-li > a.btn-connect-instagram:hover {
+.dropdown-menu li > a.btn-connect-instagram.non-menu-item:hover {
   background: url('/assets/ow-site-sprites.png') 0 -112px no-repeat;
   width: 160px;
   height: 29px;
@@ -427,7 +427,8 @@ a.badge {
   .dropdown-menu li > a:hover,
   .dropdown-menu li > a:focus,
   .dropdown-submenu:hover > a {
-    background: $main-color;
+    background-color: $main-color;
+    background-image: none;
     color: #fff;
   }
   .dropdown-menu .divider {
