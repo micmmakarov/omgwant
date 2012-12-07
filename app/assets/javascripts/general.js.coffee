@@ -10,3 +10,4 @@ $ ->
     myObject = ['Toronto','Montreal','New York','Buffalo']
                               
     $('#search-query').typeahead source: myObject
+

@@ -34,9 +34,11 @@ class Omgwant.Routers.main extends Backbone.Router
     if not currentImage?
       currentImage = new Omgwant.Models.FeedImage({id: id})
       currentImage.fetch()
-    @view = new Omgwant.Views.ImageModal({model: currentImage})
+    @view = new Omgwant.Views.ShowImage({model: currentImage})
     $(".modal-holder").html @view.render().el
+
+    $('.overlay').fadeIn 'fast'
+    $('body').css 'overflow','hidden'
 
   index: ->
     @view = new Omgwant.Views.Gallery({el:"#content"})
-

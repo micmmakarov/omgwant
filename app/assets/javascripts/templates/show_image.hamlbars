@@ -1,1 +1,4 @@
-%img{:src => '{{low_url}}'}
+%img{:src => '{{url}}'}
+
+%a.close-modal{:href => "javascript:void(0)"}
+  %i{:class => "icon-remove"}
