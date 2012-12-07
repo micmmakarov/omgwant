@@ -10,4 +10,4 @@
       %span.like-action {{#if like_action}}Like{{else}}Unlike{{/if}}
       
       %span.badge {{likes}}
-    %a.view-user-profile.pull-right.small.link{'data-link' => 'backbone', :href => '/users/{{user_info.id}}'} {{user_info.full_name}}'s Board
+    %a.view-user-profile.pull-right.small.link{:href => '/users/{{user_info.id}}'} {{user_info.full_name}}'s Board

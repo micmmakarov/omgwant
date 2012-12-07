@@ -1,4 +1,7 @@
 class Omgwant.Models.FeedImage extends Backbone.Model
+
+  urlRoot: "/api/images"
+    
   initialize: ->
 
   like: ->

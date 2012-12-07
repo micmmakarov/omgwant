@@ -1,4 +1,5 @@
 class Omgwant.Views.Gallery extends Backbone.View
+
   initialize: ->
     @collection = new Omgwant.Collections.Images()
     @collection.on 'reset', @render, @
