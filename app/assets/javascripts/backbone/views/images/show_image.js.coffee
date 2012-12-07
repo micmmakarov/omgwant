@@ -1,9 +1,9 @@
 class Omgwant.Views.ImageModal extends Backbone.View
   
   initialize: (options) ->
+    @model.on 'change', @render, @
     @model = options.model
-    @render()
-  
+
   events: ->
     
   render: ->
