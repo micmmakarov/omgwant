@@ -3,8 +3,7 @@ class Omgwant.Views.Gallery extends Backbone.View
   initialize: ->
     @collection = new Omgwant.Collections.Images()
     @collection.on 'reset', @render, @
-    @collection.on 'change', @render, @
-    @collection.on 'update', @render, @
+    @collection.on 'add', @addOne, @
     @collection.fetch()
     $(window).scroll =>
       if $(window).scrollTop() + $(window).height() is $(document).height()
@@ -15,7 +14,7 @@ class Omgwant.Views.Gallery extends Backbone.View
 
   scroll: _.debounce(->
     @collection.scroll()
-  , 1000)
+  , 500)
 
   addOne: (image) ->
     view = new Omgwant.Views.FeedImage(model: image)
