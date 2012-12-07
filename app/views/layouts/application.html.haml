@@ -8,7 +8,10 @@
     = csrf_meta_tags
   %body
     =render :partial => "layouts/main_header"
-    .main-content
-      = yield
+    .page-wrapper
+      .row-fluid.show-grid.image-feed
+        .span1
+        .span10
+          = yield
     .modal-holder
     =render :partial => "layouts/main_footer"

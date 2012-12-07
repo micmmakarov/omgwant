@@ -48,7 +48,7 @@ html, body {
   margin: 0 auto -50px; 
   padding-bottom: 20px;
 }
-#main-content {
+#content {
   position: relative;
 }
 
@@ -247,72 +247,71 @@ hgroup {
 /* Gallery
 /****************************************/
 
-.gallery-feed {
-  #images-table > div {
-    float:left;
-    width: 24%;
-    margin-right: 1%;
-    margin-bottom: 10px;
-    max-width: 306px;
-    min-width: 197px;
-    position: relative;
-    overflow: hidden;
-    &:hover {
-      .image-meta {
-        bottom: 0;
-        @include generic-transition();
-      }
-    }
-    .img {
-      border: 10px solid white;
-      box-shadow: inset 0 0 15px rgba(0, 0, 0, .5);
-      img {
-        position: relative;
-        z-index: -1;
-      }
-    }
-    .title {
-      height:30px;
-    }
+#images-table > div {
+  float:left;
+  width: 24%;
+  margin-right: 1%;
+  margin-bottom: 10px;
+  max-width: 306px;
+  min-width: 197px;
+  position: relative;
+  overflow: hidden;
+  &:hover {
     .image-meta {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -33px;
-      background: rgba(0,0,0,.8);
-      padding: 10px;
-      a {
-        text-decoration: none;
-        &:hover {
-          color: #fff;
-        }
-      }
-      h5 {
-        color: lighten($link-color, 20%);
-        text-shadow: none;
-        margin: 0 0 5px;
-      }
-      p {
-        color: white;
-        margin: 0 0 5px;
-      }
-      .small {
-        font-size: .7rem;
-        margin: 0;
-      }
-      .not-logged-in {
-        .like-action {
-          display: none;
-        }
-      }
-    }
-    .image-products {
-      position: absolute;
-      top: 15px;
-      right: 15px;
+      bottom: 0;
+      @include generic-transition();
     }
   }
+  .img {
+    border: 10px solid white;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, .5);
+    img {
+      position: relative;
+      z-index: -1;
+    }
+  }
+  .title {
+    height:30px;
+  }
+  .image-meta {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -33px;
+    background: rgba(0,0,0,.8);
+    padding: 10px;
+    a {
+      text-decoration: none;
+      &:hover {
+        color: #fff;
+      }
+    }
+    h5 {
+      color: lighten($link-color, 20%);
+      text-shadow: none;
+      margin: 0 0 5px;
+    }
+    p {
+      color: white;
+      margin: 0 0 5px;
+    }
+    .small {
+      font-size: .7rem;
+      margin: 0;
+    }
+    .not-logged-in {
+      .like-action {
+        display: none;
+      }
+    }
+  }
+  .image-products {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
 }
+
 
 
 /****************************************
@@ -465,7 +464,7 @@ a.badge {
   body {
     padding-top: 0;
   } 
-  .gallery-feed #images-table > div .image-meta {
+  #images-table > div .image-meta {
     bottom: -49px;
   }
 }

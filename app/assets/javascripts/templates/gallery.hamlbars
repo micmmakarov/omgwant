@@ -1,20 +1,12 @@
-#images
-  .row-fluid
-    .span1
-    .span10
-      %nav.category-nav
-        %h3 Browse by category:
-        %ul.nav.nav-pills
-          %li.active
-            %a.link{:href => '#'} Fashion
-          %li
-            %a.link{:href => '#'} Beauty
-          %li
-            %a.link{:href => '#'} Accessories
-    .span1
+%nav.category-nav
+  %h3 Browse by category:
+  %ul.nav.nav-pills
+    %li.active
+      %a.link{:href => '#'} Fashion
+    %li
+      %a.link{:href => '#'} Beauty
+    %li
+      %a.link{:href => '#'} Accessories
 
-  %section.row-fluid.show-grid.gallery-feed
-    .span1
-    .span10
-      #images-table
-    .span1
+.show-grid.gallery-feed
+  #images-table

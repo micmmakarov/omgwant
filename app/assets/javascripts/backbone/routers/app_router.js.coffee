@@ -17,17 +17,17 @@ class Omgwant.Routers.main extends Backbone.Router
         Omgwant.router.navigate @getAttribute('href'), {trigger:true}
 
   profile: (user) ->
-    @view = new Omgwant.Views.Profile({el:"#main-content", user_id:user})
+    @view = new Omgwant.Views.Profile({el:"#content", user_id:user})
 
   about: ->
-    @view = new Omgwant.Views.StaticPage({el:"#main-content", pageName: 'about'})
+    @view = new Omgwant.Views.StaticPage({el:"#content", pageName: 'about'})
 
   help: ->
-    @view = new Omgwant.Views.StaticPage({el:"#main-content", pageName: 'help'})
+    @view = new Omgwant.Views.StaticPage({el:"#content", pageName: 'help'})
 
   dashboard: ->
     return unless current_user?
-    @view = new Omgwant.Views.Dashboard({el:"#main-content"})
+    @view = new Omgwant.Views.Dashboard({el:"#content"})
     
   show_image: (id) ->
     currentImage = Omgwant.currentImage || new Omgwant.Models.FeedImage({id: id}).fetch()
@@ -35,5 +35,5 @@ class Omgwant.Routers.main extends Backbone.Router
     $(".modal-holder").html @view.render().el
 
   index: ->
-    @view = new Omgwant.Views.Gallery({el:"#main-content"})
+    @view = new Omgwant.Views.Gallery({el:"#content"})
 
