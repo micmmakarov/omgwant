@@ -13,11 +13,13 @@ class Omgwant.Views.DashboardImage extends Backbone.View
     console.log "Loading"
     $.ajax
       type: "GET"
-      url: "/api/search"
+      url: "http://omg-node-api.herokuapp.com"
       data: {search: @$el.find("input").val()}
+      dataType: 'JSONP'
       success: (data) =>
-
-        result = data.map((item, i) ->
+        #alert data.totalCount
+        window.data = data
+        result = data.products.map((item, i) ->
           item.name if item.name isnt "" or typeof item.name isnt 'undefined'
         )
         @$el.find('input').typeahead().data('typeahead').source = result
