@@ -7,7 +7,6 @@ gem 'devise'
 gem "haml-rails"
 gem 'coffee-rails', '~> 3.2.1'
 gem "contenteditable", :github => 'micmmakarov/contenteditable', :branch => :master
-gem 'carrierwave'
 gem "fog", "~> 1.3.1"
 gem 'httparty'
 group :development do
@@ -17,9 +16,8 @@ group :development do
 end
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
-  gem "uglifier"
-  gem "therubyracer"
   gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+  gem "uglifier"
   gem "twitter-bootstrap-rails"
   gem "rails-backbone" # lest back bone that shit
   gem 'handlebars_assets' # More info here https://github.com/leshill/handlebars_assets
