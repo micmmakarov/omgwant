@@ -15,9 +15,8 @@ class Omgwant.Views.ShowImage extends Backbone.View
     $('body').css('overflow','visible')
     @unbind()
     @remove()
-    Omgwant.router.navigate '', {trigger:false}
-    # window.history.back()
-    
+    Omgwant.router.previous()
+
   render: ->
     window.model = @model
     @$el.html HandlebarsTemplates['show_image'](@model.toJSON())

@@ -1,5 +1,6 @@
 class Omgwant.Routers.main extends Backbone.Router
 
+
   routes:
     ''            : 'index'
     'users/:user' : 'profile'
@@ -9,6 +10,9 @@ class Omgwant.Routers.main extends Backbone.Router
     'photo/:id'   : 'show_image'
 
   initialize: ->
+    @on "all", @storeRoute
+    @history = []
+
     $("html").on "click", ".link", (event) ->
       event.preventDefault()
       if @getAttribute('data-page') == 'home'
@@ -42,3 +46,11 @@ class Omgwant.Routers.main extends Backbone.Router
 
   index: ->
     @view = new Omgwant.Views.Gallery({el:"#content"})
+
+
+  storeRoute: ->
+    @history.push Backbone.history.fragment
+
+  previous: ->
+    if @history.length > 1
+      @navigate @history[@history.length-2], true
