@@ -1,0 +1,4 @@
+%input{:type => "text", :placeholder => "Type to add products..."}
+
+%ul.livesearch-items
+  

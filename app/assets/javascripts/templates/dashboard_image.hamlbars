@@ -8,7 +8,7 @@
     %span.icon.icon-geopin
     {{location_name}}
     .products
-      %input.add-products{:type => "text", :placeholder => "Type to add products..."}
+-#      %input.add-products{:type => "text", :placeholder => "Type to add products..."}
 
 .publish
   {{#if published}}

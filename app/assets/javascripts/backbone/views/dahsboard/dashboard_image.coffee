@@ -7,25 +7,23 @@ class Omgwant.Views.DashboardImage extends Backbone.View
 
   events:
     'click .publish': 'publish'
-    'keypress :input': 'type'
+    # 'keyup :input': 'type'
 
-  type: _.debounce(->
-    console.log "Loading"
-    $.ajax
-      type: "GET"
-      url: "http://omg-node-api.herokuapp.com"
-      data: {search: @$el.find("input").val()}
-      dataType: 'JSONP'
-      success: (data) =>
-        #alert data.totalCount
-        window.data = data
-        result = data.products.map((item, i) ->
-          item.name if item.name isnt "" or typeof item.name isnt 'undefined'
-        )
-        @$el.find('input').typeahead().data('typeahead').source = result
-        console.log "finished loading"
-
-  , 100)
+  # type: _.debounce(->
+  #   console.log "Loading"
+  #   $.ajax
+  #     type: "GET"
+  #     url: "http://omg-node-api.herokuapp.com"
+  #     data: {search: @$el.find("input").val()}
+  #     dataType: 'JSONP'
+  #     success: (data) =>
+  #       window.data = data
+  #       result = data.products.map((item, i) ->
+  #         item.name if item.name isnt "" or typeof item.name isnt 'undefined'
+  #       )
+  #       @$el.find('input').typeahead().data('typeahead').source = result
+  #       console.log "finished loading"
+  # , 100)
 
     #http://api.shopstyle.com/action/apiSearch?pid=uid7444-8563962-34&fts=red+dress&min=0&count=10
 
@@ -42,7 +40,11 @@ class Omgwant.Views.DashboardImage extends Backbone.View
       @$el.addClass('published')
     else
       @$el.removeClass('published')
-    @$el.html HandlebarsTemplates['dashboard_image'](@model.toJSON())
+      
+    @$el.html HandlebarsTemplates['dashboard_image'] @model.toJSON()    
+    @searchView = new Omgwant.Views.LiveSearch
+      el:'.products'
+      baseUrl:'http://omg-node-api.herokuapp.com/'
     @
 
 
