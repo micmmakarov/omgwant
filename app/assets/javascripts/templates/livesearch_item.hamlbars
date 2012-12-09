@@ -1,2 +1,7 @@
-%li
-  .title {{name}}
+%p.product-title
+  {{name}}
+.product-price {{priceLabel}}
+
+.product-img{:style => "background-image: url(\"{{images.[2].url}}\")" }
+%p.product-url
+  %a{:href => "{{url}}"} via {{retailer}}

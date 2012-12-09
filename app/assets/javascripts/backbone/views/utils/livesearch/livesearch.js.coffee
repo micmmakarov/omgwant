@@ -13,13 +13,14 @@ class Omgwant.Views.LiveSearch extends Backbone.View
     console.log model.get('name')
     window.collection = @collection
     view = new Omgwant.Views.LiveSearchItem(model: model)
-    @$el.find('.livesearch-items').append  view.el
+    @$el.find('.livesearch-items').append view.el
 
   search: _.debounce (event) ->
     @collection.reset()
+    $(event.target).parent().find('ul').empty()
     @collection.fetch
       add: true
-      data: $.param({ search: event.target.value})
+      data: $.param({search: event.target.value})
       dataType:'jsonp'
   , 500
     

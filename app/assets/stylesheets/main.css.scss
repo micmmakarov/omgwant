@@ -156,13 +156,9 @@ hgroup {
     margin: 0;
     > li {
       margin: 0 0 20px;
-      overflow: hidden;
       list-style: none;
       position: relative;
-      padding-left: 370px;
-      padding-top: 20px;
-      padding-right: 20px;
-      padding-bottom: 20px;
+      padding: 20px 20px 20px 370px;
       min-height: 330px;
       .thumb {
         position: absolute;
@@ -205,6 +201,7 @@ hgroup {
   }
   .products {
     margin: 20px 0 0;
+    position: relative;
   }
   .added-products-list {
     margin-bottom: 20px;
@@ -403,12 +400,21 @@ hgroup {
 .livesearch-items {
   overflow: hidden;
   margin: 0;
+  position: absolute;
+  top: 30px;
+  z-index: 1;
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  @include border-radius(10px);
+  width: 500px;
   li {
-    padding: 10px 93px 10px 95px;
+    padding: 0 93px 0 95px;
     background-color: #fff;
     position: relative;
     min-height: 65px;
     border-bottom: 1px #DFDFDF solid;
+    &:only-child {
+      @include border-radius(0, 10px, 10px, 10px);
+    }
     &:first-child {
       @include border-radius(0, 10px, 0, 0);
     }
@@ -420,13 +426,21 @@ hgroup {
     }
     .product-img {
       position: absolute;
-      top: 10px;
-      left: 10px;
+      top: 0;
+      left: 0;
       width: 65px;
       height: 65px;
+      background-position: center center;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-color: white;
     }
     .product-title {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
+      padding: 5px 0 0;
+      line-height: 0.8;
+      margin-bottom: 4px;
+      color: #777;
     }
     .product-url {
       font-size: 1.2rem;
@@ -442,10 +456,12 @@ hgroup {
     &:hover {
       background-color: $main-color;
       color: #fff;
+      text-shadow: none;
       a {
         color: #ffe0ec;
       }
-      .product-price {
+      .product-price,
+      .product-title {
         color: #fff;
       }
     }

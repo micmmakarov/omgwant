@@ -7,8 +7,7 @@
     {{formatDate created_at}}
     %span.icon.icon-geopin
     {{location_name}}
-    .products
--#      %input.add-products{:type => "text", :placeholder => "Type to add products..."}
+  .products
 
 .publish
   {{#if published}}
@@ -17,15 +16,5 @@
   %a{:href => '#', :class => 'btn btn-mini'} Publish photo to gallery
   {{/if}}
 
-%ul.added-products-list
-  / %li
-  /   %a{:href => "#"}
-  /     Prada Shoes - $129.99
-  / %li
-  /   %a{:href => "#"}
-  /     Gucci Skirt - $33.99
-  / %li
-  /   %a{:href => "#"}
-  /     D&B Shoes - $45.00
 %a.btn.btn-info
   Post to facebook
