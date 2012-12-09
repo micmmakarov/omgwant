@@ -15,6 +15,7 @@ group :development do
   gem 'sqlite3'
 end
 group :assets do
+  gem 'therubyracer' # Used by LESS. Remove?
   gem 'sass-rails',   '~> 3.2.3'
   gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
   gem "uglifier"
