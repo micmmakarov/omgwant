@@ -1,7 +1,7 @@
 class Omgwant.Views.LiveSearch extends Backbone.View
   
   events:
-    'keypress :input': 'search'
+    'keyup :input': 'search'
     
   initialize: ->
     @collection = new Omgwant.Collections.Products()
@@ -22,7 +22,7 @@ class Omgwant.Views.LiveSearch extends Backbone.View
       add: true
       data: $.param({search: event.target.value})
       dataType:'jsonp'
-  , 500
+  , 700
     
   render: ->
     @$el.html HandlebarsTemplates['livesearch'] {}

@@ -407,7 +407,7 @@ hgroup {
   @include border-radius(10px);
   width: 500px;
   li {
-    padding: 0 93px 0 95px;
+    padding: 0 85px;
     background-color: #fff;
     position: relative;
     min-height: 65px;
@@ -421,6 +421,12 @@ hgroup {
     &:last-child {
       @include border-radius(0, 0, 10px, 10px);
     }
+    &:only-child,
+    &:last-child {
+      .product-img {
+        @include border-radius(0, 0, 0, 10px);
+      }
+    }    
     p {
       margin: 0 0 6px;
     }
@@ -457,6 +463,7 @@ hgroup {
       background-color: $main-color;
       color: #fff;
       text-shadow: none;
+      cursor: pointer;
       a {
         color: #ffe0ec;
       }
