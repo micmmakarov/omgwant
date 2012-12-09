@@ -11,3 +11,9 @@ $ ->
                               
     $('#search-query').typeahead source: myObject
 
+  # Mousetrap stuff
+  Mousetrap.bind 'r e d', ->
+    $('body').css
+      'background': 'red'
+    console.log 'go to inbox'
+  

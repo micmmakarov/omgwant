@@ -1,0 +1,22 @@
+%ul.livesearch-items
+  %li
+    %img.product-img{:src => 'http://waltersclothing.com/wp-content/uploads/2012/03/adidas_trefoilteem_poolblu__med.jpg'}
+    %p.product-title
+      Adidas by Stella McCartney Tria Vamp pleated crepe-jersey mini skirt
+    %p.product-url
+      %a{:href => '#'} via midwestsports.com
+    .product-price $151.50
+  %li
+    %img.product-img{:src => 'http://waltersclothing.com/wp-content/uploads/2012/03/adidas_trefoilteem_poolblu__med.jpg'}
+    %p.product-title
+      Adidas by Stella McCartney Tria Vamp pleated crepe-jersey mini skirt
+    %p.product-url
+      %a{:href => '#'} via midwestsports.com
+    .product-price $151.50
+  %li
+    %img.product-img{:src => 'http://waltersclothing.com/wp-content/uploads/2012/03/adidas_trefoilteem_poolblu__med.jpg'}
+    %p.product-title
+      Adidas by Stella McCartney Tria Vamp pleated crepe-jersey mini skirt
+    %p.product-url
+      %a{:href => '#'} via midwestsports.com
+    .product-price $151.50

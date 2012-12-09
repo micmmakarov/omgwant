@@ -6,6 +6,7 @@ class Omgwant.Routers.main extends Backbone.Router
     'dashboard'   : 'dashboard'
     'about'       : 'about'
     'help'        : 'help'
+    'sandbox'     : 'sandbox'
     'photo/:id'   : 'show_image'
 
   initialize: ->
@@ -24,6 +25,10 @@ class Omgwant.Routers.main extends Backbone.Router
 
   help: ->
     @view = new Omgwant.Views.StaticPage({el:"#content", pageName: 'help'})
+
+  # dump for temporary markup and experiments
+  sandbox: ->
+    @view = new Omgwant.Views.StaticPage({el:"#content", pageName: 'sandbox'})
 
   dashboard: ->
     return unless current_user?

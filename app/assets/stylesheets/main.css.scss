@@ -31,10 +31,13 @@ $link-color: #f26d7d;
   text-shadow: 0 1px 0 rgba(255,255,255,0.9);
 }
 
+html {
+  font-size: 62.5%; 
+}
+
 body {
   background: url('/assets/bg-textured.jpg');
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
   padding-top: 60px;
 }
 
@@ -392,6 +395,67 @@ hgroup {
 /****************************************
 /* /User Profile
 /****************************************/
+
+/****************************************
+/* Search Dropdown
+/****************************************/
+
+.livesearch-items {
+  overflow: hidden;
+  margin: 0;
+  li {
+    padding: 10px 93px 10px 95px;
+    background-color: #fff;
+    position: relative;
+    min-height: 65px;
+    border-bottom: 1px #DFDFDF solid;
+    &:first-child {
+      @include border-radius(0, 10px, 0, 0);
+    }
+    &:last-child {
+      @include border-radius(0, 0, 10px, 10px);
+    }
+    p {
+      margin: 0 0 6px;
+    }
+    .product-img {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 65px;
+      height: 65px;
+    }
+    .product-title {
+      font-size: 1.6rem;
+    }
+    .product-url {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+    .product-price {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: $main-color;
+      font-size: 1.8rem;
+    }
+    &:hover {
+      background-color: $main-color;
+      color: #fff;
+      a {
+        color: #ffe0ec;
+      }
+      .product-price {
+        color: #fff;
+      }
+    }
+  }
+}
+
+/****************************************
+/* /Search Dropdown
+/****************************************/
+
 
 /****************************************
 /* Modal Box
