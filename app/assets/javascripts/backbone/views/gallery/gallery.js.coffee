@@ -21,8 +21,6 @@ class Omgwant.Views.Gallery extends Backbone.View
     ($ "#images-table").append view.render().el
     
   render: ->
-    window.a = @collection
-
     @$el.html HandlebarsTemplates['gallery']({})
     @collection.each(@addOne, @)
     @
