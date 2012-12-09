@@ -42,9 +42,7 @@ class Omgwant.Views.DashboardImage extends Backbone.View
       @$el.removeClass('published')
       
     @$el.html HandlebarsTemplates['dashboard_image'] @model.toJSON()    
-    @searchView = new Omgwant.Views.LiveSearch
-      el:'.products'
-      baseUrl:'http://omg-node-api.herokuapp.com/'
+    @searchView = new Omgwant.Views.LiveSearch({el:@$el.find('.products')})
     @
 
 

@@ -4,23 +4,23 @@ class Omgwant.Views.LiveSearch extends Backbone.View
     'keypress :input': 'search'
     
   initialize: ->
-    window.view = @
-    @collection = new Backbone.Collection
-      model: Backbone.Model
+    @collection = new Omgwant.Collections.Products()
+    #@collection.on 'reset', @render, @
     @collection.on 'add', @addItem, @
-    
     @render()
 
   addItem: (model)->
-    item = new Omgwant.Views.LiveSearchItem
-      model: model    
-    @$el.append item.el
-    console.log @collection.models.length
+    console.log model.get('name')
+    window.collection = @collection
+    view = new Omgwant.Views.LiveSearchItem(model: model)
+    @$el.find('.livesearch-items').append  view.el
 
   search: _.debounce (event) ->
     @collection.reset()
-    @collection.url = "#{@options.baseUrl}?search=#{event.target.value}"
-    @collection.fetch({dataType:'jsonp'})
+    @collection.fetch
+      add: true
+      data: $.param({ search: event.target.value})
+      dataType:'jsonp'
   , 500
     
   render: ->

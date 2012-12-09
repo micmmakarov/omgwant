@@ -8,6 +8,8 @@ class Omgwant.Collections.Images extends Backbone.Collection
   get_dashboard_url: ->
     @url = '/api/myimages'
 
+  parse: (response) ->
+    window.r =  response
 
 
   page = 0
