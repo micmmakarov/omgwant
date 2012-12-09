@@ -53,4 +53,6 @@ class Omgwant.Routers.main extends Backbone.Router
 
   previous: ->
     if @history.length > 1
-      @navigate @history[@history.length-2], true
+      @navigate @history[@history.length-2], false
+    else
+      @navigate '', true
