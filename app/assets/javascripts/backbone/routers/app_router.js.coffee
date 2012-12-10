@@ -13,7 +13,7 @@ class Omgwant.Routers.main extends Backbone.Router
   initialize: ->
     @on "all", @storeRoute
     @history = []
-
+    @messages = new Omgwant.Views.Flash()
     $("html").on "click", ".link", (event) ->
       event.preventDefault()
       if @getAttribute('data-page') == 'home'

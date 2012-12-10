@@ -12,6 +12,7 @@ window.Omgwant =
   Collections: {}
   Routers: {}
   Views: {}
+  Messages: _.extend {}, Backbone.Events
   init: ->
     @router = new Omgwant.Routers.main()
     Backbone.history.start({pushState: true})

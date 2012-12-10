@@ -4,7 +4,7 @@ class Omgwant.Views.LiveSearch extends Backbone.View
     'keyup :input': 'search'
     
   initialize: ->
-    window.view = @
+    _.bindAll @, 'flashBefore', 'flashDone'
     @collection = new Omgwant.Collections.Products()
     @collection.on 'add', @addItem, @
     @render()
@@ -17,7 +17,11 @@ class Omgwant.Views.LiveSearch extends Backbone.View
   cleanUp: (collection)->
     # @ - is a view passed on trigger
     @kill()
-      
+  flashBefore: ->
+    Omgwant.Messages.trigger 'loading:show', "Looking for products, give me a second..."
+  flashDone: ->
+    Omgwant.Messages.trigger 'loading:hide'
+  
   search: _.debounce (event) ->
     # if user cleared up the input - do not fetch anything
     # just clean up the models; be ready for new search
@@ -25,10 +29,13 @@ class Omgwant.Views.LiveSearch extends Backbone.View
     return if not /\w+/.test event.target.value
     @collection.fetch
       add: true
+      beforeSend: @flashBefore
       data: 
         search: event.target.value
       dataType:'jsonp'
+      success: @flashDone
   , 500
     
   render: ->
     @$el.html HandlebarsTemplates['livesearch'] {}
+    @
