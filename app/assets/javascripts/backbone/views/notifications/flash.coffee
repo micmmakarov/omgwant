@@ -16,7 +16,7 @@ class Omgwant.Views.Flash extends Backbone.View
     @render message, 'loading'
     
   render: (message, type)->
-    @$el.html HandlebarsTemplates['utils/flash'] {message:message}
+    @$el.html HandlebarsTemplates['products/flash'] {message:message}
     ($ 'body > header').after @$el
     _.delay @removeFlash, 2000 if !type #remove the message if just a message
     @
