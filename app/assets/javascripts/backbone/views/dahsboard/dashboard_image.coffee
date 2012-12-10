@@ -10,7 +10,7 @@ class Omgwant.Views.DashboardImage extends Backbone.View
 
   publish: (event) ->
     event.preventDefault()
-    published = not @model.get('published')
+    published = not @model.get 'published'
     @model.set('published', published)
     @model.save()
 
@@ -21,7 +21,8 @@ class Omgwant.Views.DashboardImage extends Backbone.View
       @$el.removeClass('published')
       
     @$el.html HandlebarsTemplates['dashboard_image'] @model.toJSON()    
-    @searchView = new Omgwant.Views.LiveSearch({el:@$el.find('.products')})
+    @searchView = new Omgwant.Views.LiveSearch
+      el:@$el.find '.products'
     @
 
 
