@@ -19,5 +19,5 @@ class Omgwant.Views.FeedImage extends Backbone.View
     Omgwant.router.navigate "/photo/#{@model.get('id')}", {trigger: true}
   
   render: ->
-    @$el.html HandlebarsTemplates['feed_image'](@model.toJSON())
+    @$el.html HandlebarsTemplates['images/feed_image'](@model.toJSON())
     @

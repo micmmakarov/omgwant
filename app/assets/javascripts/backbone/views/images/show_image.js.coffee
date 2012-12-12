@@ -19,5 +19,5 @@ class Omgwant.Views.ShowImage extends Backbone.View
 
   render: ->
     window.model = @model
-    @$el.html HandlebarsTemplates['show_image'](@model.toJSON())
+    @$el.html HandlebarsTemplates['images/show_image'](@model.toJSON())
     @    

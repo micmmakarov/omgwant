@@ -3,7 +3,7 @@ class Omgwant.Routers.main extends Backbone.Router
 
   routes:
     ''            : 'index'
-    'users/:user' : 'users'
+    'users/:user' : 'profile'
     'dashboard'   : 'dashboard'
     'about'       : 'about'
     'help'        : 'help'

@@ -12,7 +12,7 @@ class Omgwant.Views.Profile extends Backbone.View
       collection: @model.published_images }
 
   render: ->
-    @$el.html HandlebarsTemplates['users'] @model.toJSON()
+    @$el.html HandlebarsTemplates['users/profile'] @model.toJSON()
     (@$ '#liked-images').html @imagesView.$el
     @
 

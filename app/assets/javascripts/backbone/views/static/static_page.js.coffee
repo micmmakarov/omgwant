@@ -4,5 +4,5 @@ class Omgwant.Views.StaticPage extends Backbone.View
     @render()
 
   render: ->
-    @$el.html HandlebarsTemplates[@options.pageName]({})
+    @$el.html HandlebarsTemplates["static/#{@options.pageName}"]({})
     @

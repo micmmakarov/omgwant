@@ -7,5 +7,5 @@ class Omgwant.Views.Like extends Backbone.View
     @model.on 'change', @render, @
 
   render: ->
-    @$el.html HandlebarsTemplates['like'](@model.toJSON())
+    @$el.html HandlebarsTemplates['images/like'](@model.toJSON())
     @

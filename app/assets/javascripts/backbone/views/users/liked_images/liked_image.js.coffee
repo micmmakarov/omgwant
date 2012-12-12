@@ -5,5 +5,5 @@ class Omgwant.Views.LikedImage extends Backbone.View
     @model.on 'change', @render, @
 
   render: ->
-    @$el.html HandlebarsTemplates['liked_image'] @model.toJSON()
+    @$el.html HandlebarsTemplates['images/liked_image'] @model.toJSON()
     @

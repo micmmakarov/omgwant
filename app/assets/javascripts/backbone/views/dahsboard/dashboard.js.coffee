@@ -10,6 +10,6 @@ class Omgwant.Views.Dashboard extends Backbone.View
     ($ ".image-list").append view.render().el
 
   render: ->
-    @$el.html HandlebarsTemplates['dashboard']({})
+    @$el.html HandlebarsTemplates['dahsboard/dashboard']({})
     @collection.each(@addOne, @)
     @
