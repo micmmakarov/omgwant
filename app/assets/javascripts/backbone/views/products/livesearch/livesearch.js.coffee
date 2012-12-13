@@ -11,10 +11,11 @@ class Omgwant.Views.LiveSearch extends Backbone.View
     @render()
 
   addItem: (model)->
-    itemView = new Omgwant.Views.LiveSearchItem(model: model, image:@image)
+    itemView = new Omgwant.Views.LiveSearchItem(model: model, image:@image, collection:@collection)
     @$el.find('.livesearch-items').append itemView.el
     @collection.on 'reset', @cleanUp, itemView
-  
+
+
   cleanUp: (collection)->
     # @ - is a view passed on trigger
     @kill()

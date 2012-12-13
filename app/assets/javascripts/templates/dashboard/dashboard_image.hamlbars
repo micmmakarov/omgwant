@@ -17,10 +17,7 @@
   {{/if}}
 
 .product-list
-  %h1 {{products.length}}
-  {{#each products}}
-  %p {{this.name}}
-  {{/each}}
+  Loading
 
 %a.btn.btn-info
   Post to facebook

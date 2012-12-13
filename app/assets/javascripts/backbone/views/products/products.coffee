@@ -1,10 +1,11 @@
 class Omgwant.Views.Products extends Backbone.View
 
-  initialize: ->
-   # @collection = options.collection
-   # @collection.on 'reset', @render, @
-   # @collection.on 'add', @addOne, @
-   # @render()
+  initialize: (options) ->
+    @collection = options.collection
+    @collection.on 'reset', @render, @
+    @collection.on 'change', @render, @
+    @collection.on 'add', @render, @
+    @render()
 
   #events:
 
@@ -13,6 +14,5 @@ class Omgwant.Views.Products extends Backbone.View
    # ($ "#images-table").append view.render().el
 
   render: ->
-  #  @$el.html HandlebarsTemplates['products']({})
-  #  @collection.each(@addOne, @)
-  #  @
+    @$el.html HandlebarsTemplates['products/products'](@collection.toJSON())
+    @

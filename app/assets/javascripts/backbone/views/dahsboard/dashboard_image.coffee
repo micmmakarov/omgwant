@@ -4,13 +4,10 @@ class Omgwant.Views.DashboardImage extends Backbone.View
 
   initialize: ->
     @model.on 'change', @render, @
-    @model.products.on 'change', @products_refresh, @
+    window.p = @model.products if @model.products.length != 0
 
   events:
     'click .publish': 'publish'
-
-  products_refresh: ->
-    alert "refreshed"
 
   publish: (event) ->
     event.preventDefault()
@@ -23,8 +20,10 @@ class Omgwant.Views.DashboardImage extends Backbone.View
       @$el.addClass('published')
     else
       @$el.removeClass('published')
-      
     @$el.html HandlebarsTemplates['dashboard/dashboard_image'] @model.toJSON()
+    @ProductsView = new Omgwant.Views.Products
+      el:@$el.find '.product-list'
+      collection:@model.products
     @searchView = new Omgwant.Views.LiveSearch
       el:@$el.find '.products'
       image:@model

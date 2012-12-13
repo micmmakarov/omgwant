@@ -6,6 +6,7 @@ class Omgwant.Views.LiveSearchItem extends Backbone.View
     @render()
     @image = options.image || {}
     @products = @image.products
+    @collection = options.collection
 
   events:
     'click': 'add_product'
@@ -15,7 +16,8 @@ class Omgwant.Views.LiveSearchItem extends Backbone.View
     @model.unset 'id'
     @model.set 'image_id', @image.id
     @products.create(@model.toJSON())
-    @kill()
+    @collection.reset()
+
     
   kill: ->
     @unbind()
