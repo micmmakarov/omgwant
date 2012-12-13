@@ -10,5 +10,5 @@ class Omgwant.Views.LiveSearchItem extends Backbone.View
     @remove()
     
   render: ->
-    @$el.html HandlebarsTemplates['livesearch_item'] @model.toJSON()
+    @$el.html HandlebarsTemplates['products/livesearch_item'] @model.toJSON()
     @

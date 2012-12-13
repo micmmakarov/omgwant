@@ -20,6 +20,10 @@ class Image < ActiveRecord::Base
     self.user
   end
 
+  def products
+    self.products
+  end
+
   def like_action
     if current_user.present?
       not Cute.where(:user_id => current_user.id, :image_id => id).first.present?

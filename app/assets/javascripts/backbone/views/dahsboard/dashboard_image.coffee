@@ -20,7 +20,7 @@ class Omgwant.Views.DashboardImage extends Backbone.View
     else
       @$el.removeClass('published')
       
-    @$el.html HandlebarsTemplates['dahsboard/dashboard_image'] @model.toJSON()
+    @$el.html HandlebarsTemplates['dashboard/dashboard_image'] @model.toJSON()
     @searchView = new Omgwant.Views.LiveSearch
       el:@$el.find '.products'
     @

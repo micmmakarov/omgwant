@@ -37,5 +37,5 @@ class Omgwant.Views.LiveSearch extends Backbone.View
   , 500
     
   render: ->
-    @$el.html HandlebarsTemplates['livesearch'] {}
+    @$el.html HandlebarsTemplates['products/livesearch'] {}
     @

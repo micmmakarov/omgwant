@@ -3,8 +3,8 @@ class Omgwant.Models.FeedImage extends Backbone.Model
   urlRoot: "/api/images"
     
   initialize: ->
-  #  @products = new Omgwant.Collections.Products()
-  #  @products.url = "/api/images/#{@id}/likes"
+    @products = new Omgwant.Collections.Products()
+    @products.url = "/api/images/#{@id}/products"
 
   like: ->
     $.ajax

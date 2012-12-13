@@ -20,6 +20,7 @@ class Api::ImagesController < ApplicationController
 
   def create
     @image = Image.create(params[:image])
+    @image.user = current_user
     render json: @image.to_json(:methods => api_methods)
   end
 
