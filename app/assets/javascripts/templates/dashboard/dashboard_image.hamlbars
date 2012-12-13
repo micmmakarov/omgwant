@@ -16,5 +16,11 @@
   %a{:href => '#', :class => 'btn btn-mini'} Publish photo to gallery
   {{/if}}
 
+.product-list
+  %h1 {{products.length}}
+  {{#each products}}
+  %p {{this.name}}
+  {{/each}}
+
 %a.btn.btn-info
   Post to facebook

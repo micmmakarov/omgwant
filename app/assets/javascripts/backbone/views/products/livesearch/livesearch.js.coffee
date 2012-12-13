@@ -3,14 +3,15 @@ class Omgwant.Views.LiveSearch extends Backbone.View
   events:
     'keyup :input': 'search'
     
-  initialize: ->
+  initialize: (options) ->
     _.bindAll @, 'flashBefore', 'flashDone'
     @collection = new Omgwant.Collections.Products()
     @collection.on 'add', @addItem, @
+    @image = options.image || {}
     @render()
 
   addItem: (model)->
-    itemView = new Omgwant.Views.LiveSearchItem(model: model)
+    itemView = new Omgwant.Views.LiveSearchItem(model: model, image:@image)
     @$el.find('.livesearch-items').append itemView.el
     @collection.on 'reset', @cleanUp, itemView
   

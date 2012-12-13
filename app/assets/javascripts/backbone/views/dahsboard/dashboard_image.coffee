@@ -4,9 +4,13 @@ class Omgwant.Views.DashboardImage extends Backbone.View
 
   initialize: ->
     @model.on 'change', @render, @
+    @model.products.on 'change', @products_refresh, @
 
   events:
     'click .publish': 'publish'
+
+  products_refresh: ->
+    alert "refreshed"
 
   publish: (event) ->
     event.preventDefault()
@@ -23,6 +27,7 @@ class Omgwant.Views.DashboardImage extends Backbone.View
     @$el.html HandlebarsTemplates['dashboard/dashboard_image'] @model.toJSON()
     @searchView = new Omgwant.Views.LiveSearch
       el:@$el.find '.products'
+      image:@model
     @
 
 

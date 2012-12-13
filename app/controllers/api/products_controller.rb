@@ -19,15 +19,15 @@ class Api::ProductsController < ApplicationController
 
   def create
     product = Product.new(params[:product])
-    product.image.user = current_user
-    product.save!
+    #product.image.user = current_user
+    product.save! if product.image.user = current_user
     render json: product.to_json
   end
 
   def update
     product = Product.find(params[:id])
     product.save! if product.image.user = current_user
-    render json: product.to_json(:methods => api_methods)
+    render json: product.to_json
   end
 
   def destroy
