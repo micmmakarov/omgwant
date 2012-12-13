@@ -3,6 +3,10 @@ class Image < ActiveRecord::Base
   attr_accessible :description, :title, :price
   include ActionView::Helpers::TextHelper
   before_save :generate_code
+  has_many :products
+  has_one :embed
+  belongs_to :user
+  has_many :cutes
 
   def generate_code
     self.code = (0...12).map{65.+(rand(26)).chr}.join if self.code.blank?
@@ -18,10 +22,6 @@ class Image < ActiveRecord::Base
 
   def user_info
     self.user
-  end
-
-  def products
-    self.products
   end
 
   def like_action
@@ -49,12 +49,5 @@ class Image < ActiveRecord::Base
     end
   end
 
-  has_many :products, :through => :images_products
-  has_many :images_products
-  has_one :embed
-
-  belongs_to :user
-
-  has_many :cutes
 
 end

@@ -5,6 +5,10 @@ class Omgwant.Models.FeedImage extends Backbone.Model
   initialize: ->
     @products = new Omgwant.Collections.Products()
     @products.url = "/api/images/#{@id}/products"
+    products = @get 'products'
+    if products?
+      @products.parse(products)
+
 
   like: ->
     $.ajax
@@ -13,4 +17,5 @@ class Omgwant.Models.FeedImage extends Backbone.Model
       success: (data) =>
         @set('like_action', data.like_action)
         @set('likes', data.likes)
+
 
