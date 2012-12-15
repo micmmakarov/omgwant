@@ -11,6 +11,7 @@ class Omgwant.Views.LiveSearch extends Backbone.View
     @render()
 
   addItem: (model)->
+    @$el.find("input").val('')
     itemView = new Omgwant.Views.LiveSearchItem(model: model, image:@image, collection:@collection)
     @$el.find('.livesearch-items').append itemView.el
     @collection.on 'reset', @cleanUp, itemView
@@ -36,7 +37,7 @@ class Omgwant.Views.LiveSearch extends Backbone.View
         search: event.target.value
       dataType:'jsonp'
       success: @flashDone
-  , 500
+  , 300
     
   render: ->
     @$el.html HandlebarsTemplates['products/livesearch'] {}
