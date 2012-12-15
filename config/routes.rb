@@ -14,7 +14,7 @@ Omgwant::Application.routes.draw do
     get "images/:id/products" => "products#index"
     put "images/:image_id/products/:id" => "products#update"
     delete "images/:image_id/products/:id" => "products#destroy"
-    post "images/:id/products" => "products#create"
+    post "images/:image_id/products" => "products#create"
 
     get "users/:id/likes" => "users#user_likes"
     get "users/:id/published" => "users#user_published"
