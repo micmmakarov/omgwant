@@ -20,20 +20,20 @@ class Api::ProductsController < ApplicationController
   def create
     product = Product.new(params[:product])
     #product.image.user = current_user
-    product.save! if product.image.user = current_user
+    product.save! if product.image.user == current_user
     render json: product.to_json
   end
 
   def update
     product = Product.find(params[:id])
-    product.save! if product.image.user = current_user
+    product.save! if product.image.user == current_user
     render json: product.to_json
   end
 
   def destroy
     product = Product.find(params[:id])
-    product.destroy if product.image.user = current_user
-    render json: product
+    product.destroy if product.image.user == current_user
+    render json: {status => "destroyed"}
   end
 
 end

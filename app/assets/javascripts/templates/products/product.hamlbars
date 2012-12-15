@@ -1,0 +1,2 @@
+%p Haha:{{name}}
+%a.delete{:href => "#"} Delete

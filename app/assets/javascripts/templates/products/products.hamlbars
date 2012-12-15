@@ -1,4 +1,2 @@
 %h1 L:{{length}}
-{{#each this}}
-%p {{this.name}}
-{{/each}}
+.image-products

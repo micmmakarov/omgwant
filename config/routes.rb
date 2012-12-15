@@ -10,8 +10,12 @@ Omgwant::Application.routes.draw do
     resources :myimages
     match "like/:id" => "images#like"
     get ":id/likes" => "images#user_likes"
+
     get "images/:id/products" => "products#index"
-    match "images/:id/products" => "products#create"
+    put "images/:image_id/products/:id" => "products#update"
+    delete "images/:image_id/products/:id" => "products#destroy"
+    post "images/:id/products" => "products#create"
+
     get "users/:id/likes" => "users#user_likes"
     get "users/:id/published" => "users#user_published"
     match "search" => "products#search"
