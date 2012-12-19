@@ -1,2 +1,2 @@
-%p Haha:{{name}}
-%a.delete{:href => "#"} Delete
+%p {{name}} ({{priceLabel}})
+%a.delete.btn.btn-small{:href => "#"} Delete

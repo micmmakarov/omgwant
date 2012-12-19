@@ -1,5 +1,12 @@
 .thumb
   %img{:src => '{{low_url}}'}
+  .publish
+    {{#if published}}
+    %a{:href => '#', :class => 'btn btn-mini btn-danger'} Hide from public gallery
+    {{else}}
+    %a{:href => '#', :class => 'btn btn-mini'} Publish to public gallery
+    {{/if}}
+  
 %hgroup
   %h3.image-title
     {{title}}
@@ -9,15 +16,8 @@
     {{location_name}}
   .products
 
-.publish
-  {{#if published}}
-  %a{:href => '#', :class => 'btn btn-mini btn-danger'} Remove photo from gallery
-  {{else}}
-  %a{:href => '#', :class => 'btn btn-mini'} Publish photo to gallery
-  {{/if}}
-
 .product-list
-  Loading
+  Loading...
 
 %a.btn.btn-info
   Post to facebook

@@ -1,5 +1,7 @@
 class Omgwant.Views.Product extends Backbone.View
 
+  tagName: 'li'
+
   events: ->
     'click .delete': 'delete'
 

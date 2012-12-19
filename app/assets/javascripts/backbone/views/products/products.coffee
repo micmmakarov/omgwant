@@ -11,7 +11,7 @@ class Omgwant.Views.Products extends Backbone.View
 
   addOne: (image) ->
    view = new Omgwant.Views.Product(model: image)
-   @$el.find(".image-products").append  view.render().el
+   @$el.find(".image-product-list").append  view.render().el
 
   render: ->
     @$el.html HandlebarsTemplates['products/products'](@collection.toJSON())

@@ -191,7 +191,9 @@ hgroup {
         background: url('/assets/bg-textured-02.gif');
       }
       .publish {
-        margin-bottom: 5px;
+        position: absolute;
+        bottom: 5px;
+        left: 5px;
         p {
           float: left;
           margin-left: 20px;
@@ -296,7 +298,7 @@ hgroup {
       margin: 0 0 5px;
     }
     .small {
-      font-size: .7rem;
+      font-size: 1.1rem;
       margin: 0;
     }
     .not-logged-in {
@@ -318,6 +320,36 @@ hgroup {
 /* /Gallery
 /****************************************/
 
+
+/****************************************
+/* Dashboard
+/****************************************/
+
+.image-product-list {
+  margin: 0 0 20px 0;
+  li {
+    list-style: inside;
+    position: relative;
+    padding: 5px 62px 5px 10px;
+    margin: 0;
+    &:hover {
+      background: rgba(255,255,255,.6);
+    }
+    p {
+      font-size: 1.3rem;
+      margin: 0;
+    }
+    .delete {
+      position: absolute;
+      right: 0;
+      top: 2px;
+    }
+  }
+}
+
+/****************************************
+/* /Dashboard
+/****************************************/
 
 
 /****************************************
@@ -348,7 +380,7 @@ hgroup {
   margin: 0 0 20px;
   overflow: hidden;
   h3 {
-    font-size: 1.3rem;
+    font-size: 2rem;
     font-weight: 600;
     float: left;
     color: desaturate($main-color, 20%);
