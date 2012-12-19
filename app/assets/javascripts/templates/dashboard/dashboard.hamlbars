@@ -1,4 +1,4 @@
-.show-grid.image-feed
+.show-grid.dashboard-feed
   %h2 These are your photos {{currentUserFullName}}!
   %ul.image-list
 
