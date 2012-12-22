@@ -1,8 +1,9 @@
+%h2.text-center Shop for Awesome Products <span>&amp;</span> Earn by Sharing Your Style!
+
 %nav.category-nav
-  %h3 Browse by category:
   %ul.nav.nav-pills
     %li.active
-      %a.link{:href => '#'} Fashion
+      %a.link{:href => '#'} Style
     %li
       %a.link{:href => '#'} Beauty
     %li

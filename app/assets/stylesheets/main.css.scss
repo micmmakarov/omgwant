@@ -60,12 +60,23 @@ h1, h2, h3, h4, h5 {
   line-height: 1.2;
   text-shadow: 0 1px 0 rgba(255,255,255,.8);
 }
+h2 {
+  span {
+    font-weight: 300;
+    font-size: 110%;
+    font-style: italic;
+    color: #f26d7d;
+  }
+}
 a {
   color: $link-color;
   text-decoration: underline;
   &:hover {
     text-decoration: none;
   }
+}
+.text-center {
+  text-align: center;
 }
 
 .icon {
@@ -184,6 +195,13 @@ hgroup {
           z-index: -1;
           position: relative;
         }
+      }
+      .image-title {
+        font-size: 1.8rem;
+        margin-bottom: 5px;
+      }
+      h4 {
+        font-size: 1.5rem;
       }
       &.published {
         @include generic-transition();
