@@ -350,6 +350,12 @@ hgroup {
       position: absolute;
       right: 0;
       top: 2px;
+      i {
+        opacity: .5;
+      }
+      &:hover {
+        i { opacity: 1 }
+      }
     }
   }
 }
