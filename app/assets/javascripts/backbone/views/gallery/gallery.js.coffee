@@ -1,10 +1,15 @@
 class Omgwant.Views.Gallery extends Backbone.View
 
-  initialize: ->
+  initialize: (options) ->
+    if options.category
+      @category = options.category
+    else
+      @category = ""
     @collection = new Omgwant.Collections.Images()
     @collection.on 'reset', @render, @
     @collection.on 'add', @addOne, @
-    @collection.fetch()
+    @collection.fetch
+      url: "#{@collection.url}/#{@category}"
     $(window).scroll =>
       if $(window).scrollTop() + $(window).height() is $(document).height()
         @scroll()
@@ -24,3 +29,4 @@ class Omgwant.Views.Gallery extends Backbone.View
     @$el.html HandlebarsTemplates['images/gallery']({})
     @collection.each(@addOne, @)
     @
+
