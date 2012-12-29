@@ -224,9 +224,6 @@ hgroup {
         background: url('/assets/bg-textured-02.gif');
       }
       .publish {
-        position: absolute;
-        bottom: 5px;
-        left: 5px;
         p {
           float: left;
           margin-left: 20px;
@@ -277,6 +274,12 @@ hgroup {
 }
 @media only screen and  (max-width: 1050px) {
 }
+
+
+/****************************************
+/* /Dashboard
+/****************************************/
+
 
 /****************************************
 /* Gallery
@@ -383,9 +386,8 @@ hgroup {
     }
   }
 }
-
 /****************************************
-/* /Dashboard
+/* /Gallery
 /****************************************/
 
 

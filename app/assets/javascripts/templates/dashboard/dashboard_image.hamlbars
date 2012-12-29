@@ -1,11 +1,5 @@
 .thumb
   %img{:src => '{{low_url}}'}
-  .publish
-    {{#if published}}
-    %a{:href => '#', :class => 'btn btn-mini btn-danger'} Hide from public gallery
-    {{else}}
-    %a{:href => '#', :class => 'btn btn-mini'} Publish to public gallery
-    {{/if}}
   
 %hgroup
   %h3.image-title
@@ -18,6 +12,12 @@
 
 .product-list
   Loading...
+.publish
+  {{#if published}}
+  %a{:href => '#', :class => 'btn btn-mini btn-danger'} Hide from public gallery
+  {{else}}
+  %a{:href => '#', :class => 'btn btn-mini btn-success'} Publish to public gallery
+  {{/if}}
 
-%a.btn.btn-info
+%a.btn.btn-info.hide
   Post to facebook
