@@ -4,10 +4,15 @@ class Omgwant.Views.Flash extends Backbone.View
     Omgwant.Messages.on 'flash:show', @render, @
     Omgwant.Messages.on 'loading:show', @loader, @
     Omgwant.Messages.on 'loading:hide', @loader, @
+
+  className: "flash-container"
   
   removeFlash: ->
-    @unbind()
-    @remove()
+    @$el.fadeOut('fast', =>
+      @unbind()
+      @remove()
+      @$el.show()
+    )
     
   loader: (message)->
     if typeof message is 'undefined' #kill the view if there's no message

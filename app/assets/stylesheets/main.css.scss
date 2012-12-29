@@ -159,10 +159,16 @@ hgroup {
   }
 }
 
-/****************************************
-/* /Gallery
-/****************************************/
-
+.flash-container {
+  position: fixed;
+  top: 60px;
+  right: 5%;
+  background: rgba(0,0,0,.7);
+  color: white;
+  z-index: 100;
+  padding: 10px;
+  @include border-radius(5px);
+}
 
 /****************************************
 /* Dashboard
