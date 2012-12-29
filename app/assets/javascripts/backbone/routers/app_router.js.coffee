@@ -9,6 +9,7 @@ class Omgwant.Routers.main extends Backbone.Router
     'help'        : 'help'
     'sandbox'     : 'sandbox'
     'photo/:id'   : 'show_image'
+    'c/:category' : 'category'
 
   initialize: ->
     @on "all", @storeRoute
@@ -52,12 +53,22 @@ class Omgwant.Routers.main extends Backbone.Router
   index: ->
     @view = new Omgwant.Views.Gallery({el:"#content"})
 
+  category: (category) ->
+    @view = new Omgwant.Views.Gallery({el:"#content", category: category})
+
 
   storeRoute: ->
-    @history.push Backbone.history.fragment
+    current_url = Backbone.history.fragment
+    @history.push current_url
+    @highlight_links(current_url)
 
   previous: ->
     if @history.length > 1
       @navigate @history[@history.length-2], false
     else
       @navigate '', true
+
+  highlight_links: (current_url) ->
+    current_url = 'home' if current_url == ''
+    $("a[href!='/#{current_url}']").parent().removeClass('active')
+    $("a[href='/#{current_url}']").parent().addClass('active')
