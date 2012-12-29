@@ -3,6 +3,8 @@
 %nav.category-nav
   %ul.nav.nav-pills.categories
     %li.active
+      %a.link{:href => '/'} All Categories
+    %li
       %a.link{:href => '/c/style'} Style
     %li
       %a.link{:href => '/c/beauty'} Beauty
