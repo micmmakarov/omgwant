@@ -5,7 +5,7 @@ class Omgwant.Views.ShowImage extends Backbone.View
   initialize: (options) ->
     @model.on 'change', @render, @
     @model = options.model
-    $(document).bind 'keypress', @closeOnEsc
+    $(document).bind 'keydown', @closeOnEsc # bind listener for key input
 
   events: 
     'click .close-modal': 'close'
@@ -19,7 +19,6 @@ class Omgwant.Views.ShowImage extends Backbone.View
     Omgwant.router.previous()
   
   closeOnEsc: (e) =>
-    console.log e.keyCode
     if e.keyCode is 27
       @close(e)
     
