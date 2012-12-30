@@ -5,6 +5,7 @@ class Omgwant.Views.ShowImage extends Backbone.View
   initialize: (options) ->
     @model.on 'change', @render, @
     @model = options.model
+    $(document).bind 'keypress', @closeOnEsc
 
   events: 
     'click .close-modal': 'close'
@@ -16,8 +17,16 @@ class Omgwant.Views.ShowImage extends Backbone.View
     @unbind()
     @remove()
     Omgwant.router.previous()
-
+  
+  closeOnEsc: (e) =>
+    console.log e.keyCode
+    if e.keyCode is 27
+      @close(e)
+    
   render: ->
-    window.model = @model
     @$el.html HandlebarsTemplates['images/show_image'](@model.toJSON())
-    @    
+    
+    @ProductsView = new Omgwant.Views.ShowImageProducts
+      el:@$el.find '.product-list'
+      collection:@model.products
+    @

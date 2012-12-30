@@ -1,2 +1,2 @@
-%h4 Products added: {{length}}
 %ul.image-product-list
+%p Products added: {{length}}

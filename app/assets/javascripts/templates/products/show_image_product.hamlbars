@@ -1,0 +1,8 @@
+{{#each this}}
+%li
+  %a{:href => "{{url}}", :rel => "external"} {{name}} ({{priceLabel}}) via {{retailer}}
+{{/each}}
+
+{{#unless this.length}}
+%li No products added
+{{/unless}}

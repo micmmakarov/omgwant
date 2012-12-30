@@ -4,7 +4,6 @@ class Omgwant.Views.DashboardImage extends Backbone.View
 
   initialize: ->
     @model.on 'change', @render, @
-    window.p = @model.products if @model.products.length != 0
 
   events:
     'click .publish': 'publish'

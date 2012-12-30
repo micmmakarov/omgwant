@@ -366,6 +366,7 @@ hgroup {
     position: relative;
     padding: 5px 62px 5px 10px;
     margin: 0;
+    line-height: 1.2;
     &:hover {
       background: rgba(255,255,255,.6);
     }
@@ -569,6 +570,20 @@ hgroup {
     top: 10px;
     right: 10px;
     text-decoration: none;
+    z-index: 1;
+  }
+  .modal-meta {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 230px;
+    padding: 10px;
+    .product-list {
+      li {
+        line-height: 1.2;
+        margin-bottom: 8px;
+      }
+    }
   }
 }
 .overlay {

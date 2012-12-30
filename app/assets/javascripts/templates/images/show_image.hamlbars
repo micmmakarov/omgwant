@@ -2,3 +2,10 @@
 
 %a.close-modal{:href => "javascript:void(0)"}
   %i{:class => "icon-remove"}
+  
+.modal-meta
+  %h3 {{title}}
+  %p By {{user_info.full_name}}
+  
+  %ul.product-list
+  
