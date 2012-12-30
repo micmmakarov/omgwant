@@ -22,7 +22,7 @@ class Omgwant.Views.Gallery extends Backbone.View
     'scroll': 'scroll'
 
   scroll: _.debounce(->
-    @collection.scroll()
+    @collection.scroll(@url)
   , 500)
 
   addOne: (image) ->
