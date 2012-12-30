@@ -7,6 +7,7 @@ class Image < ActiveRecord::Base
   has_one :embed
   belongs_to :user
   has_many :cutes
+  has_one :category
 
   def generate_code
     self.code = (0...12).map{65.+(rand(26)).chr}.join if self.code.blank?
@@ -38,6 +39,11 @@ class Image < ActiveRecord::Base
   def user_id
 
   end
+
+  def category_name
+    category.name
+  end
+
 
   def computed_title
     if title.present?

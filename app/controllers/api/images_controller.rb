@@ -34,6 +34,10 @@ class Api::ImagesController < ApplicationController
 
   def update
     @image = Image.find(params[:id])
+    if params[:category]
+      category_id = Category.find_by_name(params[:category]).id
+      params[:category_id] = category_id
+    end
     @image.published = params[:published]
     @image.save! if @image.user = current_user
     render json: @image.to_json(:methods => api_methods)

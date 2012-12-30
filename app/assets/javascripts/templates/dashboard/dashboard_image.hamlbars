@@ -19,15 +19,15 @@
   %a{:href => '#', :class => 'btn btn-mini btn-success'} Publish to public gallery
   {{/if}}
   
-.style-selector
+.category-selector
   %a.btn.dropdown-toggle.btn-small{'data-toggle' => 'dropdown', :href => '#'}
     Select category&hellip;
     %span.caret
   %ul.dropdown-menu.pull-right
     %li
-      %a{:href => '#'} Style
-      %a{:href => '#'} Style
-      %a{:href => '#'} Style
+      %a{:href => 'style'} Style
+      %a{:href => 'beauty'} Beauty
+      %a{:href => 'accessories'} Accessories
 
 %a.btn.btn-info.hide
   Post to facebook
