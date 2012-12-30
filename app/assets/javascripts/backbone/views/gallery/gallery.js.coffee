@@ -15,6 +15,8 @@ class Omgwant.Views.Gallery extends Backbone.View
     $(window).scroll =>
       if $(window).scrollTop() + $(window).height() is $(document).height()
         @scroll()
+    @$el.html HandlebarsTemplates['images/gallery']({})
+
 
   events:
     'scroll': 'scroll'
@@ -28,7 +30,7 @@ class Omgwant.Views.Gallery extends Backbone.View
     ($ "#images-table").append view.render().el
     
   render: ->
-    @$el.html HandlebarsTemplates['images/gallery']({})
+    ($ "#images-table").html("")
     @collection.each(@addOne, @)
     @
 
