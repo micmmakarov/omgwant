@@ -20,8 +20,8 @@
   {{/if}}
   
 .style-selector
-  %a.btn.dropdown-toggle{'data-toggle' => 'dropdown', :href => '#'}
-    Action
+  %a.btn.dropdown-toggle.btn-small{'data-toggle' => 'dropdown', :href => '#'}
+    Select category&hellip;
     %span.caret
   %ul.dropdown-menu.pull-right
     %li
