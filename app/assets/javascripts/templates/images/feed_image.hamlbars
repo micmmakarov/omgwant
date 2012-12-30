@@ -1,8 +1,10 @@
 .img
   %img{:src => '{{low_url}}'}
+{{#if products.length}}
 %a.image-products.badge.badge-inverse{:href => '#'} 
   %span.icon.icon-bag
   {{products.length}}
+{{/if}}
 .image-meta
   %h5 {{computed_title}}
   %p

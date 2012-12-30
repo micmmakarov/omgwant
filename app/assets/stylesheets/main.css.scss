@@ -562,7 +562,7 @@ hgroup {
   margin: 60px auto 0;
   width: 500px;
   width: 450px;
-  padding-right: 250px;
+  padding-right: 320px;
   background: white;
   box-shadow: 0 0 25px rgba(0,0,0,.7);
   .close-modal {
@@ -576,8 +576,8 @@ hgroup {
     position: absolute;
     top: 0;
     right: 0;
-    width: 230px;
-    padding: 10px;
+    width: 280px;
+    padding: 10px 20px;
     .product-list {
       li {
         line-height: 1.2;
