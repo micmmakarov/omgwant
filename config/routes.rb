@@ -11,6 +11,7 @@ Omgwant::Application.routes.draw do
     match "like/:id" => "images#like"
     get ":id/likes" => "images#user_likes"
 
+    get "categories/:category/images" => "images#index"
     get "images/:id/products" => "products#index"
     put "images/:image_id/products/:id" => "products#update"
     delete "images/:image_id/products/:id" => "products#destroy"

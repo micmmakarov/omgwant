@@ -1,22 +1,15 @@
-class Api::ImagesController < ApplicationController
+class Api::CategoriesController < ApplicationController
 
   before_filter :authenticate_user!, :except => [:index, :show]
   respond_to :json
 
+
   def index
+    category = params[:category]
     Image.current_user = current_user if user_signed_in?
     page = params[:page]
-    category_name = params[:category]
-
-    if category_name.blank?
-      images = Image.where(:published => true).all(:limit => 12, :offset => page)
-    else
-      category = Category.find_by_name(category_name)
-      category_id = category.id
-      images = Image.where(:published => true, :category_id => category_id).all(:limit => 12, :offset => page)
-    end
-
-      Thread.current[:user] = current_user
+    images = Image.where(:published => true).all(:limit => 12, :offset => page)
+    Thread.current[:user] = current_user
     render json: images.to_json(:methods => api_methods)
   end
 
@@ -55,9 +48,4 @@ class Api::ImagesController < ApplicationController
 
     render json: {likes: @image.likes, like_action:@image.like_action} if @image.published
   end
-
-
-
-
-
 end
