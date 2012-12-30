@@ -18,6 +18,16 @@
   {{else}}
   %a{:href => '#', :class => 'btn btn-mini btn-success'} Publish to public gallery
   {{/if}}
+  
+.style-selector
+  %a.btn.dropdown-toggle{'data-toggle' => 'dropdown', :href => '#'}
+    Action
+    %span.caret
+  %ul.dropdown-menu.pull-right
+    %li
+      %a{:href => '#'} Style
+      %a{:href => '#'} Style
+      %a{:href => '#'} Style
 
 %a.btn.btn-info.hide
   Post to facebook

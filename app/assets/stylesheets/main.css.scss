@@ -186,6 +186,11 @@ hgroup {
       position: relative;
       padding: 20px 20px 20px 370px;
       min-height: 330px;
+      .style-selector {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
       .thumb {
         position: absolute;
         left: 0;
