@@ -65,9 +65,12 @@ class Omgwant.Routers.main extends Backbone.Router
 
   previous: ->
     if @history.length > 1
-      @navigate @history[@history.length-2], false
+      current_url = @history[@history.length-2]
+      @navigate current_url, false
     else
-      @navigate '', true
+      current_url = ''
+      @navigate current_url, true
+    @highlight_links(current_url)
 
   highlight_links: (current_url) ->
     current_url = 'home' if current_url == ''
