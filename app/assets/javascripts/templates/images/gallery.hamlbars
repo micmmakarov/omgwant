@@ -3,7 +3,7 @@
 %nav.category-nav
   %ul.nav.nav-pills.categories
     %li.active
-      %a.link{:href => '/'} All Categories
+      %a.link{:href => '/home'} All Categories
     %li
       %a.link{:href => '/c/style'} Style
     %li

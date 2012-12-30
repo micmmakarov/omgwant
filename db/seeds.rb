@@ -1,7 +1,22 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+#creating categories
+categories = ['style', 'beauty', 'accessories']
+
+categories.each do |c|
+  category = Category.find_or_create_by_name(c)
+  category.save!
+end
+
+categories = Category.all
+ids = []
+
+categories.each do |c|
+  ids.push(c.id)
+end
+
+#gives random category to images
+images = Image.all
+
+images.each do |i|
+  i.category_id = ids.sample
+  i.save!
+end
