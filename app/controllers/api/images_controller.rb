@@ -39,6 +39,7 @@ class Api::ImagesController < ApplicationController
       params[:category_id] = category_id
     end
     @image.published = params[:published]
+    @image.category_id = params[:category_id]
     @image.save! if @image.user = current_user
     render json: @image.to_json(:methods => api_methods)
   end

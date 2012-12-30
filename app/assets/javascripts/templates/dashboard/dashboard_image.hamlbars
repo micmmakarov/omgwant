@@ -21,7 +21,11 @@
   
 .category-selector
   %a.btn.dropdown-toggle.btn-small{'data-toggle' => 'dropdown', :href => '#'}
+    {{#unless category_name}}
     Select category&hellip;
+    {{else}}
+    {{category_name}}
+    {{/unless}}
     %span.caret
   %ul.dropdown-menu.pull-right
     %li

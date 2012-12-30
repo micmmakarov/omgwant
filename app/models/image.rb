@@ -7,7 +7,7 @@ class Image < ActiveRecord::Base
   has_one :embed
   belongs_to :user
   has_many :cutes
-  has_one :category
+  belongs_to :category
 
   def generate_code
     self.code = (0...12).map{65.+(rand(26)).chr}.join if self.code.blank?
