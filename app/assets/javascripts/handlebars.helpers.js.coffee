@@ -19,3 +19,14 @@ Handlebars.registerHelper "currentUserFullName", () ->
 
 Handlebars.registerHelper "currentUserAlias", () ->
   current_user.name
+
+Handlebars.registerHelper 'each_upto', (ary, max, options) ->
+  if not ary or ary.length is 0
+    return options.inverse(this)
+
+  result = [ ]
+  i = 0
+  while i < max and i < ary.length
+    result.push options.fn(ary[i])
+    ++i
+  return result.join('')

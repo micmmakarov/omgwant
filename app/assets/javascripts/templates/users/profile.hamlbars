@@ -5,12 +5,12 @@
     %div.userpic
       %img{:src => "{{image_url}}"}
 
-  %h4 Liked Photos
+  %h4 Recently Liked Photos
   #liked-images
   
 .clearfix
 %section.show-grid.gallery-feed
-  %h4 Posted Photos
+  %h4 Photos added by {{full_name}}
   
   #images-table
   
