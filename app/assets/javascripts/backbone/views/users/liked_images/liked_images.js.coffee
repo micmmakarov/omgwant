@@ -13,7 +13,6 @@ class Omgwant.Views.LikedImages extends Backbone.View
     maxImages = 16
     i = 0
     while i < maxImages
-      console.log i
       @addImage(@collection.models[i])
       i++
     @

@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   has_many :cutes
 
   def liked_images
-    cutes.map {|c| c.image}.flatten
+    cutes.order('created_at DESC').map {|c| c.image}.flatten
   end
 
   def published_images

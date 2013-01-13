@@ -1,6 +1,5 @@
 class Omgwant.Routers.main extends Backbone.Router
 
-
   routes:
     ''            : 'index'
     'home'        : 'index'
@@ -60,13 +59,14 @@ class Omgwant.Routers.main extends Backbone.Router
 
   storeRoute: ->
     current_url = Backbone.history.fragment
+    console.log "Current url: #{current_url}"
     @history.push current_url
     @highlight_links(current_url)
 
   previous: ->
     if @history.length > 1
       current_url = @history[@history.length-2]
-      @navigate current_url, false
+      @navigate current_url, true
     else
       current_url = ''
       @navigate current_url, true
