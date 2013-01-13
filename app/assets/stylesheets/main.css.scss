@@ -135,6 +135,7 @@ hgroup {
 .main-header {
   .navbar {
     .navbar-inner {
+      min-height: 30px;
       // background: #DA7481;
     }
     li {
@@ -143,6 +144,17 @@ hgroup {
         font-weight: 700;
         &:hover {
           color: $link-color;
+        }
+      }
+      &.active {
+        a {
+          background: lighten($link-color, 20%); 
+        }
+        &:hover {
+          a {
+            background: lighten($link-color, 17%);
+            color: #8D1E2E;
+          }
         }
       }
     }
@@ -154,7 +166,7 @@ hgroup {
     }
   }
   .userpic {
-    width: 25px;
+    width: 23px;
     margin-right: 5px;
   }
 }
@@ -649,6 +661,7 @@ a.badge {
   }
   .divider-vertical {
     margin: 0;
+    height: 38px;
   }
 }
 .dropdown-menu {

@@ -73,6 +73,7 @@ class Omgwant.Routers.main extends Backbone.Router
     @highlight_links(current_url)
 
   highlight_links: (current_url) ->
-    current_url = 'home' if current_url == ''
+    # current_url = 'home' if current_url == ''
     $("a[href!='/#{current_url}']").parent().removeClass('active')
     $("a[href='/#{current_url}']").parent().addClass('active')
+    
