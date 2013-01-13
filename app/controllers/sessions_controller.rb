@@ -22,7 +22,6 @@ class SessionsController < ApplicationController
       redirect_to :controller => :home, :action => :index
 
     end
-
     #user.name
     #user.bio
     #user.website

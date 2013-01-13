@@ -3,7 +3,11 @@ class Api::MyimagesController < ApplicationController
   before_filter :user_signed_in?
 
   def index
-    @images = current_user.images.order('created_at DESC')
+    if current_user.admin?
+      @images = Image.order('created_at DESC')
+    else
+      @images = current_user.images.order('created_at DESC')
+    end
     render json: @images.to_json(:methods => api_methods)
   end
 

@@ -20,3 +20,9 @@ images.each do |i|
   i.category_id = ids.sample
   i.save!
 end
+
+#users = [1, 2]
+#images.each do |i|
+#  i.user_id = users.sample
+#  i.save!
+#end

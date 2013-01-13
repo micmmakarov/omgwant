@@ -12,12 +12,12 @@ class Omgwant.Views.ShowImage extends Backbone.View
     
   close: (e) ->
     e.stopPropagation()
+    Omgwant.router.previous()
     $('.overlay').fadeOut 'fast'
     $('body').css('overflow','visible')
     @unbind()
     @remove()
-    Omgwant.router.previous()
-  
+
   closeOnEsc: (e) =>
     if e.keyCode is 27
       @close(e)
