@@ -1,6 +1,6 @@
 {{#each this}}
 %li
-  %a{:href => "{{url}}", :rel => "external"} {{name}} ({{priceLabel}}) via {{retailer}}
+  %a{:href => "{{url}}", :rel => "external"} {{name}} ({{price}}) via {{retailer}}
 {{/each}}
 
 {{#unless this.length}}

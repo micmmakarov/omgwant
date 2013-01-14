@@ -1,3 +1,3 @@
-%p {{name}} ({{priceLabel}})
+%p {{name}} ({{price}})
 %a.delete.btn.btn-mini{:href => "#"}
   %i.icon-remove
