@@ -8,4 +8,7 @@
   %p By {{user_info.full_name}}
   
   %ul.product-list
-  
+  %p
+    %a.like{:href => '#', :class => '{{logged_in_state}}'}
+      %span.badge {{likes}}
+      %span.like-action {{#if like_action}}Like{{else}}Unlike{{/if}}

@@ -9,11 +9,11 @@ class Omgwant.Views.FeedImage extends Backbone.View
     @model.on 'change', @render, @
 
   like: (event) ->
-    event.preventDefault()
     alert "please register" if typeof current_user is 'undefined'
     return if typeof current_user is 'undefined'
     @model.like()
-  
+    false
+
   show_image: ->
     Omgwant.currentImage = @model
     Omgwant.router.navigate "/photo/#{@model.get('id')}", {trigger: true}
