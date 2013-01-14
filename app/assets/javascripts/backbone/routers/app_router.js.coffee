@@ -32,7 +32,7 @@ class Omgwant.Routers.main extends Backbone.Router
   help: ->
     @view = new Omgwant.Views.StaticPage({el:"#content", pageName: 'help'})
 
-  # dump for temporary markup and experiments
+  # dump page for temporary markup and experiments
   sandbox: ->
     @view = new Omgwant.Views.StaticPage({el:"#content", pageName: 'sandbox'})
 

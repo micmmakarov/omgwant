@@ -1,0 +1,21 @@
+.intro
+  .row-fluid.show-grid
+    .span1
+    .span10
+      %h2.text-center Express Your Style and Make Some Money
+      .row-fluid.steps
+        .span3
+          %h3 1. Dress up</h3>
+          %p Put on your best clothing items to express your mood today
+        .span3
+          %h3 2. Take a photo
+          %p Take your smartphone out and snap a shot using Instagram
+        .span3
+          %h3 3. Add product links
+          %p Go to the Dashboard and search for products you're showcasing
+        .span3
+          %h3 4. Post to OMGwant!
+          %p Now people can help you make money by purchasing products you've listed
+      .cta
+        %a.btn.btn-large.btn-omg{:href => '/auth'}
+          Get started!

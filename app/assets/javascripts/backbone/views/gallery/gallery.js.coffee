@@ -16,7 +16,8 @@ class Omgwant.Views.Gallery extends Backbone.View
       if $(window).scrollTop() + $(window).height() is $(document).height()
         @scroll()
     @$el.html HandlebarsTemplates['images/gallery']({})
-
+    if typeof current_user is 'undefined'
+      @$el.parents('.page-wrapper').find('.intro-wrapper').html HandlebarsTemplates['static/intro']({})
 
   events:
     'scroll': 'scroll'

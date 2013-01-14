@@ -1,5 +1,3 @@
-%h2.text-center Shop for Awesome Products <span>&amp;</span> Earn by Sharing Your Style!
-
 %nav.category-nav
   %ul.nav.nav-pills.categories
     %li.active

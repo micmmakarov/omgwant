@@ -9,10 +9,11 @@
   %body
     =render :partial => "layouts/main_header"
     .page-wrapper
-      .row-fluid.show-grid.dashboard-feed
+      .intro-wrapper
+      .row-fluid.show-grid
         .span1
         .span10
-          = yield
+          #content
     .overlay
       .modal-holder
     =render :partial => "layouts/main_footer"
