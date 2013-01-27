@@ -41,7 +41,7 @@ class Image < ActiveRecord::Base
   end
 
   def category_name
-    category.name
+    category.name if canegory.present?
   end
 
 
