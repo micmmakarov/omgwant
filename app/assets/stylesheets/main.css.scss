@@ -9,8 +9,11 @@
 $main-color: #ec008c;
 $link-color: #f26d7d;
 
-@mixin generic-transition() {
-  -webkit-transition: all .2s ease-in-out;
+@mixin generic-transition($time) {
+  -webkit-transition: all $time ease-in-out;
+  -moz-transition: all $time ease-in-out;
+  -ms-transition: all $time ease-in-out;
+  transition: all $time ease-in-out;
 }
 @mixin border-radius($topleft, $topright: $topleft, $bottomright: $topleft, $bottomleft: $topleft) {
   -moz-border-radius: $topleft $topright $bottomright $bottomleft;
@@ -211,7 +214,7 @@ hgroup {
         margin-right: 20px;
         border: 10px solid white;
         box-shadow: inset 0 0 15px rgba(0, 0, 0, .5);
-        @include generic-transition();
+        @include generic-transition(0.2s);
         -webkit-filter: grayscale(.8) saturate(0.5);
         img {
           width: 100%;
@@ -227,7 +230,7 @@ hgroup {
         font-size: 1.5rem;
       }
       &.published {
-        @include generic-transition();
+        @include generic-transition(0.2s);
         background: rgba(255,255,255,.5);
         border-radius: 10px;
         .thumb {
@@ -348,12 +351,13 @@ hgroup {
   min-width: 197px;
   position: relative;
   overflow: hidden;
+  .image-meta {
+    @include generic-transition(0.2s);
+  }
   &:hover {
     .image-meta {
       bottom: 0;
-      @include generic-transition();
-      h5 {
-      }
+      @include generic-transition(0.2s);
     }
   }
   .img {
