@@ -6,7 +6,7 @@ class Omgwant.Routers.main extends Backbone.Router
     'users/:user' : 'profile'
     'dashboard'   : 'dashboard'
     'about'       : 'about'
-    'help'        : 'help'
+    'faq'         : 'faq'
     'sandbox'     : 'sandbox'
     'photo/:id'   : 'show_image'
     'c/:category' : 'category'
@@ -29,8 +29,8 @@ class Omgwant.Routers.main extends Backbone.Router
   about: ->
     @view = new Omgwant.Views.StaticPage({el:"#content", pageName: 'about'})
 
-  help: ->
-    @view = new Omgwant.Views.StaticPage({el:"#content", pageName: 'help'})
+  faq: ->
+    @view = new Omgwant.Views.StaticPage({el:"#content", pageName: 'faq'})
 
   # dump page for temporary markup and experiments
   sandbox: ->

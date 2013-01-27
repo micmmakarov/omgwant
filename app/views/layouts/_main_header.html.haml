@@ -5,11 +5,14 @@
         %img{:src => "/assets/logo.png"}/
       %ul.nav
         %li
-          %a.link{:href => "/", 'data-link' => 'home'} Photo Feed
+          %a.link{:href => "/", 'data-link' => 'home'} Everyone
+        -if user_signed_in?
+          %li
+            %a.link{:href => "/following", 'data-link' => 'following'} Following
         %li
           %a.link{:href => "/about"} About
         %li
-          %a.link{:href => "/help"} Help
+          %a.link{:href => "/faq"} FAQ
 
       %ul.nav.pull-right
         %li.divider-vertical

@@ -1,10 +1,13 @@
 .user-profile
   %header.user-profile-header
-    %h3 {{full_name}}
-    %p Joined {{formatDate created_at}}
+    %hgroup
+      %h3 {{full_name}}
+      %p Joined {{formatDate created_at}}
     %div.userpic
       %object.userpic{"Data" => "{{image_url}}"}
         %img{:src => "/assets/avatar-default.png"}
+    .btn.btn-success
+      Follow
 
   %h4 Recently Liked Photos
   #liked-images
