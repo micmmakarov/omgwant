@@ -29,7 +29,13 @@ class Omgwant.Views.Gallery extends Backbone.View
     ($ "#images-table").append view.render().el
     
   render: ->
-    ($ "#images-table").html("")
-    @collection.each(@addOne, @)
+    collection = @collection
+    addOne = @addOne
+    view = @
+    ($ "#images-table").fadeOut('fast', ->
+      ($ "#images-table").html("").fadeIn('fast')
+      collection.each(addOne, view)
+    )
+
     @
 
