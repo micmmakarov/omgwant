@@ -12,7 +12,7 @@ class Omgwant.Views.ShowImage extends Backbone.View
     'click .like': 'like'
 
   like: (event) ->
-    alert "please register" if typeof current_user is 'undefined'
+    alert "Please sign in to like photos" if typeof current_user is 'undefined'
     return if typeof current_user is 'undefined'
     @model.like()
     false

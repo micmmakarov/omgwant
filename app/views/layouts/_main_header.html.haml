@@ -16,8 +16,8 @@
         -if user_signed_in?
           %li.dropdown
             %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-              %object.userpic{"Data" => "/assets/avatar-default.png"}
-                =image_tag current_user.image_url, :class => 'userpic'
+              %object.userpic{"Data" => current_user.image_url}
+                =image_tag "/assets/avatar-default.png", :class => 'userpic'
               Hi, #{current_user.computed_name}
               %b.caret
             %ul.dropdown-menu

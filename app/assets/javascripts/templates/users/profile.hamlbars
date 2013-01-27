@@ -3,7 +3,8 @@
     %h3 {{full_name}}
     %p Joined {{formatDate created_at}}
     %div.userpic
-      %img{:src => "{{image_url}}"}
+      %object.userpic{"Data" => "{{image_url}}"}
+        %img{:src => "/assets/avatar-default.png"}
 
   %h4 Recently Liked Photos
   #liked-images
