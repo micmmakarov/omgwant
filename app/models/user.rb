@@ -16,6 +16,14 @@ class User < ActiveRecord::Base
     cutes.order('created_at DESC').map {|c| c.image}.flatten
   end
 
+  def computed_name
+    if full_name.present?
+      full_name
+    else
+      name
+    end
+  end
+
   def published_images
     images.where(:published => true)
   end

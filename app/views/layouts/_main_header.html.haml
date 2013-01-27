@@ -18,7 +18,7 @@
             %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
               %object.userpic{"Data" => "/assets/avatar-default.png"}
                 =image_tag current_user.image_url, :class => 'userpic'
-              Hi, #{current_user.full_name}
+              Hi, #{current_user.computed_name}
               %b.caret
             %ul.dropdown-menu
               %li
