@@ -626,6 +626,10 @@ hgroup {
   padding-right: 320px;
   background: white;
   box-shadow: 0 0 25px rgba(0,0,0,.7);
+  @include border-radius(8px);
+  img {
+    @include border-radius(8px, 0, 0, 8px);
+  }
   .close-modal {
     position: absolute;
     top: 10px;
