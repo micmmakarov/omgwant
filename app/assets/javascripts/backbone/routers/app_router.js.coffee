@@ -54,6 +54,7 @@ class Omgwant.Routers.main extends Backbone.Router
   index: ->
     @view = new Omgwant.Views.Gallery({el:"#content"})
 
+
   category: (category) ->
     @view = new Omgwant.Views.Gallery({el:"#content", category: category})
 
@@ -78,6 +79,14 @@ class Omgwant.Routers.main extends Backbone.Router
     @highlight_links(current_url)
 
   highlight_links: (current_url) ->
+    if typeof current_user is 'undefined'
+      if current_url is ''
+        $('.page-wrapper .intro-wrapper').html HandlebarsTemplates['static/intro']({})
+        $('.page-wrapper .intro-wrapper').slideDown('fast')
+      else
+        $('.page-wrapper .intro-wrapper').slideUp('fast', ->
+          #$('.page-wrapper .intro-wrapper').html ''
+        )
     $("a[href!='/#{current_url}']").parent().removeClass('active')
     $("a[href='/#{current_url}']").parent().addClass('active')
     if current_url.substr(0,2) == "c/"
