@@ -11,6 +11,16 @@ class User < ActiveRecord::Base
 
   has_many :images
   has_many :cutes
+  has_many :follows
+  has_many :followings, :through => :follows, :source => :user, :foreign_key => :following
+
+  def followers
+    Follow.where(following:user.id)
+  end
+
+  def follow(user)
+    follows.create(following:user.id)
+  end
 
   def liked_images
     cutes.order('created_at DESC').map {|c| c.image}.flatten
