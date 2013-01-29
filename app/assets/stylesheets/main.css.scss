@@ -660,6 +660,9 @@ hgroup {
         // @include linear-gradient(color-stops(red,green));
       }
     }
+    .like.not-logged-in {
+      display: none;
+    }
   }
 }
 .overlay {
