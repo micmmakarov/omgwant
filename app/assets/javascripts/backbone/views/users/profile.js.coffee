@@ -11,9 +11,15 @@ class Omgwant.Views.Profile extends Backbone.View
     @publishedView = new Omgwant.Views.Images {
       collection: @model.published_images }
 
+  events:
+    'click .follow': 'follow'
+
   render: ->
     @$el.html HandlebarsTemplates['users/profile'] @model.toJSON()
     (@$ '#liked-images').html @imagesView.$el
     @
+
+  follow: ->
+    @model.follow()
 
 

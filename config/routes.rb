@@ -9,6 +9,7 @@ Omgwant::Application.routes.draw do
     resources :products
     resources :myimages
     match "like/:id" => "images#like"
+    match "follow/:id" => "users#follow"
     get ":id/likes" => "images#user_likes"
 
     get "categories/:category/images" => "images#index"

@@ -7,4 +7,13 @@ class Omgwant.Models.User extends Backbone.Model
 
   url:-> "/api/users/#{@id}"
 
+  follow: ->
+    current_user = @
+    window.c = current_user
+    $.ajax
+      url: "/api/follow/#{@id}"
+      success: (result) ->
+        current_user.set('is_following', result.is_following)
+
+
 
