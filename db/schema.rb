@@ -30,13 +30,13 @@ ActiveRecord::Schema.define(:version => 20130127060140) do
   add_index "cutes", ["image_id", "user_id"], :name => "index_cutes_on_image_id_and_user_id", :unique => true
 
   create_table "follows", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "following"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "follower_id"
+    t.integer  "followed_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
-  add_index "follows", ["following", "user_id"], :name => "index_follows_on_following_and_user_id", :unique => true
+  add_index "follows", ["follower_id", "followed_id"], :name => "index_follows_on_follower_id_and_followed_id", :unique => true
 
   create_table "images", :force => true do |t|
     t.string   "url"

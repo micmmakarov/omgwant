@@ -11,15 +11,25 @@ class User < ActiveRecord::Base
 
   has_many :images
   has_many :cutes
-  has_many :follows
-  has_many :followings, :through => :follows, :source => :user, :foreign_key => :following
 
-  def followers
-    Follow.where(following:user.id)
+  has_many :follows, foreign_key: "follower_id", dependent: :destroy
+  has_many :followed_users, through: :follows, source: :followed
+  has_many :reverse_follows, foreign_key: "followed_id",
+           class_name:  "Follow",
+           dependent:   :destroy
+  has_many :followers, through: :reverse_follows, source: :follower
+
+
+  def following?(other_user)
+    follows.find_by_followed_id(other_user.id)
   end
 
-  def follow(user)
-    follows.create(following:user.id)
+  def follow!(other_user)
+    follows.create!(followed_id: other_user.id)
+  end
+
+  def unfollow!(other_user)
+    follows.find_by_followed_id(other_user.id).destroy
   end
 
   def liked_images
