@@ -689,8 +689,8 @@ hgroup {
   &:hover {
     color: #fff;
   }
-  &.active {
-
+  &:active {
+    background: #fd7682 url('/assets/bg-pink-dotted.png');
   }
 }
 
