@@ -6,8 +6,7 @@
     %div.userpic
       %object.userpic{"Data" => "{{image_url}}"}
         %img{:src => "/assets/avatar-default.png"}
-    .btn.btn-success.follow
-      Follow
+    .follow-container
 
   %h4 Recently Liked Photos
   #liked-images
