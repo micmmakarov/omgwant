@@ -3,6 +3,7 @@ class Omgwant.Routers.main extends Backbone.Router
   routes:
     ''            : 'index'
     'home'        : 'index'
+    'following'   : 'following'
     'users/:user' : 'profile'
     'dashboard'   : 'dashboard'
     'about'       : 'about'
@@ -31,6 +32,9 @@ class Omgwant.Routers.main extends Backbone.Router
 
   faq: ->
     @view = new Omgwant.Views.StaticPage({el:"#content", pageName: 'faq'})
+
+  following: ->
+    @view = new Omgwant.Views.Following(el:"#content")
 
   # dump page for temporary markup and experiments
   sandbox: ->

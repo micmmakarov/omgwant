@@ -1,0 +1,10 @@
+%h1 Followers
+{{#each followers}}
+{{this.name}}
+{{this.email}}
+{{/each}}
+%h1 Followed users
+{{#each followed_users}}
+{{this.name}}
+{{this.email}}
+{{/each}}
