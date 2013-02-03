@@ -1,13 +1,18 @@
-%h1 Followers
-{{#each followers}}
-{{this.name}}
-{{this.email}}
-{{/each}}
-%h1 Followed users
-{{#each followed_users}}
-{{this.name}}
-{{this.email}}
-{{/each}}
-
+.row-fluid.follow-totals
+  .span6
+    .row-fluid
+      .span6
+        %h3 Following: {{followers.length}}
+        {{#each followers}}
+        {{this.name}}
+        {{this.email}}
+        {{/each}}
+      .span6
+        %h3 Followers: {{followed_users.length}}
+        {{#each followed_users}}
+        {{this.name}}
+        {{this.email}}
+        {{/each}}
+    .span6
 
 #images-table

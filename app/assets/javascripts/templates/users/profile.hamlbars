@@ -1,12 +1,29 @@
 .user-profile
-  %header.user-profile-header
-    %hgroup
-      %h3 {{full_name}}
-      %p Joined {{formatDate created_at}}
-    %div.userpic
-      %object.userpic{"Data" => "{{image_url}}"}
-        %img{:src => "/assets/avatar-default.png"}
-    .follow-container
+  .row-fluid
+    .span6
+      %header.user-profile-header
+        %hgroup
+          %h3 {{full_name}}
+          / %p Joined {{formatDate created_at}}
+        %div.userpic
+          %object.userpic{"Data" => "{{image_url}}"}
+            %img{:src => "/assets/avatar-default.png"}
+        .follow-container
+    .span4
+      .row-fluid
+        .span6
+          %h4 Following 20
+          {{#each followers}}
+          {{this.name}}
+          {{this.email}}
+          {{/each}}
+        .span6
+          %h4 Followers 2
+          {{#each followed_users}}
+          {{this.name}}
+          {{this.email}}
+          {{/each}}
+    .span2
 
   %h4 Recently Liked Photos
   #liked-images
