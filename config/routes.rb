@@ -11,6 +11,7 @@ Omgwant::Application.routes.draw do
     match "like/:id" => "images#like"
     match "follow/:id" => "users#follow"
     get ":id/likes" => "images#user_likes"
+    get "feed" => "users#feed"
 
     get "categories/:category/images" => "images#index"
     get "images/:id/products" => "products#index"

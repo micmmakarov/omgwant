@@ -2,12 +2,20 @@ class Omgwant.Views.Gallery extends Backbone.View
 
   initialize: (options) ->
     @collection = new Omgwant.Collections.Images()
-    if options.category
-      @category = options.category
-      @url =  "/api/categories/#{@category}/images"
+    if options.feed
+      if options.category
+        @category = options.category
+        @url =  "/api/categories/#{@category}/images"
+      else
+        @category = ""
+        @url =  "/api/feed"
     else
-      @category = ""
-      @url =  @collection.url
+      if options.category
+        @category = options.category
+        @url =  "/api/categories/#{@category}/images"
+      else
+        @category = ""
+        @url =  @collection.url
     @collection.on 'reset', @render, @
     @collection.on 'add', @addOne, @
     @collection.fetch

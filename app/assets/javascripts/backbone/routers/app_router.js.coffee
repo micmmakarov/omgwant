@@ -3,6 +3,7 @@ class Omgwant.Routers.main extends Backbone.Router
   routes:
     ''            : 'index'
     'home'        : 'index'
+    'feed'        : 'feed'
     'following'   : 'following'
     'users/:user' : 'profile'
     'dashboard'   : 'dashboard'
@@ -35,6 +36,11 @@ class Omgwant.Routers.main extends Backbone.Router
 
   following: ->
     @view = new Omgwant.Views.Following(el:"#content")
+
+  feed: ->
+    @view = new Omgwant.Views.Gallery
+      el:"#content"
+      feed:true
 
   # dump page for temporary markup and experiments
   sandbox: ->

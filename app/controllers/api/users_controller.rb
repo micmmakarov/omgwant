@@ -26,13 +26,19 @@ class Api::UsersController < ApplicationController
 
   def follow
     user = User.find(params[:id])
-    User.is_following = current_user.following?(user) if user_signed_in?
+    User.is_following = true if current_user.following?(user)
     if current_user.following?(user)
       current_user.unfollow!(user)
     else
       current_user.follow!(user)
     end
     render json: user.to_json(:methods => [:is_following])
+  end
+
+  def feed
+    users = current_user.followed_users
+    feed = users.map {|u| u.images.order("created_at DESC")}.flatten.sort_by{|e| e[:created_at]}
+    render json: feed.to_json(:methods => api_methods)
   end
 
 end
