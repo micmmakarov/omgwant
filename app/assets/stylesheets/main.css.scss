@@ -656,11 +656,21 @@ hgroup {
     padding: 10px 20px;
     .product-list {
       margin: 0 -20px;
+      border-top: 1px solid #ddd;
       li {
         line-height: 1.2;
         list-style: none;
-        padding: 8px 20px;
         // @include linear-gradient(color-stops(red,green));
+        a {
+          display: block;
+          padding: 8px 20px;
+          border-bottom: 1px solid #ddd;
+        }
+        &.empty {
+          color: #aaa;
+          padding: 8px 20px;          
+          border-bottom: 1px solid #ddd;
+        }
       }
     }
     .like.not-logged-in {

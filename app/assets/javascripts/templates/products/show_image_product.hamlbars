@@ -4,5 +4,5 @@
 {{/each}}
 
 {{#unless this.length}}
-%li No products added
+%li.empty No products added
 {{/unless}}
