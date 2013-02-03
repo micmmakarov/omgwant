@@ -1,6 +1,12 @@
 class Omgwant.Views.Following extends Backbone.View
 
   initialize: ->
+    @collection = new Omgwant.Collections.Images
+      url: '/api/feed'
+    @collection.fetch()
+    @publishedView = new Omgwant.Views.Images
+      collection: @collection
+
     @render()
 
   render: ->

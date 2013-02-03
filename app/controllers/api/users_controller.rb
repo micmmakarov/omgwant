@@ -26,7 +26,7 @@ class Api::UsersController < ApplicationController
 
   def follow
     user = User.find(params[:id])
-    User.is_following = true if current_user.following?(user)
+    User.is_following = current_user.following?(user)
     if current_user.following?(user)
       current_user.unfollow!(user)
     else
