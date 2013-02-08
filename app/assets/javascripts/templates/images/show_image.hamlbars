@@ -4,8 +4,11 @@
   %i{:class => "icon-remove"}
   
 .modal-meta
-  %h3 {{title}}
-  %p By {{user_info.full_name}}
+  %h3 {{computed_title}}
+  %p
+    Posted by:
+    %a{:href => '/users/{{user_info.id}}'}
+      {{user_info.full_name}}
   
   %p
     %span.badge

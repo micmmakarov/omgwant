@@ -1,8 +1,15 @@
 {{#each this}}
 %li
-  %a{:href => "{{url}}", :rel => "external"} {{name}} (${{price}}) via {{retailer}}
+  %p.product-title{:title => "{{name}}"}
+    {{truncate name 50}}
+  .product-price ${{price}}
+  .product-img{:style => "background-image: url(\"{{low_url}}\")" }
+  %p.product-url
+    %a{:href => "{{url}}", :rel => "external"} via {{retailer}}
 {{/each}}
 
 {{#unless this.length}}
 %li.empty No products added
 {{/unless}}
+
+

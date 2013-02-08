@@ -20,7 +20,7 @@ class Omgwant.Views.LiveSearch extends Backbone.View
     # @ - is a view passed on trigger
     @kill()
   flashBefore: ->
-    Omgwant.Messages.trigger 'loading:show', "Looking for products, give me a second..."
+    Omgwant.Messages.trigger 'loading:show', "Looking for products..."
   flashDone: ->
     Omgwant.Messages.trigger 'loading:hide'
   

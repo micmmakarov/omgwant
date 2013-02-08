@@ -10,7 +10,7 @@
     {{location_name}}
   .products
 
-.product-list
+.product-list-container
   Loading...
 .publish
   {{#if published}}

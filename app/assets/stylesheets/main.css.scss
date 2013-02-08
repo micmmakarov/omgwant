@@ -538,7 +538,7 @@ hgroup {
 /****************************************/
 
 /****************************************
-/* Search Dropdown
+/* Search Dropdown and Product List
 /****************************************/
 
 .livesearch-items {
@@ -551,10 +551,6 @@ hgroup {
   @include border-radius(10px);
   width: 500px;
   li {
-    padding: 0 85px;
-    background-color: #fff;
-    position: relative;
-    min-height: 65px;
     border-bottom: 1px #DFDFDF solid;
     &:only-child {
       @include border-radius(0, 10px, 10px, 10px);
@@ -571,38 +567,15 @@ hgroup {
         @include border-radius(0, 0, 0, 10px);
       }
     }    
-    p {
-      margin: 0 0 6px;
-    }
-    .product-img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 65px;
-      height: 65px;
-      background-position: center center;
-      background-size: 100%;
-      background-repeat: no-repeat;
-      background-color: white;
-    }
-    .product-title {
-      font-size: 1.5rem;
-      padding: 5px 0 0;
-      line-height: 0.8;
-      margin-bottom: 4px;
-      color: #777;
-    }
-    .product-url {
-      font-size: 1.2rem;
-      margin: 0;
-    }
-    .product-price {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      color: $main-color;
-      font-size: 1.8rem;
-    }
+  }
+}
+.product-list,
+.livesearch-items {
+  li {
+    padding: 0 67px 0 75px;
+    position: relative;
+    background-color: #fff;
+    min-height: 65px;
     &:hover {
       background-color: $main-color;
       color: #fff;
@@ -616,6 +589,38 @@ hgroup {
         color: #fff;
       }
     }
+  }
+  p {
+    margin: 0 0 6px;
+  }
+  .product-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 65px;
+    height: 65px;
+    background-position: center center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: white;
+  }
+  .product-title {
+    font-size: 1.5rem;
+    padding: 5px 0 0;
+    line-height: 1;
+    margin-bottom: 4px;
+    color: #777;
+  }
+  .product-url {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  .product-price {
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    color: $main-color;
+    font-size: 1.8rem;
   }
 }
 
@@ -634,12 +639,13 @@ hgroup {
   margin: 60px auto 0;
   width: 500px;
   width: 450px;
-  padding-right: 320px;
+  padding-right: 341px;
   background: white;
   box-shadow: 0 0 25px rgba(0,0,0,.7);
   @include border-radius(8px);
   img {
     @include border-radius(8px, 0, 0, 8px);
+    border-right: 1px solid #ddd;
   }
   .close-modal {
     position: absolute;
@@ -652,24 +658,35 @@ hgroup {
     position: absolute;
     top: 0;
     right: 0;
-    width: 280px;
+    width: 300px;
     padding: 10px 20px;
+    h3 {
+      font-size: 2rem;
+    }
     .product-list {
       margin: 0 -20px;
       border-top: 1px solid #ddd;
+      overflow: auto;
+      height: 305px;
+      @include border-radius(0, 0, 8px, 0);
       li {
         line-height: 1.2;
         list-style: none;
         // @include linear-gradient(color-stops(red,green));
+        border-bottom: 1px solid #ddd;
         a {
-          display: block;
-          padding: 8px 20px;
-          border-bottom: 1px solid #ddd;
+          // display: block;
+          // padding: 8px 20px;
         }
         &.empty {
           color: #aaa;
           padding: 8px 20px;          
           border-bottom: 1px solid #ddd;
+          min-height: 1px;
+          &:hover {
+            background: white;
+            cursor: default;
+          }
         }
       }
     }
