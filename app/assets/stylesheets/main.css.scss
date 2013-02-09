@@ -33,6 +33,13 @@ $link-color: #f26d7d;
 @mixin text-shadow-white() {
   text-shadow: 0 1px 0 rgba(255,255,255,0.9);
 }
+@mixin border-box() {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 
 html {
   font-size: 62.5%; 
@@ -269,19 +276,12 @@ hgroup {
   li {
     list-style: none;
     position: relative;
+    border: 5px solid white;
     float: left;
-    margin: 0 1% 10px 0;
+    margin: 0 1.1% 10px 0;
     box-shadow: inset 0 0 15px rgba(0, 0, 0, .5);
     cursor: pointer;
-    &:before {
-      position: absolute;
-      content: '';
-      left: 0;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      border: 5px solid white;
-    }
+    @include border-box;
     img {
       position: relative;
       z-index: -1;
@@ -526,6 +526,44 @@ hgroup {
       position: absolute;
       top: 0;
       left: 0;
+    }
+  }
+  .user-stats {
+    ul {
+      background: #ececec;
+      margin: 10px 0 0 0;
+      border: 1px solid #bfa8a8;
+      @include border-radius(6px);
+      box-shadow: 0 3px 3px rgba(0, 0, 0, .1);
+      @include border-box;
+      li {
+        padding: 0 20px;
+        text-align: center;
+        margin: 10px 0;
+        width: 25%;
+        float: left;
+        list-style: none;
+        @include text-shadow-white;
+        @include border-box;
+        border-left: 1px solid #dcd1d1;
+        border-right: 1px solid #fff;
+        &:first-child {
+          border-left: none;
+        }
+        &:last-child {
+          border-right: none;
+        }
+        .number {
+          font-size: 2rem;
+          font-weight: 500;
+          color: $main-color;
+          margin-bottom: 5px;
+        }
+        .ulabel {
+          color: #4f4e4f;
+          font-weight: 100;
+        }
+      }
     }
   }
 }
