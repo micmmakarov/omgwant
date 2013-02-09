@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130209080058) do
+ActiveRecord::Schema.define(:version => 20130209081116) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -105,8 +105,8 @@ ActiveRecord::Schema.define(:version => 20130209080058) do
     t.integer  "facebook",               :limit => 8
     t.string   "facebook_token"
     t.boolean  "admin"
-    t.integer  "followers_number"
-    t.integer  "following_number"
+    t.integer  "followers_number",                    :default => 0
+    t.integer  "following_number",                    :default => 0
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -29,14 +29,14 @@ class User < ActiveRecord::Base
 
   def follow!(other_user)
     follows.create!(followed_id: other_user.id)
-    other_user.followers_number = other_user.followers_number + 1
-    following_number = following_number + 1
+    other_user.followers_number += 1
+    self.following_number += 1
   end
 
   def unfollow!(other_user)
     follows.find_by_followed_id(other_user.id).destroy
-    other_user.followers_number = other_user.followers_number - 1
-    following_number = following_number - 1
+    other_user.followers_number -= 1
+    self.following_number -= 1
   end
 
   def liked_images
