@@ -32,6 +32,7 @@ class Api::UsersController < ApplicationController
     else
       current_user.follow!(user)
     end
+    User.is_following = current_user.following?(user)
     render json: user.to_json(:methods => [:is_following])
   end
 
