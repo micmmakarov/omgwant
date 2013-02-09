@@ -11,3 +11,7 @@
 
 .show-grid.gallery-feed
   #images-table
+
+.clearfix
+.loading.text-center.hide
+  %img{:src => '/assets/ajax-loader.gif'}

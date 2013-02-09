@@ -11,33 +11,6 @@
         .follow-container
     .span6
       .user-stats
-        %ul.row-fluid
-          %li
-            .number {{followers_number}}
-            .ulabel Followers
-          %li
-            .number {{following_number}}
-            .ulabel Following
-          %li
-            .number 102
-            .ulabel Photos
-          %li
-            .number 56
-            .ulabel Likes
-      
-      / .row-fluid
-      /   .span6
-      /     %h4 Following 20
-      /     {{#each followers}}
-      /     {{this.name}}
-      /     {{this.email}}
-      /     {{/each}}
-      /   .span6
-      /     %h4 Followers 2
-      /     {{#each followed_users}}
-      /     {{this.name}}
-      /     {{this.email}}
-      /     {{/each}}
 
   %h4 Recently Liked Photos
   #liked-images

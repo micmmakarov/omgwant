@@ -30,6 +30,7 @@ class Omgwant.Views.Gallery extends Backbone.View
 
   scroll: _.debounce(->
     @collection.scroll(@url)
+    @.$el.find('.loading').removeClass('hide')
   , 500)
 
   addOne: (image) ->

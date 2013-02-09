@@ -1,0 +1,13 @@
+%ul.row-fluid
+  %li
+    .number {{followers_number}}
+    .ulabel Followers
+  %li
+    .number {{following_number}}
+    .ulabel Following
+  %li
+    .number 102
+    .ulabel Photos
+  %li
+    .number 56
+    .ulabel Likes

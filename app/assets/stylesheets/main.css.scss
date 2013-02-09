@@ -193,6 +193,9 @@ hgroup {
   padding: 10px;
   @include border-radius(5px);
 }
+.loading {
+  margin-top: 20px;
+}
 
 /****************************************
 /* Dashboard

@@ -2,6 +2,7 @@ class Omgwant.Views.Profile extends Backbone.View
   initialize: ->
     @model = new Omgwant.Models.User {id:@options.user_id}
     @model.on 'change', @renderProfileHead, @
+    @model.on 'change', @renderUserStats, @
     @model.on 'change', @render, @
     @model.fetch()
     @model.published_images.fetch()
@@ -12,10 +13,12 @@ class Omgwant.Views.Profile extends Backbone.View
     @publishedView = new Omgwant.Views.Images
       collection: @model.published_images
 
-
   renderProfileHead: ->
     @model.off 'change', @renderProfileHead, @
     @$el.html HandlebarsTemplates['users/profile'] @model.toJSON()
+
+  renderUserStats: ->
+    @$el.find('.user-stats').html HandlebarsTemplates['users/profile_stats'] @model.toJSON()    
 
   events:
     'click .follow': 'follow'
