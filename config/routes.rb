@@ -4,9 +4,12 @@ Omgwant::Application.routes.draw do
   #resources :users
 
   namespace :api do
-    resources :images
+    resources :images do
+      resources :comments
+    end
     resources :users
     resources :products
+    resources :comments
     resources :myimages
     match "like/:id" => "images#like"
     match "follow/:id" => "users#follow"
@@ -14,10 +17,16 @@ Omgwant::Application.routes.draw do
     get "feed" => "users#feed"
 
     get "categories/:category/images" => "images#index"
+    #products
     get "images/:id/products" => "products#index"
     put "images/:image_id/products/:id" => "products#update"
     delete "images/:image_id/products/:id" => "products#destroy"
     post "images/:image_id/products" => "products#create"
+    #comment
+    #get "images/:id/comments" => "comments#index"
+    #put "images/:image_id/comments/:id" => "comments#update"
+    #delete "images/:image_id/comments/:id" => "comments#destroy"
+    #post "images/:image_id/comments" => "comments#create"
 
     get "users/:id/likes" => "users#user_likes"
     get "users/:id/published" => "users#user_published"

@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   helper_method :api_methods, :like_methods
 
   def api_methods
-    [:title, :low_url, :url, :likes, :computed_title, :like_action, :user_info, :products, :category_name]
+    [:comments, :title, :low_url, :url, :likes, :computed_title, :like_action, :user_info, :products, :category_name]
   end
 
   def like_methods

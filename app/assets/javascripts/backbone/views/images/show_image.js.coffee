@@ -36,4 +36,8 @@ class Omgwant.Views.ShowImage extends Backbone.View
     @ProductsView = new Omgwant.Views.ShowImageProducts
       el:@$el.find '.product-list'
       collection:@model.products
+    @CommentsView = new Omgwant.Views.Comments
+      el:@$el.find '.comment-list'
+      collection:@model.comments
+
     @

@@ -21,6 +21,7 @@ class User < ActiveRecord::Base
            class_name:  "Follow",
            dependent:   :destroy
   has_many :followers, through: :reverse_follows, source: :follower
+  has_many :comments
 
 
   def following?(other_user)

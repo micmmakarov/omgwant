@@ -8,6 +8,7 @@ class Image < ActiveRecord::Base
   belongs_to :user
   has_many :cutes
   belongs_to :category
+  has_many :comments
 
   def generate_code
     self.code = (0...12).map{65.+(rand(26)).chr}.join if self.code.blank?

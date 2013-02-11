@@ -1,0 +1,3 @@
+.comments-template
+%input.newComment{:type => 'text'}
+%button.createComment Comment

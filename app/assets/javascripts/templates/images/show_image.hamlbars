@@ -24,3 +24,4 @@
         {{/if}}
 
   %ul.product-list
+  %ul.comment-list
