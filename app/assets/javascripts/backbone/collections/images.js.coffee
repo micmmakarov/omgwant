@@ -15,5 +15,9 @@ class Omgwant.Collections.Images extends Backbone.Collection
   page = 0
   scroll: (url) =>
     page += 12
-    console.log url
-    @fetch({add:true, url: url, data: $.param({ page: page}) })
+    @fetch
+      add:true
+      url: url
+      data: $.param({ page: page})
+      success: ->
+        $(".loading").fadeOut('slow', -> $(".loading").addClass("hide"))
