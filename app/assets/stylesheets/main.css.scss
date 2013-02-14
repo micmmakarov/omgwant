@@ -321,6 +321,17 @@ hgroup {
   background: linear-gradient(to bottom,  #4b0a2d 0%,#5f1e41 56%,#69294b 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4b0a2d', endColorstr='#69294b',GradientType=0 ); /* IE6-9 */
   padding: 60px 0 40px;
+  position: relative;
+  &:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: url("/assets/bg-closet.png") center center repeat-x;
+    content: '';
+    z-index: 0;
+  }
   h2 {
     font-weight: 100;
     font-size: 4.8rem;
@@ -328,6 +339,10 @@ hgroup {
     color: #fff;
     text-shadow: none;
     margin: 0;
+  }
+  .show-grid {
+    position: relative;
+    z-index: 1;
   }
   .steps {
     color: #fff;
