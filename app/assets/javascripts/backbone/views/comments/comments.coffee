@@ -1,5 +1,5 @@
 class Omgwant.Views.Comments extends Backbone.View
-  class_name: 'comments'
+  className: 'comments'
 
   initialize: (options) ->
     @collection = options.collection
@@ -11,7 +11,7 @@ class Omgwant.Views.Comments extends Backbone.View
 
 
   events:
-    'click .createComment': 'createComment'
+    'click .create-comment': 'createComment'
 
   addOne: (comment) ->
     view = new Omgwant.Views.Comment(model: comment)

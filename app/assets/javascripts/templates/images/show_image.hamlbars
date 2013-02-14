@@ -1,27 +1,29 @@
-%img{:src => '{{url}}'}
+%img.photo{:src => '{{url}}'}
 
 %a.close-modal{:href => "javascript:void(0)"}
   %i{:class => "icon-remove"}
   
-.modal-meta
-  %h3 {{computed_title}}
-  %p
-    Posted by:
-    %a{:href => '/users/{{user_info.id}}'}
-      {{user_info.full_name}}
+%aside.sidebar
+  .modal-meta
+    %h3 {{computed_title}}
+    %p
+      Posted by:
+      %a{:href => '/users/{{user_info.id}}'}
+        {{user_info.full_name}}
+      %p
+        %span.badge
+          %i.icon-heart
+          {{likes}}
+        %a.like{:href => '#', :class => '{{logged_in_state}} btn btn-small'}
+          %span.like-action
+            {{#if like_action}} 
+            %i.icon-thumbs-up
+            Like
+            {{else}}
+            Unlike
+            {{/if}}
   
-  %p
-    %span.badge
-      %i.icon-heart
-      {{likes}}
-    %a.like{:href => '#', :class => '{{logged_in_state}} btn btn-small'}
-      %span.like-action
-        {{#if like_action}} 
-        %i.icon-thumbs-up
-        Like
-        {{else}}
-        Unlike
-        {{/if}}
+  %ul.product-list.col
+  .comment-list.col
+    .comment-list-wrapper
 
-  %ul.product-list
-  %ul.comment-list

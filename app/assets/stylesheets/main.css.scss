@@ -47,7 +47,7 @@ html {
 
 body {
   background: url('/assets/bg-textured.jpg');
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 1.4rem "Helvetica Neue", Helvetica, Arial, sans-serif;
   padding-top: 40px;
 }
 
@@ -63,6 +63,7 @@ html, body {
 }
 #content {
   position: relative;
+  margin-top: 20px;
 }
 
 h1, h2, h3, h4, h5 {
@@ -203,7 +204,6 @@ hgroup {
 
 .dashboard-feed {
   h2 {
-    margin-top: 30px;
     margin-bottom: 30px;
   }
   ul.image-list {
@@ -506,7 +506,7 @@ hgroup {
   }
   .nav-pills {
     float: left;
-    margin: 20px 0 0 14px;
+    margin: 0 0 0 14px;
   }
 }
 
@@ -587,6 +587,7 @@ hgroup {
         .ulabel {
           color: #4f4e4f;
           font-weight: 100;
+          letter-spacing: 0.15rem;
         }
       }
     }
@@ -668,14 +669,14 @@ hgroup {
     background-color: white;
   }
   .product-title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     padding: 5px 0 0;
     line-height: 1;
     margin-bottom: 4px;
     color: #777;
   }
   .product-url {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin: 0;
   }
   .product-price {
@@ -683,7 +684,7 @@ hgroup {
     top: 6px;
     right: 10px;
     color: $main-color;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 }
 
@@ -700,13 +701,12 @@ hgroup {
   position: relative;
   z-index: 100;
   margin: 60px auto 0;
-  width: 500px;
-  width: 450px;
-  padding-right: 341px;
+  width: 615px;
+  padding-right: 518px;
   background: white;
   box-shadow: 0 0 25px rgba(0,0,0,.7);
   @include border-radius(8px);
-  img {
+  .photo {
     @include border-radius(8px, 0, 0, 8px);
     border-right: 1px solid #ddd;
   }
@@ -718,20 +718,32 @@ hgroup {
     z-index: 1;
   }
   .modal-meta {
+    padding: 10px 20px;
+  }
+  .sidebar {
     position: absolute;
     top: 0;
     right: 0;
-    width: 300px;
-    padding: 10px 20px;
+    width: 520px;
     h3 {
       font-size: 2rem;
     }
+    .col {
+      width: 50%;
+      float: left;
+      margin: 0;
+      border-right: 1px solid #ccc;
+      @include border-box;
+      &:last-child {
+        border: 0;
+        @include border-radius(0, 0, 8px, 0);
+      }
+    }
     .product-list {
-      margin: 0 -20px;
+      margin: 0;
       border-top: 1px solid #ddd;
       overflow: auto;
-      height: 305px;
-      @include border-radius(0, 0, 8px, 0);
+      height: 482px;
       li {
         line-height: 1.2;
         list-style: none;
@@ -749,6 +761,48 @@ hgroup {
           &:hover {
             background: white;
             cursor: default;
+          }
+        }
+      }
+    }
+    .comment-list {
+    }
+    .comment-list-wrapper {
+      padding: 0 20px;
+      .comment-input {
+        margin: 0 0 15px;
+      }
+      .comments-template {
+        margin: 0 -20px;
+        height: 390px;
+        overflow: auto;
+        li {
+          list-style: none;
+          padding-left: 28px;
+          position: relative;
+          margin: 0 20px 10px 12px;
+          line-height: 1;
+          .userpic {
+            width: 23px;
+            height: 23px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            img {
+              @include border-radius(2px);
+            }
+          }
+          .username {
+            display: block;
+            margin-bottom: 5px;
+          }
+          .comment-content {
+            line-height: 1.2;
+            margin-bottom: 5px;
+          }
+          .timestamp {
+            color: #999;
+            font-size: 1.1rem;
           }
         }
       }
@@ -803,13 +857,20 @@ a.badge {
 }
 .navbar {
   .brand {
-    padding: 8px 20px 8px;
+    padding: 7px 20px;
   } 
   .nav > {
-    li > a {
-      padding: 10px 15px 8px;
-      &.dropdown-toggle {
-        padding: 8px 15px 8px;
+    li {
+      > a {
+        padding: 10px 15px 8px;
+        &.dropdown-toggle {
+          padding: 8px 15px 8px;
+        }
+      }
+      &.dropdown.open {
+        > .dropdown-toggle {
+          background: lighten($main-color, 45%);
+        }
       }
     }
   }

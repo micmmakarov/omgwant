@@ -1,1 +1,8 @@
-{{text}}
+.userpic
+  %img{ :src => '/assets/avatar-default.png' }
+%a.username{ :href => '#' }
+  Kimmy Nguyen
+.comment-content
+  {{text}}
+.timestamp
+  about a minute ago
