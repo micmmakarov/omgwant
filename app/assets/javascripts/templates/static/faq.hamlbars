@@ -1,16 +1,18 @@
-%h1 Frequently Asked Questions
+.row-fluid
+  .span2.empty
+  .span8
+    %h2 Frequently Asked Questions
+    %p
+      %b What can I do on this website?
 
-%p
-  %b What can I do on this website?
+    %p You can view people's photos where they showcase their style. You can buy items they feature in their shots. You may also add your photos to the feed and mention products you wear in them, then those who see you photos can buy products. The best part: you make money off of each sale.
 
-%p You can view people's photos where they showcase their style. You can buy items they feature in their shots. You may also add your photos to the feed and mention products you wear in them, then those who see you photos can buy products. The best part: you make money off of each sale.
+    %p
+      %b How much money can I make?
 
-%p
-  %b How much money can I make?
+    %p Anywhere between 2% and 10% per item. Different retailers have different rules.
 
-%p Anywhere between 2% and 10% per item. Different retailers have different rules.
+    %p
+      %b Do I need to have an Instagram account to use OMGwant?
 
-%p
-  %b Do I need to have an Instagram account to use OMGwant?
-
-%p Yes, at present you must be already an Instagram user to log into OMGwant. You can get started by installing the <a href="http://instagram.com/">Instagram app</a> on your smartphone (iPhone or Android).
+    %p Yes, at present you must be already an Instagram user to log into OMGwant. You can get started by installing the <a href="http://instagram.com/">Instagram app</a> on your smartphone (iPhone or Android).

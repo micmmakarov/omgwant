@@ -923,6 +923,24 @@ a.badge {
     bottom: -49px;
   }
 }
+@media only screen and (max-width: 480px) {
+  .row-fluid {
+    .empty {
+      display: none;
+    }
+  }
+  .navbar {
+    .nav {
+      &.user-menu {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: auto;
+      }      
+    }
+  }
+}
+
 
 /****************************************
 /* /Bootstrap Overrides

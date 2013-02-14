@@ -1,6 +1,6 @@
 .intro
   .row-fluid.show-grid
-    .span1
+    .span1.empty
     .span10
       %h2.text-center Express Your Style and Make Some Money
       .row-fluid.steps
