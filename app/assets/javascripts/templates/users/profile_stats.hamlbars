@@ -6,5 +6,5 @@
     .number {{following_number}}
     .ulabel Following
   %li
-    .number 102
+    .number {{images_number}}
     .ulabel Photos
