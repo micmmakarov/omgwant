@@ -30,7 +30,9 @@
   %ul.dropdown-menu.pull-right
     %li
       %a{:href => 'style'} Style
+    %li
       %a{:href => 'beauty'} Beauty
+    %li
       %a{:href => 'accessories'} Accessories
 
 %a.btn.btn-info.hide

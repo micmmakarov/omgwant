@@ -1,3 +1,8 @@
-%p {{name}} ({{price}})
+.product-img{:style => "background-image: url(\"{{images.[2].url}}\")" }
+%p
+  {{name}}
+  %span.product-price ${{price}}
+%p.product-url
+  %a{:href => "{{url}}"} via {{retailer}}
 %a.delete.btn.btn-mini{:href => "#"}
   %i.icon-remove

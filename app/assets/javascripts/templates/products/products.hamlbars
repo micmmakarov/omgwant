@@ -1,2 +1,4 @@
+%p.total-products
+  Total products:
+  %b {{length}}
 %ul.image-product-list
-%p Products added: {{length}}

@@ -438,14 +438,27 @@ hgroup {
     margin: 0 0 10px;
   }
 }
+.product-list-container {
+  position: relative;
+  .total-products {
+    position: absolute;
+    right: 0;
+    top: -35px;
+    color: #aaa;
+    b {
+      color: #888;
+    }
+  }
+}
 .image-product-list {
   margin: 0 0 20px 0;
   li {
-    list-style: inside;
+    list-style: none;
     position: relative;
-    padding: 5px 62px 5px 10px;
+    padding: 5px 62px 5px 30px;
     margin: 0;
     line-height: 1.2;
+    position: relative;
     &:hover {
       background: rgba(255,255,255,.6);
     }
@@ -453,10 +466,24 @@ hgroup {
       font-size: 1.3rem;
       margin: 0;
     }
+    .product-img {
+      height: 15px;
+      width: 15px;
+      float: left;
+      background-size: 100%;
+      position: absolute;
+      left: 0;
+    }
+    .product-url {
+      font-size: 1.1rem;
+    }
+    .product-price {
+      color: $main-color;
+    }
     .delete {
       position: absolute;
-      right: 0;
-      top: 2px;
+      right: 4px;
+      top: 4px;
       i {
         opacity: .5;
       }
@@ -845,6 +872,9 @@ hgroup {
 /* Bootstrap Overrides
 /****************************************/
 
+hgroup {
+  margin: 0;
+}
 .btn {
   text-decoration: none;
   .icon.icon-tumblr-16 {
@@ -854,6 +884,31 @@ hgroup {
 }
 a.badge {
   text-decoration: none;
+}
+.dropdown-menu {
+  li {
+    a {
+      color: #8D1E2E;
+      font-weight: 700;
+      text-decoration: none;
+      &:hover {
+        background-color: #ec008c;
+        background-image: none;
+        color: #fff;
+      }
+    }
+    &.active {
+      a {
+        background: lighten($link-color, 20%); 
+      }
+      &:hover {
+        a {
+          background: lighten($link-color, 17%);
+          color: #8D1E2E;
+        }
+      }
+    }
+  }
 }
 .navbar {
   .brand {
