@@ -2,10 +2,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   helper_method :user
-  helper_method :api_methods, :like_methods
+  helper_method :api_methods, :like_methods, :api_includes
 
   def api_methods
-    [:comments, :title, :low_url, :url, :likes, :computed_title, :like_action, :user_info, :products, :category_name]
+    [:title, :low_url, :url, :likes, :computed_title, :like_action, :user_info, :products, :category_name]
+  end
+
+  def api_includes
+    {:comments => {:include => {:user => {:only => [:name, :image_url]}}}}
   end
 
   def like_methods

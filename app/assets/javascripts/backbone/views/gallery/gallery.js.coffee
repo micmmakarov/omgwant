@@ -2,6 +2,7 @@ class Omgwant.Views.Gallery extends Backbone.View
 
   initialize: (options) ->
     @collection = new Omgwant.Collections.Images()
+    window.c = @collection
     if options.feed
       if options.category
         @category = options.category
