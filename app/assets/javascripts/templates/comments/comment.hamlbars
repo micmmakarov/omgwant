@@ -1,6 +1,6 @@
 .userpic
-  %img{ :src => '/assets/avatar-default.png' }
-%a.username{ :href => '#' }
+  %img{ :src => '{{user.image_url}}' }
+%a.username{ :href => '/users/{{user.id}}' }
   {{user.name}}
 .comment-content
   {{text}}

@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   end
 
   def api_includes
-    {:comments => {:include => {:user => {:only => [:name, :image_url]}}}}
+    {:comments => {:include => {:user => {:only => [:id, :name, :image_url]}}}}
   end
 
   def like_methods
