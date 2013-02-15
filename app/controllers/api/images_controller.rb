@@ -38,6 +38,14 @@ class Api::ImagesController < ApplicationController
       category_id = Category.find_by_name(params[:category]).id
       params[:category_id] = category_id
     end
+    if @image.published =! params[:published] && @image.published == true
+      current_user.images_number -= 1
+      current_user.save!
+    end
+    if @image.published =! params[:published] && @image.published == false
+      current_user.images_number += 1
+      current_user.save!
+    end
     @image.published = params[:published]
     if @image.published
       @image.published_at = DateTime.now
