@@ -23,13 +23,13 @@ class Api::ImagesController < ApplicationController
   def show
     Image.current_user = current_user if user_signed_in?
     image = Image.find(params[:id])
-    render json: images.to_json(:methods => api_methods, :include => api_includes ) if image.published
+    render json: image.to_json(:methods => api_methods, :include => api_includes) if image.published
   end
 
   def create
     @image = Image.create(params[:image])
     @image.user = current_user
-    render json: images.to_json(:methods => api_methods, :include => api_includes )
+    render json: image.to_json(:methods => api_methods, :include => api_includes )
   end
 
   def update
@@ -44,7 +44,7 @@ class Api::ImagesController < ApplicationController
     end
     @image.category_id = params[:category_id]
     @image.save! if @image.user = current_user
-    render json: images.to_json(:methods => api_methods, :include => api_includes )
+    render json: image.to_json(:methods => api_methods, :include => api_includes )
   end
 
   def destroy

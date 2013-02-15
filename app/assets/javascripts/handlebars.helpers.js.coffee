@@ -14,6 +14,13 @@ Handlebars.registerHelper 'logged_in_state', (block) ->
   else
     'not-logged-in'
 
+Handlebars.registerHelper 'showed_if_logged_in', (block) ->
+  if typeof current_user isnt 'undefined'
+    ''
+  else
+    'hidden'
+
+
 Handlebars.registerHelper "currentUserFullName", () ->
   current_user.full_name
 

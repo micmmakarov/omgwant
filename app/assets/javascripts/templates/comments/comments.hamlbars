@@ -1,4 +1,4 @@
-%section.comment-input-container
+%section.comment-input-container{:class => '{{showed_if_logged_in}}'}
   %input.comment-input{:type => 'text', :placeholder => 'Write a comment...'}
   %button.btn.btn-success.btn-small.create-comment Add Comment
 %ul.comments-template
