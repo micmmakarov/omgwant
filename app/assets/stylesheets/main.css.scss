@@ -397,9 +397,9 @@ hgroup {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -33px;
+    bottom: -25px;
     background: rgba(0,0,0,.8);
-    padding: 10px;
+    padding: 7px 10px;
     a {
       text-decoration: none;
       &:hover {
@@ -411,10 +411,11 @@ hgroup {
       text-shadow: none;
       margin: 0 0 5px;
       font-weight: 400;
+      font-size: 1.3rem;
     }
     p {
       color: white;
-      margin: 0 0 5px;
+      margin: 0;
     }
     .small {
       font-size: 1.1rem;
