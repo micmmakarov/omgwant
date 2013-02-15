@@ -21,13 +21,17 @@ class Omgwant.Views.Comments extends Backbone.View
     if e.keyCode is 13
       @createComment(e)
 
+  createComment: ->
+    input = @$el.find(".comment-input")
+    # validate: check for empty comment
+    if(input.val().length < 1)
+      return
+    comment = input.val()
+    input.val("")
+    @collection.create
+      text: comment
+
   render: ->
     @$el.html HandlebarsTemplates['comments/comments']
     @collection.each(@addOne, @)
     @
-
-  createComment: ->
-    text = @$el.find(".comment-input").val()
-    @$el.find(".comment-input").val("")
-    @collection.create
-      text: text
