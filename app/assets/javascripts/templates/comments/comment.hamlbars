@@ -5,4 +5,4 @@
 .comment-content
   {{text}}
 .timestamp
-  {{created_at}}
+  {{timeAgo created_at}}

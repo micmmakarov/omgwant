@@ -2,6 +2,10 @@ Handlebars.registerHelper "formatDate", (date) ->
   date = moment.utc(date)
   date.format "MMM Do, YYYY"
 
+Handlebars.registerHelper "timeAgo", (date) ->
+  date = moment.utc(date)
+  date.fromNow()
+
 Handlebars.registerHelper 'if_current_user', (block) ->
   if typeof current_user isnt 'undefined'
     block.fn()
