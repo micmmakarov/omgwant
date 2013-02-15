@@ -440,11 +440,10 @@ hgroup {
   }
 }
 .product-list-container {
-  position: relative;
   .total-products {
     position: absolute;
-    right: 0;
-    top: -35px;
+    right: 20px;
+    top: 95px;
     color: #aaa;
     b {
       color: #888;
