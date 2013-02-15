@@ -1,6 +1,6 @@
 .user-profile
   .row-fluid
-    .span6
+    .span8
       %header.user-profile-header
         %hgroup
           %h3 {{full_name}}
@@ -9,7 +9,7 @@
           %object.userpic{"Data" => "{{image_url}}"}
             %img{:src => "/assets/avatar-default.png"}
         .follow-container
-    .span6
+    .span4
       .user-stats
 
   %h4 Recently Liked Photos

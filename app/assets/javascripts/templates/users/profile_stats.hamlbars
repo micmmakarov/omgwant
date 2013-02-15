@@ -8,6 +8,3 @@
   %li
     .number 102
     .ulabel Photos
-  %li
-    .number 56
-    .ulabel Likes
