@@ -61,6 +61,7 @@ class Omgwant.Routers.main extends Backbone.Router
     else
       @view = new Omgwant.Views.ShowImage({model: currentImage})
       $(".modal-holder").html @view.render().el
+    window.c = currentImage
 
     $('.overlay').fadeIn 'fast'
     $('body').css 'overflow','hidden'

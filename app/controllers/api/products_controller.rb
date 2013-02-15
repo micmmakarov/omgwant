@@ -19,6 +19,11 @@ class Api::ProductsController < ApplicationController
 
   def create
     product = Product.new(params[:product])
+    if params[:images]
+      product.thumb_url=params[:images][0][:url]
+      product.low_url=params[:images][1][:url]
+      product.big_url=params[:images][2][:url]
+    end
     #product.image.user = current_user
     product.save! if product.image.user == current_user  || current_user.admin == true
     render json: product.to_json
