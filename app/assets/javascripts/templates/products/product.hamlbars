@@ -1,4 +1,8 @@
+{{#if images}}
 .product-img{:style => "background-image: url(\"{{images.[2].url}}\")" }
+{{else}}
+.product-img{:style => "background-image: url(\"{{low_url}}\")" }
+{{/if}}
 %p
   {{name}}
   %span.product-price ${{price}}
