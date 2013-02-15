@@ -17,7 +17,6 @@ class Omgwant.Views.ShowImage extends Backbone.View
     @model.like()
     false
 
-
   close: (e) ->
     e.stopPropagation()
     Omgwant.router.previous()

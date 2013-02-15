@@ -1,4 +1,4 @@
-%section.comment-input
-  %input.newComment{:type => 'text', :placeholder => 'Write a comment...'}
+%section.comment-input-container
+  %input.comment-input{:type => 'text', :placeholder => 'Write a comment...'}
   %button.btn.btn-success.btn-small.create-comment Add Comment
 %ul.comments-template
