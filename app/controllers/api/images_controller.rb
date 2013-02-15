@@ -9,11 +9,11 @@ class Api::ImagesController < ApplicationController
     category_name = params[:category]
 
     if category_name.blank?
-      images = Image.where(:published => true).all(:limit => 12, :offset => page)
+      images = Image.where(:published => true).all(:limit => 12, :offset => page, :order => "published_at DESC")
     else
       category = Category.find_by_name(category_name)
       category_id = category.id
-      images = Image.where(:published => true, :category_id => category_id).all(:limit => 12, :offset => page)
+      images = Image.where(:published => true, :category_id => category_id).all(:limit => 12, :offset => page, :order => "published_at DESC")
     end
 
       Thread.current[:user] = current_user
@@ -39,6 +39,9 @@ class Api::ImagesController < ApplicationController
       params[:category_id] = category_id
     end
     @image.published = params[:published]
+    if @image.published
+      @image.published_at = DateTime.now
+    end
     @image.category_id = params[:category_id]
     @image.save! if @image.user = current_user
     render json: @image.to_json(:methods => api_methods)
