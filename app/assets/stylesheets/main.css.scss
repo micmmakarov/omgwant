@@ -389,6 +389,16 @@ hgroup {
       position: relative;
       z-index: -1;
     }
+    .liked-by {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      font-size: 1.1rem;
+      background-color: rgba(236, 0, 140, .55);
+      color: #fff;
+      padding: 3px 6px;
+      @include border-radius(6px);
+    }
   }
   .title {
     height:30px;

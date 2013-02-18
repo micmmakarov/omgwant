@@ -3,12 +3,12 @@
     .row-fluid
       .span6
         %h3 Your Personal Feed
-      .span6
         %h4 Following: {{followers.length}}
-        {{#each followers}}
-        {{this.name}}
-        {{this.email}}
-        {{/each}}
+      .span6
+        / {{#each followers}}
+        / {{this.name}}
+        / {{this.email}}
+        / {{/each}}
     .span6
 
 #images-table
