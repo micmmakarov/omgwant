@@ -16,6 +16,7 @@ class SessionsController < ApplicationController
       user.full_name = u.full_name
       user.password = user.password_confirmation = pwd
       user.image_url = u.profile_picture
+      user.bio = ActionController::Base.helpers.sanitize(u.bio)
       user.save!
       sign_in(user)
       user.refresh_images(session[:access_token])
