@@ -51,14 +51,15 @@ class Api::CommentsController < ApplicationController
   # PUT /comments/1.json
   def update
     @comment = Comment.find(params[:id])
-
-    respond_to do |format|
-      if @comment.update_attributes(params[:comment])
-        format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
+    if @comment.user = current_user
+      respond_to do |format|
+        if @comment.update_attributes(params[:comment])
+          format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
+          format.json { head :no_content }
+        else
+          format.html { render action: "edit" }
+          format.json { render json: @comment.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
@@ -67,7 +68,8 @@ class Api::CommentsController < ApplicationController
   # DELETE /comments/1.json
   def destroy
     @comment = Comment.find(params[:id])
-    @comment.destroy
+    @comment.destroy if @comment.user = current_user
+
 
     respond_to do |format|
       format.html { redirect_to comments_url }
