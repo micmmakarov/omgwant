@@ -12,7 +12,6 @@ class Omgwant.Views.LiveSearchItem extends Backbone.View
     'click': 'add_product'
 
   add_product: ->
-    #alert "product added #{@model.get 'name'} to #{@image.get 'title'}"
     @$el.parent().parent().find("input").val('')
     @model.unset 'id'
     @model.set 'image_id', @image.id

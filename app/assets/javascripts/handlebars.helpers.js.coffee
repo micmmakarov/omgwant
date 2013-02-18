@@ -44,7 +44,7 @@ Handlebars.registerHelper 'each_upto', (ary, max, options) ->
 
 # Truncates string
 Handlebars.registerHelper "truncate", (str, len) ->
-  if str.length > len
+  if str and str.length > len
     new_str = str.substr(0, len + 1)
     while new_str.length
       ch = new_str.substr(-1)

@@ -14,9 +14,9 @@
   Loading...
 .publish
   {{#if published}}
-  %a{:href => '#', :class => 'btn btn-mini btn-danger'} Hide from public gallery
+  %a{:href => '#', :class => 'btn btn-danger'} Unpublish
   {{else}}
-  %a{:href => '#', :class => 'btn btn-mini btn-success'} Publish to public gallery
+  %a{:href => '#', :class => 'btn btn-success'} Publish
   {{/if}}
   
 .category-selector

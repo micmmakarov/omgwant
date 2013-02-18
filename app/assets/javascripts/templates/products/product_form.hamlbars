@@ -1,0 +1,22 @@
+#custom-product-modal{:class => "modal hide fade", :tabindex => "-1", :role => "dialog", "aria-labelledby" => "myModalLabel", "aria-hidden" => "true"}
+  .modal-header
+    %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+    %h3#myModalLabel Add a Product Manually
+  .modal-body
+    %form.form-horizontal
+      .control-group
+        %label.control-label{:for => "inputProductTitle"} Title
+        .controls
+          %input.input-xlarge#inputProductTitle{:placeholder => "Product name, try to be precise", :type => "text"}
+          %span.label.label-important Required
+      .control-group
+        %label.control-label{:for => "inputProductURL"} Product URL
+        .controls
+          %input.input-xlarge#inputProductURL{:placeholder => "Link to product web page", :type => "text"}
+      .control-group
+        %label.control-label{:for => "inputProductPrice"} Price
+        .controls
+          %input.input-mini#inputProductPrice{:placeholder => "$", :type => "text"}
+  .modal-footer
+    %button.btn{"aria-hidden" => "true", "data-dismiss" => "modal"} Close
+    %button#save-product.btn.btn-success Save

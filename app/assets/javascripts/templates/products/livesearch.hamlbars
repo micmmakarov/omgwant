@@ -1,4 +1,7 @@
 %input{:type => "text", :placeholder => "Type to add products..."}
 
 %ul.livesearch-items
-  
+  %li.add-custom-product.hide
+    Can't find a product?
+    %a{:href => "#custom-product-modal", :role => "button", :class => "btn", "data-toggle" => "modal"} Add by hand!
+    
