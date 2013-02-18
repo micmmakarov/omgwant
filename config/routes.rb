@@ -45,7 +45,7 @@ Omgwant::Application.routes.draw do
 
 
   get "sessions/callback"
-
+  get "recache" => "admin#recache"
 
   root :to => 'home#index'
 
