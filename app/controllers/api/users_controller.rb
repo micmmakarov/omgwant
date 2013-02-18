@@ -37,9 +37,20 @@ class Api::UsersController < ApplicationController
   end
 
   def feed
+    Image.current_user = current_user if user_signed_in?
     users = current_user.followed_users
-    feed = users.map {|u| u.images.order("created_at DESC")}.flatten.sort_by{|e| e[:created_at]}
-    render json: feed.to_json(:methods => api_methods)
+    #feed = users.map {|u| u.images.order("created_at DESC")}.flatten.sort_by{|e| e[:created_at]}
+    published_feed = users.map {|u| u.published_images}.flatten.sort_by{|e| e[:created_at]}.as_json(:methods => api_methods)
+    published_feed.length.times do |p|
+      published_feed[p][:feed_date] = published_feed[p]["published_at"]
+      puts published_feed[p][:feed_date]
+    end
+    liked_images = users.map { |u| u.cutes.order('created_at DESC').map {|c| image = c.image.as_json(:methods => api_methods); image[:liked] = true; image[:liked_by] = c.user.as_json;image[:liked_at] = c.created_at; image[:feed_date] = c.created_at;image} }
+    liked_feed = liked_images.flatten
+    the_feed = (liked_feed + published_feed).sort_by{|e| e[:feed_date]}
+    render json: the_feed
+
+
   end
 
 end

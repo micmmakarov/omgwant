@@ -1,4 +1,7 @@
 .img
+  {{#if liked}}
+  Liked by your friend {{liked_by.full_name}}
+  {{/if}}
   %img{:src => '{{low_url}}'}
 {{#if products.length}}
 %a.image-products.badge.badge-inverse{:href => '#'} 

@@ -4,6 +4,7 @@
       %header.user-profile-header
         %hgroup
           %h3 {{full_name}}
+          %p {{bio}}
           / %p Joined {{formatDate created_at}}
         %div.userpic
           %object.userpic{"Data" => "{{image_url}}"}
