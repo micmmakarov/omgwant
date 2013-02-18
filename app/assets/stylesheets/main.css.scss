@@ -822,7 +822,7 @@ hgroup {
             }
           }
           .username {
-            display: block;
+            display: inline-block;
             margin-bottom: 5px;
           }
           .comment-content {
@@ -832,6 +832,19 @@ hgroup {
           .timestamp {
             color: #999;
             font-size: 1.1rem;
+          }
+          .delete-comment {
+            position: absolute;
+            top: 2px;
+            right: 0px;
+            color: red;
+            opacity: .3;
+            text-decoration: none;
+          }
+          &:hover {
+            .delete-comment {
+              opacity: 1;
+            }
           }
         }
       }

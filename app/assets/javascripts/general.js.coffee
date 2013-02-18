@@ -1,6 +1,6 @@
 $ ->
   # initialize Bootstrap tooltips
-  $("[rel=\"tooltip\"]").tooltip()
+  $('[rel="tooltip"]').tooltip()
 
   # focus on search input field in modal
   $("#addProductModal").on "shown", ->

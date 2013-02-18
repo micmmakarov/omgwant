@@ -5,12 +5,17 @@ class Omgwant.Views.Comment extends Backbone.View
     @model = options.model
 
   events: ->
-    'click .delete': 'delete'
+    'click .delete-comment': 'delete'
 
   delete: (e) ->
     e.preventDefault()
-    @model.destroy()
+    @$el.slideUp 'fast', =>
+      @model.destroy()
+      @unbind()
 
   render: ->
-    @$el.html HandlebarsTemplates['comments/comment'](@model.toJSON())
+    deletable = true if window.current_user.id == @model.get('user').id
+    model = @model.toJSON()
+    model['deletable'] = deletable
+    @$el.html HandlebarsTemplates['comments/comment'](model)
     @

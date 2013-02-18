@@ -6,3 +6,7 @@
   {{text}}
 .timestamp
   {{timeAgo created_at}}
+{{#if deletable}}
+%a.delete-comment{ :href => '#', :title => 'Delete my comment', "data-toggle" => 'tooltip', :rel => 'tooltip' }
+  %i.icon-trash
+{{/if}}
