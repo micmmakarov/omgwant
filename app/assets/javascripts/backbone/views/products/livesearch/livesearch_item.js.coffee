@@ -9,16 +9,17 @@ class Omgwant.Views.LiveSearchItem extends Backbone.View
     @collection = options.collection
 
   events:
-    'click': 'add_product'
+    'click': 'addProduct'
 
-  add_product: ->
+  addProduct: (e) ->
+    e.stopPropagation()
     @$el.parent().parent().find("input").val('')
     @model.unset 'id'
     @model.set 'image_id', @image.id
     @products.create(@model.toJSON())
+    @$el.parents('ul').find('.add-custom-product').addClass 'hide'
     @collection.reset()
 
-    
   kill: ->
     @unbind()
     @remove()

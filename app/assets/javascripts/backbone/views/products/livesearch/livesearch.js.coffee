@@ -6,20 +6,20 @@ class Omgwant.Views.LiveSearch extends Backbone.View
     @collection.on 'add', @addItem, @
     @image = options.image || {}
     $('.bs-modal-content').html HandlebarsTemplates['products/product_form'] {}
-
+    $('html').on 'click', @hideMenu
     @render()
 
   events:
     'keyup :input': 'search'
     'click .add-custom-product': 'addCustomProduct'
 
-  addItem: (model)->
+  addItem: (model) ->
     @$el.find('.add-custom-product').removeClass 'hide' # show add link
     itemView = new Omgwant.Views.LiveSearchItem(model: model, image:@image, collection:@collection)
     @$el.find('.livesearch-items').append itemView.el
     @collection.on 'reset', @cleanUp, itemView
 
-  cleanUp: (collection)->
+  cleanUp: (collection) ->
     # @ - is a view passed on trigger
     @kill()
 
@@ -51,8 +51,7 @@ class Omgwant.Views.LiveSearch extends Backbone.View
     console.log "Add product"
     $('#save-product').on 'click', =>
       @saveProduct()
-    @$el.find('.livesearch-items li:not(.add-custom-product)').remove()
-    @$el.find('.add-custom-product').addClass 'hide' # hide add link
+    @hideMenu()
     # TODO
     # $('#inputProductTitle').focus()
 
@@ -68,7 +67,11 @@ class Omgwant.Views.LiveSearch extends Backbone.View
       price: price
       image_id: image_id
     @collection.reset()
-    $('#custom-product-modal').modal('hide')
+    $('#custom-product-modal').modal 'hide'
+
+  hideMenu: =>
+    @$el.find('.livesearch-items li:not(.add-custom-product)').remove()
+    @$el.find('.add-custom-product').addClass 'hide'
 
   render: ->
     @$el.html HandlebarsTemplates['products/livesearch'] {}
