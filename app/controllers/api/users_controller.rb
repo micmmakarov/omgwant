@@ -14,14 +14,14 @@ class Api::UsersController < ApplicationController
     Image.current_user = current_user if user_signed_in?
     user = User.find(params[:id])
     images = user.liked_images
-    render json: images.to_json(:methods => api_methods)
+    render json: images.to_json(:methods => api_methods, :include => api_includes)
   end
 
   def user_published
     Image.current_user = current_user if user_signed_in?
     user = User.find(params[:id])
     images = user.published_images
-    render json: images.to_json(:methods => api_methods)
+    render json: images.to_json(:methods => api_methods, :include => api_includes)
   end
 
   def follow

@@ -31,6 +31,7 @@ class Omgwant.Views.Comments extends Backbone.View
     @collection.create
       text: comment
       user: {name: window.current_user.name}
+      user: {image_url: window.current_user.image_url}
 
   render: ->
     @$el.html HandlebarsTemplates['comments/comments']
