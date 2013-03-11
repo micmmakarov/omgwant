@@ -1,7 +1,7 @@
 {{#each this}}
 %li
   %p.product-title{:title => "{{name}}"}
-    {{truncate name 50}}
+    {{truncate name 44}}
   .product-price ${{price}}
   {{#if low_url}}
   .product-img{:style => "background-image: url(\"{{low_url}}\")" }
