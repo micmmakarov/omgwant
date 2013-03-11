@@ -8,8 +8,14 @@
   {{else}}
   .product-img{:style => "background-image: url(\"/assets/product-default.png\")" }
   {{/if}}
+  {{#if low_url}}
   %p.product-url
     %a{:href => "{{url}}", :rel => "external"} via {{retailer}}
+  {{else}}
+  %p.product-url
+    %a{:href => "{{url}}", :rel => "external"} via {{getHostDomain url}}
+  {{/if}}
+  
 {{/each}}
 
 {{#unless this.length}}
