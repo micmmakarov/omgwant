@@ -61,7 +61,6 @@ class Omgwant.Routers.main extends Backbone.Router
     else
       @view = new Omgwant.Views.ShowImage({model: currentImage})
       $(".modal-holder").html @view.render().el
-    window.c = currentImage
 
     $('.overlay').fadeIn 'fast'
     $('body').css 'overflow','hidden'
@@ -95,12 +94,11 @@ class Omgwant.Routers.main extends Backbone.Router
 
   highlight_links: (current_url) ->
     if typeof current_user is 'undefined'
-      if current_url is ''
+      if current_url is '' or current_url[0..4] == 'photo'
         $('.page-wrapper .intro-wrapper').html HandlebarsTemplates['static/intro']({})
         $('.page-wrapper .intro-wrapper').slideDown('fast')
       else
         $('.page-wrapper .intro-wrapper').slideUp('fast', ->
-          #$('.page-wrapper .intro-wrapper').html ''
         )
     $("a[href!='/#{current_url}']").parent().removeClass('active')
     $("a[href='/#{current_url}']").parent().addClass('active')
