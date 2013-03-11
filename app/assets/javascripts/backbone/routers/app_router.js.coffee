@@ -2,6 +2,7 @@ class Omgwant.Routers.main extends Backbone.Router
 
   routes:
     ''            : 'index'
+    '_'           : 'index'
     'home'        : 'index'
     'feed'        : 'feed'
     'following'   : 'following'
@@ -94,7 +95,7 @@ class Omgwant.Routers.main extends Backbone.Router
 
   highlight_links: (current_url) ->
     if typeof current_user is 'undefined'
-      if current_url is '' or current_url[0..4] == 'photo'
+      if current_url is '' or current_url[0..4] == 'photo' or current_url is '_'
         $('.page-wrapper .intro-wrapper').html HandlebarsTemplates['static/intro']({})
         $('.page-wrapper .intro-wrapper').slideDown('fast')
       else
