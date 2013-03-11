@@ -3,7 +3,11 @@
   %p.product-title{:title => "{{name}}"}
     {{truncate name 50}}
   .product-price ${{price}}
+  {{#if low_url}}
   .product-img{:style => "background-image: url(\"{{low_url}}\")" }
+  {{else}}
+  .product-img{:style => "background-image: url(\"/assets/product-default.png\")" }
+  {{/if}}
   %p.product-url
     %a{:href => "{{url}}", :rel => "external"} via {{retailer}}
 {{/each}}
