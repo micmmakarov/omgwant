@@ -155,6 +155,7 @@ hgroup {
       -webkit-box-shadow: none;
       box-shadow: none;
       background: $superdark;
+      border: 0;
     }
     li {
       a {
@@ -942,30 +943,41 @@ hgroup {
 a.badge {
   text-decoration: none;
 }
-.dropdown-menu {
-  li {
-    a {
-      color: #8D1E2E;
-      font-weight: 700;
-      text-decoration: none;
-      &:hover {
-        background-color: #ec008c;
-        background-image: none;
-        color: #fff;
-      }
-    }
-    &.active {
+.main-header {
+  .dropdown-menu {
+    li {
       a {
-        background: lighten($link-color, 20%); 
+        color: #8D1E2E;
+        font-weight: 700;
+        text-decoration: none;
+        text-shadow: none;
+        &:hover {
+          background-color: #ec008c;
+          background-image: none;
+          color: #fff;
+        }
       }
-      &:hover {
+      p {
         a {
-          background: lighten($link-color, 17%);
-          color: #8D1E2E;
+          &:hover {
+            background: transparent;
+            color: #8D1E2E;
+          }
+        }
+      }
+      &.active {
+        a {
+          background: lighten($link-color, 20%); 
+        }
+        &:hover {
+          a {
+            background: lighten($link-color, 17%);
+            color: #8D1E2E;
+          }
         }
       }
     }
-  }
+  }  
 }
 .navbar {
   .brand {
@@ -988,6 +1000,7 @@ a.badge {
       &.dropdown.open {
         > .dropdown-toggle {
           background: lighten($main-color, 45%);
+          @include text-shadow-white;
         }
       }
     }
