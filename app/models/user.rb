@@ -20,10 +20,7 @@ class User < ActiveRecord::Base
 
   def generate_slug
     s = Slug.new(name).generate if self.slug.blank?
-    if User.find_by_slug(s)
-      s = "#{s}_#{rand(1000)}"
-    end
-    self.slug = s
+    self.slug = "#{s}_#{rand(1000)}"
   end
 
   has_many :follows, foreign_key: "follower_id", dependent: :destroy
