@@ -8,6 +8,7 @@
 
 $main-color: #ec008c;
 $link-color: #f26d7d;
+$superdark: #333;
 
 @mixin generic-transition($time) {
   -webkit-transition: all $time ease-in-out;
@@ -32,6 +33,9 @@ $link-color: #f26d7d;
 }
 @mixin text-shadow-white() {
   text-shadow: 0 1px 0 rgba(255,255,255,0.9);
+}
+@mixin text-shadow-black() {
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.9);
 }
 @mixin border-box() {
   -webkit-box-sizing: border-box;
@@ -147,12 +151,16 @@ hgroup {
   .navbar {
     .navbar-inner {
       min-height: 30px;
-      // background: #DA7481;
+      -moz-box-shadow: none;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      background: $superdark;
     }
     li {
       a {
-        color: #8D1E2E;
+        color: #e6e6e6;
         font-weight: 700;
+        @include text-shadow-black;
         &:hover {
           color: $link-color;
         }
@@ -160,6 +168,7 @@ hgroup {
       &.active {
         a {
           background: lighten($link-color, 20%); 
+          @include text-shadow-white;
         }
         &:hover {
           a {
@@ -966,9 +975,15 @@ a.badge {
     li {
       > a {
         padding: 10px 15px 8px;
+        font-weight: 300;
+        font-size: 1.7rem;
         &.dropdown-toggle {
           padding: 8px 15px 8px;
         }
+      }
+      &.divider-vertical {
+        border-right: 0;
+        border-left-color: #999;
       }
       &.dropdown.open {
         > .dropdown-toggle {
@@ -979,6 +994,9 @@ a.badge {
   }
   .dropdown-menu li > a {
     text-decoration: none;
+    color: $superdark;
+    text-shadow: none;
+    font-weight: 300;
   }
   .dropdown-menu li > a:hover,
   .dropdown-menu li > a:focus,
