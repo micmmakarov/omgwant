@@ -5,7 +5,11 @@ class Api::UsersController < ApplicationController
 
   def show
     Image.current_user = current_user if user_signed_in?
-    user = User.find(params[:id])
+    if params[:id].is_number?
+      user = User.find(params[:id])
+    else
+      user = User.find_by_slug(params[:id])
+    end
     User.is_following = current_user.following?(user) if user_signed_in?
     render json: user.to_json(:methods => [:is_following])
   end
@@ -51,6 +55,11 @@ class Api::UsersController < ApplicationController
     render json: the_feed
 
 
+  end
+
+private
+  def is_number?(object)
+    true if Float(object) rescue false
   end
 
 end

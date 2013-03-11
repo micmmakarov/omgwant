@@ -1,3 +1,5 @@
+require 'slug'
+
 class User < ActiveRecord::Base
 
   # Include default devise modules. Others available are:
@@ -14,6 +16,15 @@ class User < ActiveRecord::Base
 
   has_many :images
   has_many :cutes
+  before_save :generate_slug
+
+  def generate_slug
+    s = Slug.new(name).generate if self.slug.blank?
+    if User.find_by_slug(s)
+      s = "#{s}_#{rand(1000)}"
+    end
+    self.slug = s
+  end
 
   has_many :follows, foreign_key: "follower_id", dependent: :destroy
   has_many :followed_users, through: :follows, source: :followed
